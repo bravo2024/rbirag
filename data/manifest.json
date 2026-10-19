@@ -1,0 +1,22 @@
+{
+  "built_at": "2026-10-19T23:25:30",
+  "chunk_words": [
+    120,
+    380
+  ],
+  "docs_types": {
+    "amendment_direction": 9,
+    "master_direction": 364,
+    "notification": 4,
+    "other": 17,
+    "scheme": 4
+  },
+  "embed_model": "BAAI/bge-small-en-v1.5",
+  "n_chunks": 14186,
+  "n_docs": 398,
+  "sources": {
+    "backfill": 385,
+    "rss": 13
+  },
+  "version": "v1-182406aedd"
+}
