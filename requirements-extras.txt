@@ -1,0 +1,23 @@
+# Optional extras — install with:  pip install -r requirements-extras.txt
+#
+# FAISS vector search for the dense arm (exact IndexFlatIP over the same
+# vectors; the engine falls back to byte-identical NumPy search when faiss
+# is absent, so this stays optional).
+faiss-cpu>=1.9
+#
+# LangChain layer: retriever + LCEL answer chain + persisted FAISS store +
+# failover chat models over the same providers.
+langchain-core>=1.0
+langchain-community>=0.4
+langchain-openai>=1.0
+#
+# Kaggle CLI — GPU index builds (scripts/kaggle_build_index.py).
+kaggle>=1.7
+#
+# Answer-level evaluation (scripts/eval_answers.py): RAGAS metrics judged
+# through the same provider chain via regintel/judge.py. Pinned to 0.4.3 —
+# its classic metric classes accept any BaseRagasLLM; the v2
+# "collections" metrics require instructor-LLM structured output and would
+# bypass the provider failover/cache. See regintel/judge.py for the tiny
+# langchain-community compat shim it needs.
+ragas==0.4.3

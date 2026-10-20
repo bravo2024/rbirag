@@ -1,0 +1,6 @@
+# Development + CI dependencies (not installed by Streamlit Cloud).
+#   pip install -r requirements-dev.txt
+pytest>=8.0
+# tests/test_judge.py and tests/test_lc_layer.py import langchain-core directly;
+# the runtime app does not need it (the LangChain layer is an optional extra).
+langchain-core>=1.0
