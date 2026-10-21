@@ -1,0 +1,12 @@
+{"query": "interest rate on savings deposits offered by commercial banks", "gold_doc_ids": ["md13157"], "institution": "bank", "note": "Commercial Banks - Interest Rate on Deposits, 2025"}
+{"query": "classification and valuation of the investment portfolio of NBFCs including held-to-maturity", "gold_doc_ids": ["md12950"], "institution": "nbfc", "note": "NBFC investment classification directions"}
+{"query": "reporting of credit information to credit information companies by banks", "gold_doc_ids": ["md13154"], "institution": "bank", "note": "Commercial Banks - Credit Information Reporting, 2025"}
+{"query": "internal ombudsman appointment and complaint handling for NBFCs", "gold_doc_ids": ["md13274"], "institution": "nbfc", "note": "NBFC Internal Ombudsman directions, 2026"}
+{"query": "fraud risk management and reporting of fraud incidents by commercial banks", "gold_doc_ids": ["md13641"], "institution": "bank", "note": "Commercial Banks - Fraud Risk Management, 2026 (supervisory family)"}
+{"query": "financing of MSME receivables through TReDS", "gold_doc_ids": ["md13526"], "institution": null, "note": "Trade Receivables Discounting System directions, 2026"}
+{"query": "certificate of deposit issuance norms for banks", "gold_doc_ids": ["md12108"], "institution": null, "note": "Certificate of Deposit directions, 2021"}
+{"query": "non-resident investment in Indian debt instruments", "gold_doc_ids": ["md12765"], "institution": null, "note": "FEMA non-resident debt directions"}
+{"query": "cyber resilience controls for non-bank payment system operators", "gold_doc_ids": ["md12715"], "institution": null, "note": "Cyber resilience master directions"}
+{"query": "acceptance of public deposits by NBFCs - repayment and ceiling rules", "gold_doc_ids": ["md12958"], "institution": "nbfc", "note": "NBFC acceptance of public deposits, 2025"}
+{"query": "borrowing and lending in the call, notice and term money markets", "gold_doc_ids": ["md12061"], "institution": null, "note": "Call, notice and term money directions, 2021"}
+{"query": "what must banks do to detect and report fraud incidents", "gold_doc_ids": ["md13641"], "institution": null, "note": "no institution filter: checks whether the Commercial Banks version outranks its nine entity siblings"}

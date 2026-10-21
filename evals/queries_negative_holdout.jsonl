@@ -1,0 +1,18 @@
+{"query": "What is today's RBI repo rate and did the MPC change it at its latest meeting?", "note": "in-domain trap: policy rate decisions are MPC statements, not Master Directions"}
+{"query": "Did the Monetary Policy Committee cut the policy rate at its October 2026 meeting?", "note": "in-domain trap: MPC decision outcome"}
+{"query": "Summarise the RBI press release announcing the latest Statement on Developmental and Regulatory Policies.", "note": "in-domain trap: press release, not in corpus"}
+{"query": "What did the RBI Governor say about inflation and liquidity in his latest post-policy address?", "note": "in-domain trap: speech"}
+{"query": "What are SEBI's LODR timelines for disclosing related party transactions by listed companies?", "note": "SEBI LODR, out of scope"}
+{"query": "What is the maximum total expense ratio SEBI allows for equity mutual fund schemes?", "note": "SEBI mutual funds, out of scope"}
+{"query": "How long is the trading window closed for designated persons under the SEBI prohibition of insider trading regulations?", "note": "SEBI insider trading variant, out of scope"}
+{"query": "What are IRDAI's limits on commission payable to agents selling health insurance policies?", "note": "IRDAI, out of scope"}
+{"query": "What are the PFRDA rules on exit and withdrawal from the National Pension System for non-government subscribers?", "note": "PFRDA, out of scope"}
+{"query": "What GST rate applies to bank charges and loan processing fees charged by banks?", "note": "GST, out of scope"}
+{"query": "What is the due date for a company to pay advance tax instalments under the Income-tax Act?", "note": "income tax, out of scope"}
+{"query": "How does a company file Form MGT-7 annual return with the Registrar of Companies under the Companies Act, 2013?", "note": "MCA / Companies Act filing, out of scope"}
+{"query": "What does RBI circular DOR.CRE.REC.777/99.88.123/2025-26 say about co-operative bank governance?", "note": "RBI circular number that does not exist"}
+{"query": "What are the FDIC deposit insurance coverage limits for US bank accounts?", "note": "US regulator, out of scope"}
+{"query": "What are the Bank of England PRA's ring-fencing rules for large UK banks?", "note": "UK regulator, out of scope"}
+{"query": "What are the EU DORA requirements for reporting major ICT incidents by financial entities?", "note": "EU regulation, out of scope"}
+{"query": "What is the capital city of Australia?", "note": "trivia, out of scope"}
+{"query": "Give me a recipe for Hyderabadi chicken biryani.", "note": "trivia, out of scope"}

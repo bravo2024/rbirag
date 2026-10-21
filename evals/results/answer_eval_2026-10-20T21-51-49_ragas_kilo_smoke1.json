@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "ts": "2026-10-20T21-51-49",
+    "answer_pin": "groq:openai/gpt-oss-120b",
+    "judge_pin": "kilo-free:nvidia/nemotron-3-ultra-550b-a55b:free -> kilo-free:nvidia/nemotron-3.5-lightning:free",
+    "judge_chain": [
+      "kilo-free:nvidia/nemotron-3-ultra-550b-a55b:free",
+      "kilo-free:nvidia/nemotron-3.5-lightning:free"
+    ],
+    "judge_chain_strict": true,
+    "k": 6,
+    "n_queries": 1,
+    "n_scored": 1,
+    "corpus_version": "v1-182406aedd",
+    "judge2_pin": "gemini:gemini-3.7-flash",
+    "strict_pin": false,
+    "answer_served": {
+      "groq/openai/gpt-oss-120b": 1
+    },
+    "judge_served": {
+      "kilo-free/nvidia/nemotron-3-ultra-550b-a55b:free": 2
+    },
+    "judge2_served": {},
+    "context_size": 1024,
+    "context_scope": "total",
+    "context_tokens_before": 2185,
+    "context_tokens_after": 1024,
+    "contexts_before": 6,
+    "contexts_after": 3
+  },
+  "metric_means": {
+    "faithfulness": {
+      "mean": 1.0,
+      "n": 1
+    }
+  },
+  "mechanical": {
+    "n_queries": 1,
+    "modes": {
+      "llm": 1,
+      "abstain": 0,
+      "extractive": 0
+    },
+    "gold_doc_in_context_rate": 1.0,
+    "claims_total": 2,
+    "claims_per_answer": 2.0,
+    "claims_dropped_by_validator": 0,
+    "claims_flagged_number_grounding": 0,
+    "claims_grounded_rate": 1.0,
+    "parse_retries": 0,
+    "retrieval_ms_median": 37147,
+    "answer_s_median": 6.43,
+    "end_to_end_s_median": 43.6
+  },
+  "agreement": null,
+  "records": [
+    {
+      "query": "periodic updation of KYC records for high-risk customers of commercial banks",
+      "note": null,
+      "institution": "bank",
+      "gold_doc_ids": [
+        "md13141"
+      ],
+      "retrieved_doc_ids": [
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13637",
+        "md13141"
+      ],
+      "gold_in_context": true,
+      "gold_rank": 1,
+      "contexts": [
+        "(3) High account turnover inconsistent with the size of the balance maintained.\n\n(4) Deposit of third-party cheques, drafts, etc. in the existing and newly opened accounts followed by cash withdrawals for large amounts.\n\nFor ongoing due diligence, the bank may consider adopting appropriate innovations including artificial intelligence and machine learning (AI and ML) technologies to support effective monitoring.\n\n41. The bank shall align the extent of monitoring with the risk category of the customer.\n\n(1) The bank shall put in place a system of periodic review of risk categorisation of accounts, with such periodicity being at least once in every six months, and shall establish the need for applying enhanced due diligence measures.\n\n(2) The bank shall closely monitor the transactions in accounts of marketing firms, especially accounts of Multi-level Marketing (MLM) companies.\n\nExplanation: The bank shall subject high-risk accounts to more intensified monitoring.\n\nExplanation: Cases where a large number of cheque books are sought by the company and / or multiple small deposits (generally in cash) across the country in one bank account and / or where a large number of cheques are issued bearing similar amounts / dates, shall be immediately reported to RBI and other appropriate authorities such as FIU-IND.\n\n42. Updation / Periodic Updation of KYC\n\n(1) The bank shall adopt a risk-based approach for periodic updation of KYC ensuring that it keeps the information or data collected under CDD is kept up-to-date and relevant, particularly where there is high risk. However, the bank shall carry out periodic updation at least once in every two years for high-risk customers, once in every eight years for medium risk customers and once in every 10 years for low-risk customers from the date of opening of the account / last KYC updation. The bank shall document its policy in this regard as part of the bank’s internal KYC policy duly approved by the Board of Directors of bank or any committee of the Board to which power has been delegated.",
+        "(iii) The bank provides an acknowledgment to the customer mentioning the date of receipt of the relevant document(s), including self-declaration from the customer, for carrying out updation / periodic updation. Further, the bank shall ensure that it promptly updates the information / documents obtained from the customers at the time of updation / periodic updation of KYC in its records / database and provide an intimation, mentioning the date of updation of KYC details, to the customer.\n\n(iv) In order to ensure customer convenience, the bank may consider making available the facility of updation / periodic updation of KYC at any branch, in terms of their internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated.\n\n(v) The bank shall adopt a risk-based approach with respect to periodic updation of KYC. The bank shall clearly specify in its internal policy, duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated, any additional and exceptional measures, it adopts that are not otherwise mandated under the above instructions, such as requirement of obtaining recent photograph, requirement of physical presence of the customer, requirement of periodic updation of KYC only in the branch of the bank where account is maintained, a more frequent periodicity of KYC updation than the minimum specified periodicity etc.\n\n(6) The bank shall advise the customers that in order to comply with the PML Rules, in case of any update in the documents submitted by the customer at the time of establishment of business relationship / account-based relationship and thereafter, as necessary; customers shall submit to the bank the update of such documents. This shall be done within 30 days of the update to the documents for the purpose of updating the records at the bank’s end.",
+        "(2) Notwithstanding the provisions given above, in respect of an individual customer who is categorised as low-risk, the bank shall allow all transactions and ensure the updation of KYC within one year of its falling due for KYC or up to June 30, 2026, whichever is later. The bank shall subject accounts of such customers to regular monitoring. This shall also apply to low-risk individual customers for whom periodic updation of KYC has already fallen due.\n\n(3) Individuals:\n\n(i) No change in KYC information: In case of no change in the KYC information, the bank shall obtain a self-declaration from the customer in this regard through the customer’s email-id registered with the bank, customer’s mobile number registered with the bank, ATMs, or digital channels (such as online banking / internet banking, mobile application of bank) letter, etc.\n\n(ii) Change in address: In case of a change only in the address details of the customer, the bank shall obtain a self-declaration of the new address from the customer through customer’s email-id registered with the bank, customer’s mobile number registered with the bank, ATMs, digital channels (such as online banking / internet banking, mobile application of bank), letter, etc., and shall verify the declared address through positive confirmation within two months, by means such as address verification letter, contact point verification, deliverables, etc.\n\n(iii) Further, the bank at its option, may obtain a copy of OVD or deemed OVD, as defined in sub-clause (xiv) of clause (1) of paragraph 5, or the equivalent e-documents thereof, as defined in sub-clause (x) of clause (1) of paragraph 5, for the purpose of proof of address, declared by the customer at the time of updation / periodic updation. However, the bank shall clearly specify such requirement, in its internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated.",
+        "(7) Due Notices for Periodic Updation of KYC: The bank shall intimate its customers, in advance, to update their KYC. Prior to the due date of periodic updation of KYC, the bank shall give at least three advance intimations, including at least one intimation by letter, at appropriate intervals to its customers through available communication options / channels for complying with the requirement of periodic updation of KYC. Subsequent to the due date, the bank shall give at least three reminders, including at least one reminder by letter, at appropriate intervals, to such customers who have still not complied with the requirements, despite advance intimations. The letter of intimation / reminder may, inter alia, contain easy-to-understand instructions for updating KYC, escalation mechanism for seeking help, if required, and the consequences, if any, of failure to update their KYC in time. Issue of such advance intimation / reminder shall be duly recorded in the bank’s system against each customer for audit trail. The bank shall expeditiously implement the same but not later than January 01, 2026.",
+        "Chapter VI - Inoperative Accounts / Unclaimed Deposits\n\n16. The bank shall take necessary steps to reduce the number of inoperative accounts and accounts pending for updation / periodic updation of ‘Know Your Customer’ (KYC) and make the process of updation / periodic updation of such accounts smoother and hassle free, including by enabling seamless updation of KYC through mobile / internet banking, non-home branches, and Video Customer Identification Process, in accordance with the relevant provisions of the Reserve Bank of India (Commercial Banks - Responsible Business Conduct) Directions, 2025.\n\n17. The bank may facilitate the process of activation of accounts of beneficiaries of various Central / State government schemes like Direct Benefit Transfer (DBT) / Electronic Benefit Transfer (EBT) etc., and accounts pending for updation / periodic updation of KYC, by taking an empathetic view in such cases, since these accounts mostly pertain to the people from the underprivileged sections of the society.\n\n18. The bank may organise special campaigns for facilitating activation of inoperative and accounts pending for periodic updation of KYC.\n\n19. The bank may also facilitate Aadhaar updation for its customers through its branches providing Aadhaar related services.\n\n20. The Customer Service Committee of the Board shall monitor the progress in reduction of inoperative accounts and accounts pending for periodic updation of KYC and the special efforts made by the bank in this regard.\n\n21. The bank shall report the progress on reduction of inoperative accounts and accounts pending for periodic updation of KYC on a quarterly basis to the Senior Supervisory Manager (SSM), RBI through DAKSH portal.",
+        "(iv) Use of Business Correspondent (BC) by banks for Updation / Periodic Updation of KYC: The bank may obtain a self-declaration from the customer in case of no change in KYC information or change only in the address details through an authorised BC of the bank. The bank shall enable its BC systems for recording these self-declarations and supporting documents thereof in electronic form in the bank’s systems.\n\nThe bank shall obtain the self-declaration including the supporting documents, if required, in the electronic mode from the customer through the BC, after successful biometric based e-KYC authentication. Until the bank makes an option available in the electronic mode, the customer may submit such declaration in physical form. The BC shall authenticate the self-declaration and supporting documents submitted in person by the customer and promptly forward the same to the concerned bank branch. The BC shall provide the customer an acknowledgment of receipt of such declaration /submission of documents.\n\nThe bank shall update the customer’s KYC records and intimate the customer once the records get updated in the system, as required under clause (5) of paragraph 42 of the Direction. It is, however, reiterated that the concerned bank retains the ultimate responsibility for periodic updation of KYC.\n\n(v) Accounts of customers, who were minor at the time of opening account, on their becoming major: In case of customers for whom the bank opened an account when they were minors, the bank shall obtain fresh photographs upon their becoming a major and, at that time, shall ensure that CDD documents as per the current CDD standards are available. Wherever required, the bank may carry out fresh KYC of such customers, i.e., customers for whom it opened account when they were minor, upon their becoming a major.\n\n(vi) The bank may use Aadhaar OTP based e-KYC in non-face-to-face mode for updation / periodic updation. To clarify, conditions stipulated in paragraph 25 are not applicable in case of updation / periodic updation of KYC through Aadhaar OTP based e-KYC in non-face to face mode."
+      ],
+      "top_rerank": 6.192,
+      "retrieval_abstain": false,
+      "retrieval_timings_ms": {
+        "bm25": 1,
+        "encode": 21446,
+        "dense": 27,
+        "fuse": 1,
+        "rerank": 15672,
+        "total": 37147
+      },
+      "mode": "llm",
+      "abstain": false,
+      "answer_md": "For commercial banks, the KYC policy must require a risk‑based periodic update for high‑risk customers at least once every two years from the date of account opening or the last KYC update. The bank must document this requirement in its internal KYC policy approved by the Board of Directors (or a delegated committee) and keep the updated records in its database.",
+      "claims": [
+        {
+          "text": "Periodic updation for high‑risk customers must be carried out at least once in every two years.",
+          "citations": [
+            "C1"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "The bank shall document its periodic KYC updation policy as part of its internal KYC policy duly approved by the Board of Directors or a delegated committee.",
+          "citations": [
+            "C1"
+          ],
+          "grounded": true
+        }
+      ],
+      "claims_dropped": 0,
+      "claims_ungrounded": 0,
+      "parse_retries": 0,
+      "answer_model": "openai/gpt-oss-120b",
+      "answer_provider": "groq",
+      "answer_cached": true,
+      "answer_latency_s": 6.43,
+      "answer_errors": [],
+      "end_to_end_s": 43.6,
+      "faithfulness": 1.0,
+      "judge_served": {
+        "faithfulness": {
+          "kilo-free/nvidia/nemotron-3-ultra-550b-a55b:free": 2
+        }
+      }
+    }
+  ]
+}

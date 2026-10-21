@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "ts": "2026-10-20T21-37-44",
+    "answer_pin": "groq:openai/gpt-oss-120b",
+    "judge_pin": "gemini:gemini-3.5-flash-lite -> gemini:gemini-2.5-flash-lite -> kilo-free:nvidia/nemotron-3-ultra-550b-a55b:free -> kilo-free:nvidia/nemotron-3.5-lightning:free -> kilo-free:dots-studio/dots-3-note-preview:free -> kilo-free:cohere/north-mini-code:free -> kilo-free:poolside/laguna-s-2.1:free",
+    "judge_chain": [
+      "gemini:gemini-3.5-flash-lite",
+      "gemini:gemini-2.5-flash-lite",
+      "kilo-free:nvidia/nemotron-3-ultra-550b-a55b:free",
+      "kilo-free:nvidia/nemotron-3.5-lightning:free",
+      "kilo-free:dots-studio/dots-3-note-preview:free",
+      "kilo-free:cohere/north-mini-code:free",
+      "kilo-free:poolside/laguna-s-2.1:free"
+    ],
+    "judge_chain_strict": true,
+    "k": 6,
+    "n_queries": 2,
+    "n_scored": 2,
+    "corpus_version": "v1-182406aedd",
+    "judge2_pin": "gemini:gemini-3.7-flash",
+    "strict_pin": false,
+    "answer_served": {
+      "groq/openai/gpt-oss-120b": 2
+    },
+    "judge_served": {
+      "gemini/gemini-3.5-flash-lite": 12,
+      "kilo-free/nvidia/nemotron-3-ultra-550b-a55b:free": 4
+    },
+    "judge2_served": {},
+    "context_size": 1024,
+    "context_scope": "total",
+    "context_tokens_before": 4803,
+    "context_tokens_after": 2048,
+    "contexts_before": 12,
+    "contexts_after": 6
+  },
+  "metric_means": {
+    "faithfulness": {
+      "mean": 0.5,
+      "n": 2
+    },
+    "answer_relevancy": {
+      "mean": 0.816,
+      "n": 2
+    },
+    "llm_context_precision_without_reference": {
+      "mean": 0.5,
+      "n": 2
+    }
+  },
+  "mechanical": {
+    "n_queries": 2,
+    "modes": {
+      "llm": 2,
+      "abstain": 0,
+      "extractive": 0
+    },
+    "gold_doc_in_context_rate": 1.0,
+    "claims_total": 4,
+    "claims_per_answer": 2.0,
+    "claims_dropped_by_validator": 0,
+    "claims_flagged_number_grounding": 0,
+    "claims_grounded_rate": 1.0,
+    "parse_retries": 0,
+    "retrieval_ms_median": 37147,
+    "answer_s_median": 6.43,
+    "end_to_end_s_median": 43.6
+  },
+  "agreement": null,
+  "records": [
+    {
+      "query": "periodic updation of KYC records for high-risk customers of commercial banks",
+      "note": null,
+      "institution": "bank",
+      "gold_doc_ids": [
+        "md13141"
+      ],
+      "retrieved_doc_ids": [
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13637",
+        "md13141"
+      ],
+      "gold_in_context": true,
+      "gold_rank": 1,
+      "contexts": [
+        "(3) High account turnover inconsistent with the size of the balance maintained.\n\n(4) Deposit of third-party cheques, drafts, etc. in the existing and newly opened accounts followed by cash withdrawals for large amounts.\n\nFor ongoing due diligence, the bank may consider adopting appropriate innovations including artificial intelligence and machine learning (AI and ML) technologies to support effective monitoring.\n\n41. The bank shall align the extent of monitoring with the risk category of the customer.\n\n(1) The bank shall put in place a system of periodic review of risk categorisation of accounts, with such periodicity being at least once in every six months, and shall establish the need for applying enhanced due diligence measures.\n\n(2) The bank shall closely monitor the transactions in accounts of marketing firms, especially accounts of Multi-level Marketing (MLM) companies.\n\nExplanation: The bank shall subject high-risk accounts to more intensified monitoring.\n\nExplanation: Cases where a large number of cheque books are sought by the company and / or multiple small deposits (generally in cash) across the country in one bank account and / or where a large number of cheques are issued bearing similar amounts / dates, shall be immediately reported to RBI and other appropriate authorities such as FIU-IND.\n\n42. Updation / Periodic Updation of KYC\n\n(1) The bank shall adopt a risk-based approach for periodic updation of KYC ensuring that it keeps the information or data collected under CDD is kept up-to-date and relevant, particularly where there is high risk. However, the bank shall carry out periodic updation at least once in every two years for high-risk customers, once in every eight years for medium risk customers and once in every 10 years for low-risk customers from the date of opening of the account / last KYC updation. The bank shall document its policy in this regard as part of the bank’s internal KYC policy duly approved by the Board of Directors of bank or any committee of the Board to which power has been delegated.",
+        "(iii) The bank provides an acknowledgment to the customer mentioning the date of receipt of the relevant document(s), including self-declaration from the customer, for carrying out updation / periodic updation. Further, the bank shall ensure that it promptly updates the information / documents obtained from the customers at the time of updation / periodic updation of KYC in its records / database and provide an intimation, mentioning the date of updation of KYC details, to the customer.\n\n(iv) In order to ensure customer convenience, the bank may consider making available the facility of updation / periodic updation of KYC at any branch, in terms of their internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated.\n\n(v) The bank shall adopt a risk-based approach with respect to periodic updation of KYC. The bank shall clearly specify in its internal policy, duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated, any additional and exceptional measures, it adopts that are not otherwise mandated under the above instructions, such as requirement of obtaining recent photograph, requirement of physical presence of the customer, requirement of periodic updation of KYC only in the branch of the bank where account is maintained, a more frequent periodicity of KYC updation than the minimum specified periodicity etc.\n\n(6) The bank shall advise the customers that in order to comply with the PML Rules, in case of any update in the documents submitted by the customer at the time of establishment of business relationship / account-based relationship and thereafter, as necessary; customers shall submit to the bank the update of such documents. This shall be done within 30 days of the update to the documents for the purpose of updating the records at the bank’s end.",
+        "(2) Notwithstanding the provisions given above, in respect of an individual customer who is categorised as low-risk, the bank shall allow all transactions and ensure the updation of KYC within one year of its falling due for KYC or up to June 30, 2026, whichever is later. The bank shall subject accounts of such customers to regular monitoring. This shall also apply to low-risk individual customers for whom periodic updation of KYC has already fallen due.\n\n(3) Individuals:\n\n(i) No change in KYC information: In case of no change in the KYC information, the bank shall obtain a self-declaration from the customer in this regard through the customer’s email-id registered with the bank, customer’s mobile number registered with the bank, ATMs, or digital channels (such as online banking / internet banking, mobile application of bank) letter, etc.\n\n(ii) Change in address: In case of a change only in the address details of the customer, the bank shall obtain a self-declaration of the new address from the customer through customer’s email-id registered with the bank, customer’s mobile number registered with the bank, ATMs, digital channels (such as online banking / internet banking, mobile application of bank), letter, etc., and shall verify the declared address through positive confirmation within two months, by means such as address verification letter, contact point verification, deliverables, etc.\n\n(iii) Further, the bank at its option, may obtain a copy of OVD or deemed OVD, as defined in sub-clause (xiv) of clause (1) of paragraph 5, or the equivalent e-documents thereof, as defined in sub-clause (x) of clause (1) of paragraph 5, for the purpose of proof of address, declared by the customer at the time of updation / periodic updation. However, the bank shall clearly specify such requirement, in its internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated.",
+        "(7) Due Notices for Periodic Updation of KYC: The bank shall intimate its customers, in advance, to update their KYC. Prior to the due date of periodic updation of KYC, the bank shall give at least three advance intimations, including at least one intimation by letter, at appropriate intervals to its customers through available communication options / channels for complying with the requirement of periodic updation of KYC. Subsequent to the due date, the bank shall give at least three reminders, including at least one reminder by letter, at appropriate intervals, to such customers who have still not complied with the requirements, despite advance intimations. The letter of intimation / reminder may, inter alia, contain easy-to-understand instructions for updating KYC, escalation mechanism for seeking help, if required, and the consequences, if any, of failure to update their KYC in time. Issue of such advance intimation / reminder shall be duly recorded in the bank’s system against each customer for audit trail. The bank shall expeditiously implement the same but not later than January 01, 2026.",
+        "Chapter VI - Inoperative Accounts / Unclaimed Deposits\n\n16. The bank shall take necessary steps to reduce the number of inoperative accounts and accounts pending for updation / periodic updation of ‘Know Your Customer’ (KYC) and make the process of updation / periodic updation of such accounts smoother and hassle free, including by enabling seamless updation of KYC through mobile / internet banking, non-home branches, and Video Customer Identification Process, in accordance with the relevant provisions of the Reserve Bank of India (Commercial Banks - Responsible Business Conduct) Directions, 2025.\n\n17. The bank may facilitate the process of activation of accounts of beneficiaries of various Central / State government schemes like Direct Benefit Transfer (DBT) / Electronic Benefit Transfer (EBT) etc., and accounts pending for updation / periodic updation of KYC, by taking an empathetic view in such cases, since these accounts mostly pertain to the people from the underprivileged sections of the society.\n\n18. The bank may organise special campaigns for facilitating activation of inoperative and accounts pending for periodic updation of KYC.\n\n19. The bank may also facilitate Aadhaar updation for its customers through its branches providing Aadhaar related services.\n\n20. The Customer Service Committee of the Board shall monitor the progress in reduction of inoperative accounts and accounts pending for periodic updation of KYC and the special efforts made by the bank in this regard.\n\n21. The bank shall report the progress on reduction of inoperative accounts and accounts pending for periodic updation of KYC on a quarterly basis to the Senior Supervisory Manager (SSM), RBI through DAKSH portal.",
+        "(iv) Use of Business Correspondent (BC) by banks for Updation / Periodic Updation of KYC: The bank may obtain a self-declaration from the customer in case of no change in KYC information or change only in the address details through an authorised BC of the bank. The bank shall enable its BC systems for recording these self-declarations and supporting documents thereof in electronic form in the bank’s systems.\n\nThe bank shall obtain the self-declaration including the supporting documents, if required, in the electronic mode from the customer through the BC, after successful biometric based e-KYC authentication. Until the bank makes an option available in the electronic mode, the customer may submit such declaration in physical form. The BC shall authenticate the self-declaration and supporting documents submitted in person by the customer and promptly forward the same to the concerned bank branch. The BC shall provide the customer an acknowledgment of receipt of such declaration /submission of documents.\n\nThe bank shall update the customer’s KYC records and intimate the customer once the records get updated in the system, as required under clause (5) of paragraph 42 of the Direction. It is, however, reiterated that the concerned bank retains the ultimate responsibility for periodic updation of KYC.\n\n(v) Accounts of customers, who were minor at the time of opening account, on their becoming major: In case of customers for whom the bank opened an account when they were minors, the bank shall obtain fresh photographs upon their becoming a major and, at that time, shall ensure that CDD documents as per the current CDD standards are available. Wherever required, the bank may carry out fresh KYC of such customers, i.e., customers for whom it opened account when they were minor, upon their becoming a major.\n\n(vi) The bank may use Aadhaar OTP based e-KYC in non-face-to-face mode for updation / periodic updation. To clarify, conditions stipulated in paragraph 25 are not applicable in case of updation / periodic updation of KYC through Aadhaar OTP based e-KYC in non-face to face mode."
+      ],
+      "top_rerank": 6.192,
+      "retrieval_abstain": false,
+      "retrieval_timings_ms": {
+        "bm25": 1,
+        "encode": 21446,
+        "dense": 27,
+        "fuse": 1,
+        "rerank": 15672,
+        "total": 37147
+      },
+      "mode": "llm",
+      "abstain": false,
+      "answer_md": "For commercial banks, the KYC policy must require a risk‑based periodic update for high‑risk customers at least once every two years from the date of account opening or the last KYC update. The bank must document this requirement in its internal KYC policy approved by the Board of Directors (or a delegated committee) and keep the updated records in its database.",
+      "claims": [
+        {
+          "text": "Periodic updation for high‑risk customers must be carried out at least once in every two years.",
+          "citations": [
+            "C1"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "The bank shall document its periodic KYC updation policy as part of its internal KYC policy duly approved by the Board of Directors or a delegated committee.",
+          "citations": [
+            "C1"
+          ],
+          "grounded": true
+        }
+      ],
+      "claims_dropped": 0,
+      "claims_ungrounded": 0,
+      "parse_retries": 0,
+      "answer_model": "openai/gpt-oss-120b",
+      "answer_provider": "groq",
+      "answer_cached": true,
+      "answer_latency_s": 6.43,
+      "answer_errors": [],
+      "end_to_end_s": 43.6,
+      "faithfulness": 1.0,
+      "judge_served": {
+        "faithfulness": {
+          "kilo-free/nvidia/nemotron-3-ultra-550b-a55b:free": 2
+        },
+        "answer_relevancy": {
+          "gemini/gemini-3.5-flash-lite": 3
+        },
+        "llm_context_precision_without_reference": {
+          "gemini/gemini-3.5-flash-lite": 3
+        }
+      },
+      "answer_relevancy": 0.8154,
+      "llm_context_precision_without_reference": 1.0
+    },
+    {
+      "query": "interest rate offered on savings deposits by commercial banks",
+      "note": null,
+      "institution": "bank",
+      "gold_doc_ids": [
+        "md13157"
+      ],
+      "retrieved_doc_ids": [
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13140"
+      ],
+      "gold_in_context": true,
+      "gold_rank": 1,
+      "contexts": [
+        "Chapter IV – Rupee Deposits of Non-Residents\n\n26. Rupee deposits of non-residents under NRE and NRO deposits shall be accepted only by those banks that are authorised under Foreign Exchange Management Act,1999 (FEMA) by Reserve Bank of India from time to time.\n\nA. Interest Rate on Rupee Deposits - Non-Residents\n\n27. Interest on deposits of money accepted or renewed under NRE / NRO deposit scheme shall be on the terms and conditions specified in the ensuing paragraphs:\n\n(1) The interest rates shall be subject to the conditions laid down in paragraph 7 of these Directions.\n\n(2) Interest rates on savings deposits under NRE Deposits / NRO Deposits shall be in accordance with paragraph 9 of these Directions.\n\n(3) Interest rates on NRE / NRO term deposits shall vary only on account of one or more of the following reasons: (i) Tenor of deposits A bank shall have the freedom to determine the maturity / tenor of the deposit subject to the condition that minimum tenor of NRE term deposits shall be one year and that of NRO term deposits shall be seven days. (ii) Size of deposits Differential interest rate shall be offered only on bulk deposits. (iii) Non-availability of premature withdrawal option A bank shall have the freedom to offer NRE / NRO term deposits without premature withdrawal option. Provided that all NRE / NRO term deposits accepted from individuals (held singly or jointly) for amount of ₹1 crore and below shall have premature withdrawal facility. (iv) Applicable run-off rates under Liquidity Coverage Ratio (LCR) framework A bank shall have the freedom to offer differential interest rate on bulk deposits, by considering the differential run-off rate applicable to deposits or unsecured wholesale funding under the LCR framework, as specified in the ‘Reserve Bank of India (Commercial Banks – Asset Liability Management) Directions, 2025’.iv",
+        "Chapter I – Preliminary\n\nA. Short Title and Commencement\n\n1. These Directions shall be called the Reserve Bank of India (Commercial Banks - Interest Rate on Deposits) Directions, 2025.\n\n2. These Directions shall come into effect on the day it is placed on the official website of the Reserve Bank of India.\n\nB. Objective\n\n3. These Directions provide a framework for Commercial Banks to follow while formulating their policies on Interest Rate on Deposits.\n\nC. Applicability\n\n4. These Directions shall be applicable to Commercial Banks (hereinafter collectively referred to as 'banks' and individually as a 'bank').\n\nFor the purpose of these Directions, ‘Commercial Banks’ means all banking companies (other than Small Finance Banks, Payment Banks, Regional Rural Banks and Local Area Banks), corresponding new banks, and the State Bank of India, as defined respectively under clauses (c), (da), and (nc) of Section 5 of the Banking Regulation Act, 1949.\n\n5. These Directions shall not be applicable to operations of foreign branches of Indian banks.\n\nD. Definitions\n\n6. In these Directions, unless the context otherwise requires, the terms herein shall bear the meanings assigned to them below:\n\n(1) ‘Alternative Reference Rate (ARR)’ means any widely accepted ARR for the respective currency as prescribed in RBI circular on Roadmap for LIBOR Transition issued vide CO.FMRD.DIRD.S39/14.02.001/2021-22 dated July 08, 2021.\n\n(2) ‘Bulk Deposit’ means Single Rupee term deposits of ₹3 crore and above.\n\n(3) ‘Composite Cash Credit’ means a type of loan product having a cash credit limit with a fully savings module designed to take care of farmer’s interest.\n\n(4) ‘Current Account’ means a form of non-interest bearing demand deposit where from withdrawals are allowed any number of times depending upon the balance in the account or up to a particular agreed amount and shall also be deemed to include other deposit accounts which are neither Savings Deposit nor Term Deposit.\n\n(5) ‘Daily Product’ means the interest applied on the end of day balance.\n\n(6) ‘Demand Deposit’ means a deposit received by a bank, which is withdrawable on demand.\n\n(7) ‘Domestic Rupee Deposits’ mean rupee deposits maintained in India in the form of current account, savings deposit or term deposit.\n\n(8) ‘Family’ includes members as mentioned in a bank’s Service / Staff Regulations.",
+        "(4) Applicable run-off rates under Liquidity Coverage Ratio (LCR) framework A bank shall have the freedom to offer differential interest rate on bulk deposits, by considering the differential run-off rate applicable to deposits or unsecured wholesale funding under the LCR framework, as specified in the ‘Reserve Bank of India (Commercial Banks – Asset Liability Management) Directions, 2025’. iii\n\nC.1 Payment of interest on pre-mature withdrawal\n\n11. The interest rates applicable on term deposits withdrawn before the maturity date shall be as under:\n\n(1) Interest shall be paid at the rate applicable to the amount and period for which the deposit remained with the bank and not at the contracted rate.\n\n(2) No interest shall be paid, where premature withdrawal of deposit takes place before completion of the minimum period specified in paragraph 10(1).\n\nD. Payment of Additional Interest on Domestic Deposits\n\n12. A bank shall, at its discretion, allow additional interest of one per cent per annum, over and above the rate of interest mentioned in the schedule of interest rates on savings or term deposits to bank’s staff and their exclusive associations as well as on deposits of Chairman, Chairman & Managing Director, Executive Director, or such other Executives appointed for a fixed tenure, subject to the following conditions:\n\n(1) The additional interest is payable till the person continues to be eligible for the same and in case of his ceasing to be so eligible, till the maturity of a term deposit account.\n\n(2) In case of employees taken over pursuant to the scheme of amalgamation, the additional interest is allowed only if the interest at the contractual rate together with the additional interest does not exceed the rate which could have been allowed if such employees were originally employed by the bank.\n\n(3) In the case of employees taken on deputation from another bank, the bank from which they are deputed may allow additional interest in respect of the deposit account opened with it during the period of deputation.\n\n(4) In the case of persons taken on deputation for a fixed tenure or on a contract of a fixed tenure, the benefit will cease to accrue on the expiry of the term of deputation or contract, as the case may be.",
+        "Chapter III – Domestic Rupee Deposits\n\nA. Interest Rate on Domestic Current Account\n\n8. No interest shall be paid on deposits held in current accounts. Provided that balances lying in current account standing in the name of a deceased individual depositor or sole proprietorship concern shall attract interest from the date of death of the depositor till the date of repayment to the claimant(s) at the rate of interest applicable to savings deposit as on the date of payment.\n\nB. Interest Rate on Domestic Savings Deposit\n\n9. In addition to the conditions laid down in paragraph 7 of these Directions, interest on domestic rupee savings deposit shall be subject to the following: (1) Interest shall be calculated on a daily product basis as under: (i) A uniform interest rate shall be set on balance up to ₹1 lakh, irrespective of the amount in the account within this limit. (ii) Differential rates of interest may be provided for any end-of-day savings bank account balance exceeding ₹1 lakh.\n\nC. Interest Rate on Domestic Term Deposits\n\n10. In addition to the conditions laid down in paragraph 7 of these Directions, interest rates on term deposits shall vary only on account of one or more of the following reasons:\n\n(1) Tenor of deposits A bank shall have the freedom to determine the maturity / tenor of the deposit subject to the condition that minimum tenor of the deposit offered shall be seven days.\n\n(2) Size of deposits Differential interest rate shall be offered only on bulk deposits. Provided that differential interest shall not be applicable on deposit schemes framed on the basis of the Bank Term Deposit Scheme, 2006. Provided also that differential interest shall not be applicable on deposits received under the Capital Gains Accounts Scheme, 1988 by a bank.\n\n(3) Non-availability of premature withdrawal option A bank shall have the freedom to offer term deposits without premature withdrawal option. Provided that all term deposits accepted by a bank from individuals (held singly or jointly) for amount of ₹1 crore and below shall have premature withdrawal facility.",
+        "(4) Interest rates on NRE / NRO deposits shall not be higher than those offered by the bank on comparable domestic rupee term deposits1.\n\n1 The said restriction with respect to interest rates offered on fresh NRE deposits mobilised by banks, including the deposits that are renewed upon maturity, for three years and above tenors, is temporarily withdrawn with effect from June 17, 2026, for the period until August 31, 2026v. Any transfer from NRO accounts to NRE accounts shall not qualify for such exemption.vi\n\n(5) The benefit of additional interest rate on deposits on account of being bank’s own staff or senior citizens shall not be available to NRE and NRO deposits.\n\n(6) Interest on savings deposits shall be credited at quarterly or shorter intervals by a bank.\n\n(7) If an NRE account holder, immediately on return to India, requests for conversion of the NRE term deposit into Resident Foreign Currency (RFC) account, interest shall be paid as under: (i) If the NRE deposit has not run for a minimum period of one year, interest shall be paid at a rate not exceeding the rate payable on savings deposits held in RFC accounts. (ii) In all other cases, interest shall be paid at the contracted rate.\n\nB. Prohibition on Marking Lien\n\n28. A bank shall not mark any type of lien, direct or indirect, against NRE saving deposits.\n\nC. Penalty on Premature Withdrawal of Non-Resident External (NRE) Deposits\n\n29. There shall be a comprehensive policy on penalties for premature withdrawal of NRE term deposits approved by the Board of Directors or any Committee of the Board to which powers have been delegated, subject to the following:\n\n(1) The components of penalty shall be clearly brought to the notice of the depositors at the time of acceptance of the deposits.\n\n(2) No penalty shall be levied for premature withdrawal of NRE term deposits for conversion into RFC account.\n\n(3) Penalties for premature withdrawal shall be levied for conversion of NRE deposit into FCNR(B) deposit and vice versa.",
+        "Chapter VII – Deposit Accounts and Other Liabilities\n\nA. Opening / Operation of Deposit Accounts\n\n157. A bank shall be guided by Reserve Bank’s instructions on KYC / AML for opening and operation of accounts as prescribed in the Reserve Bank of India (Commercial Banks – Know Your Customer) Directions, 2025.\n\n158. A bank shall be guided by Reserve Bank’s instructions on interest rates on deposit accounts and related matters as prescribed in the Reserve Bank of India (Commercial Banks – Interest Rate on Deposits) Directions, 2025.\n\nA.1 Minimum balance in savings bank accounts\n\n159. A bank shall at the time of opening the accounts, inform its customers in a transparent manner, the requirement of maintaining minimum balance and details of charges, if any, due to non-maintenance of the same. A bank shall inform, at least one month in advance, the existing account holders of any change in the prescribed minimum balance and the charges that may be levied if the prescribed minimum balance is not maintained.\n\nA.1.1 Levy of penal charges on non-maintenance of minimum balance in savings bank accounts\n\n160. While levying charges for non-maintenance of minimum balance in savings bank accounts, a bank shall adhere to the following additional instructions:\n\n(1) In the event of a default in maintenance of minimum balance / average minimum balance as agreed to between the bank and customer, the bank shall notify the customer clearly by SMS / email / letter, etc., that in the event of the minimum balance not being restored in the account within a month from the date of notice, penal charges shall be applicable.\n\n(2) In case the minimum balance is not restored within a reasonable period, which shall not be less than one month from the date of notice of shortfall, penal charges may be recovered under intimation to the account holder. (3) The policy on penal charges to be so levied shall be decided with the approval of Board of the bank or a Committee to which powers have been delegated by the Board18."
+      ],
+      "top_rerank": 4.653,
+      "retrieval_abstain": false,
+      "retrieval_timings_ms": {
+        "bm25": 1,
+        "encode": 74,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 11775,
+        "total": 11872
+      },
+      "mode": "llm",
+      "abstain": false,
+      "answer_md": "For domestic rupee savings deposits, a commercial bank must apply a uniform interest rate on the balance up to ₹1 lakh and may offer differential rates on any end‑of‑day balance exceeding ₹1 lakh, with interest calculated on a daily‑product basis. Interest on savings deposits must be credited at least quarterly (or at shorter intervals).",
+      "claims": [
+        {
+          "text": "A uniform interest rate shall be set on balance up to ₹1 lakh, with differential rates allowed for balances above ₹1 lakh, calculated on a daily‑product basis.",
+          "citations": [
+            "C4"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "Interest on savings deposits shall be credited at quarterly or shorter intervals.",
+          "citations": [
+            "C5"
+          ],
+          "grounded": true
+        }
+      ],
+      "claims_dropped": 0,
+      "claims_ungrounded": 0,
+      "parse_retries": 0,
+      "answer_model": "openai/gpt-oss-120b",
+      "answer_provider": "groq",
+      "answer_cached": true,
+      "answer_latency_s": 0.01,
+      "answer_errors": [],
+      "end_to_end_s": 11.93,
+      "faithfulness": 0.0,
+      "judge_served": {
+        "faithfulness": {
+          "gemini/gemini-3.5-flash-lite": 2
+        },
+        "answer_relevancy": {
+          "gemini/gemini-3.5-flash-lite": 3
+        },
+        "llm_context_precision_without_reference": {
+          "kilo-free/nvidia/nemotron-3-ultra-550b-a55b:free": 2,
+          "gemini/gemini-3.5-flash-lite": 1
+        }
+      },
+      "answer_relevancy": 0.8161,
+      "llm_context_precision_without_reference": 0.0
+    }
+  ]
+}

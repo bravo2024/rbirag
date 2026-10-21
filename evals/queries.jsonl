@@ -1,0 +1,23 @@
+{"query": "periodic updation of KYC records for NBFC customers", "gold_doc_ids": ["md12943"], "institution": null, "note": "NBFC KYC directions"}
+{"query": "periodic updation of KYC records for high risk customers of banks", "gold_doc_ids": ["md13141"], "institution": "bank", "note": "Commercial Banks KYC directions"}
+{"query": "minimum capital adequacy ratio requirement for commercial banks", "gold_doc_ids": ["md13159", "md13399"], "institution": "bank", "note": "Capital adequacy / credit risk capital charge"}
+{"query": "liquidity coverage ratio LCR requirement for banks", "gold_doc_ids": ["md13147", "md13159"], "institution": "bank", "note": "ALM directions, capital adequacy"}
+{"query": "capital requirement for housing finance companies", "gold_doc_ids": ["md12939"], "institution": "nbfc", "note": "HFC directions"}
+{"query": "credit card issuance norms for banks", "gold_doc_ids": ["md13155", "md13156"], "institution": "bank", "note": "Credit/debit cards directions"}
+{"query": "issuance and conduct of credit cards by NBFCs", "gold_doc_ids": ["md12956"], "institution": "nbfc", "note": "NBFC credit cards directions"}
+{"query": "asset classification norms 90 days overdue provisioning for banks", "gold_doc_ids": ["md13146", "md13400"], "institution": "bank", "note": "IRAC directions"}
+{"query": "treatment of wilful defaulters suit filing by banks", "gold_doc_ids": ["md13144", "md13145"], "institution": "bank", "note": "Wilful defaulters / stressed assets"}
+{"query": "peer to peer lending platform leverage ratio for NBFC", "gold_doc_ids": ["md12934"], "institution": "nbfc", "note": "P2P lending directions"}
+{"query": "microfinance loan eligibility household income limit", "gold_doc_ids": ["md12933"], "institution": "nbfc", "note": "Microfinance directions"}
+{"query": "core investment companies registration and net asset requirement", "gold_doc_ids": ["md12937"], "institution": null, "note": "CIC directions"}
+{"query": "securitisation transactions minimum retention requirement", "gold_doc_ids": ["md12951", "md13150"], "institution": null, "note": "Securitisation directions (both entity families)"}
+{"query": "code of conduct for recovery agents and repossession", "gold_doc_ids": ["md13140", "md12942"], "institution": null, "note": "Responsible business conduct"}
+{"query": "fit and proper criteria for directors of commercial banks", "gold_doc_ids": ["md13161"], "institution": "bank", "note": "Governance directions"}
+{"query": "approval for setting up digital banking channels by banks", "gold_doc_ids": ["md13163"], "institution": "bank", "note": "Digital banking channels authorisation (2026)"}
+{"query": "foreign exchange risk reserve requirement for authorised dealers", "gold_doc_ids": ["nn13738"], "institution": "bank", "note": "Live RSS notification"}
+{"query": "branch authorisation for NBFC opening of new branches", "gold_doc_ids": ["md12962"], "institution": "nbfc", "note": "NBFC branch authorisation"}
+{"query": "know your customer requirements for co-operative banks", "gold_doc_ids": ["md12988", "md13014"], "institution": null, "note": "Co-operative banks KYC (rural + urban)"}
+{"query": "income recognition and asset classification norms for regional rural banks", "gold_doc_ids": ["md13044"], "institution": null, "note": "RRB IRAC directions"}
+{"query": "compounding of contraventions under FEMA", "gold_doc_ids": ["md10190"], "institution": null, "note": "FEMA compounding master direction"}
+{"query": "statutory audit requirements for commercial banks", "gold_doc_ids": ["md13639"], "institution": "bank", "note": "2026 supervisory directions (DoS)"}
+{"query": "prepaid payment instrument issuance and loading limits", "gold_doc_ids": ["md12156"], "institution": null, "note": "PPI master directions"}

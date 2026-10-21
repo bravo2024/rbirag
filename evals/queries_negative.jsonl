@@ -1,0 +1,11 @@
+{"query": "What are the SEC disclosure requirements for US-listed companies?", "note": "US regulator, out of scope"}
+{"query": "What is the Federal Reserve's current federal funds rate target?", "note": "US monetary policy, out of scope"}
+{"query": "Explain the EU's MiFID II best execution requirements for brokers.", "note": "EU regulation, out of scope"}
+{"query": "What is the UK FCA consumer duty implementation deadline?", "note": "UK regulator, out of scope"}
+{"query": "Who won the ICC Cricket World Cup in 2023?", "note": "trivia, out of scope"}
+{"query": "What are IRDAI's solvency margin rules for life insurers?", "note": "insurance regulator, out of scope"}
+{"query": "What is SEBI's framework for insider trading by company insiders?", "note": "securities regulator, out of scope"}
+{"query": "How do I file my personal income tax return in India?", "note": "taxation, out of scope"}
+{"query": "What is the RBI's monetary policy repo rate decision timeline for FY2027?", "note": "monetary policy announcements are not in the Master Directions corpus"}
+{"query": "What is the current RBI repo rate?", "note": "policy rate levels are announced in MPC statements, not the Master Directions corpus"}
+{"query": "Summarise the RBI Governor's speech on fintech at Davos 2026.", "note": "speeches are not in the Master Directions corpus"}

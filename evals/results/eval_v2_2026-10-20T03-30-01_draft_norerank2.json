@@ -1,0 +1,4537 @@
+{
+  "ts": "2026-10-20T03-30-01",
+  "file": "evals/eval_set_v2.jsonl",
+  "k": 5,
+  "rerank": false,
+  "only": null,
+  "n": 120,
+  "summary": {
+    "retrieval": {
+      "n": 80,
+      "recall@5": 0.95,
+      "mrr@5": 0.795,
+      "recall@10": 0.975,
+      "ndcg@10": 0.816
+    },
+    "retrieval_by_institution": {
+      "bank": {
+        "n": 47,
+        "recall@5": 1.0
+      },
+      "nbfc": {
+        "n": 30,
+        "recall@5": 0.867
+      },
+      "all": {
+        "n": 3,
+        "recall@5": 1.0
+      }
+    },
+    "as_of": {
+      "n": 20,
+      "pass_rate": 1.0,
+      "false_include": 0,
+      "false_exclude": 0
+    },
+    "unanswerable": {
+      "n": 20,
+      "scored": 0,
+      "abstain_rate": null
+    }
+  },
+  "summary_reviewed": null,
+  "rows": [
+    {
+      "id": "v2-a01",
+      "category": "answerable",
+      "query": "periodic updation of KYC records for high-risk customers of commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13637",
+        "md13141",
+        "md13141",
+        "md13136",
+        "md13141"
+      ],
+      "gold": [
+        "md13141"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 32712,
+        "dense": 27,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 32742
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a02",
+      "category": "answerable",
+      "query": "interest rate offered on savings deposits by commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13157",
+        "md13147",
+        "md13140",
+        "md13140",
+        "md13140"
+      ],
+      "gold": [
+        "md13157"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 69,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 90
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a03",
+      "category": "answerable",
+      "query": "benchmark rate and spread for interest rates on advances",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13149",
+        "md13149",
+        "md13149",
+        "md13149",
+        "md10202",
+        "md13149",
+        "md13149",
+        "md13149",
+        "md13147",
+        "md13149"
+      ],
+      "gold": [
+        "md13149"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 79,
+        "dense": 36,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 117
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a04",
+      "category": "answerable",
+      "query": "cash reserve ratio and statutory liquidity ratio maintenance requirements",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13160",
+        "md13160",
+        "md13160",
+        "nn13736",
+        "md13147",
+        "md13147",
+        "md13160",
+        "md13639",
+        "md13148",
+        "md13147"
+      ],
+      "gold": [
+        "md13160"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 88,
+        "dense": 38,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 129
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a05",
+      "category": "answerable",
+      "query": "classification and valuation of the investment portfolio including held-to-maturity",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13148",
+        "md13148",
+        "md13148",
+        "md13148",
+        "md13145",
+        "md13148",
+        "md13159",
+        "md13148",
+        "md13400",
+        "md13147"
+      ],
+      "gold": [
+        "md13148"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 106,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 133
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a06",
+      "category": "answerable",
+      "query": "income recognition, asset classification and provisioning for non-performing assets",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13148",
+        "md13146",
+        "md13400",
+        "md13400",
+        "md13145",
+        "md13639",
+        "md13146",
+        "md13156",
+        "md13400",
+        "md13400"
+      ],
+      "gold": [
+        "md13146"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 92,
+        "dense": 31,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 124
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a07",
+      "category": "answerable",
+      "query": "resolution of stressed assets and restructuring of advances",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13145",
+        "md13146",
+        "md13145",
+        "md13639",
+        "md13146",
+        "md13151",
+        "md13145",
+        "md13151",
+        "md13144",
+        "md13145"
+      ],
+      "gold": [
+        "md13145"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 92,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 116
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a08",
+      "category": "answerable",
+      "query": "minimum retention requirement for securitisation transactions",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13150",
+        "md13150",
+        "md13159",
+        "md13150",
+        "md13159",
+        "md13150",
+        "md13159",
+        "md13159",
+        "md13399",
+        "md12765"
+      ],
+      "gold": [
+        "md13150"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 110,
+        "dense": 22,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 135
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a09",
+      "category": "answerable",
+      "query": "transfer and distribution of credit risk through credit derivatives",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13151",
+        "md13159",
+        "md13137",
+        "nn13730",
+        "md13137",
+        "md13159",
+        "md13159",
+        "md13705",
+        "nn13730",
+        "md13151"
+      ],
+      "gold": [
+        "md13151"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 82,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 106
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a10",
+      "category": "answerable",
+      "query": "large exposure limits and concentration risk management",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13152",
+        "md13159",
+        "md13152",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13152"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 80,
+        "dense": 21,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 102
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a11",
+      "category": "answerable",
+      "query": "credit risk management framework and appraisal standards",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13153",
+        "md13156",
+        "md13400",
+        "md13159",
+        "md13400",
+        "md13645",
+        "md13640",
+        "md13159",
+        "md13399",
+        "md13159"
+      ],
+      "gold": [
+        "md13153"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 98,
+        "dense": 19,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 121
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a12",
+      "category": "answerable",
+      "query": "credit facilities and loans and advances by commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13153",
+        "md13156",
+        "md13143",
+        "md13149",
+        "md13162",
+        "md13639",
+        "md13156",
+        "md13156",
+        "md13400",
+        "md13151"
+      ],
+      "gold": [
+        "md13156"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 70,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 94
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a13",
+      "category": "answerable",
+      "query": "capital adequacy ratios and Basel III capital requirements",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13137",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13399",
+        "md13159",
+        "md13159",
+        "md10476"
+      ],
+      "gold": [
+        "md13159"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 3,
+        "encode": 64,
+        "dense": 26,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 93
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a14",
+      "category": "answerable",
+      "query": "declaration of dividend and remittance of profits by commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13319",
+        "md13319",
+        "md13319",
+        "md13319",
+        "md13319",
+        "md10404",
+        "md13143",
+        "md13167",
+        "md11200",
+        "md10192"
+      ],
+      "gold": [
+        "md13319"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 79,
+        "dense": 19,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 100
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a15",
+      "category": "answerable",
+      "query": "capital charge for credit risk under the standardised approach for commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13399",
+        "md13159",
+        "md13399",
+        "md13159",
+        "md13729",
+        "md13152",
+        "nn13730",
+        "md13705",
+        "md13137",
+        "md13159"
+      ],
+      "gold": [
+        "md13399"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 115,
+        "dense": 19,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 136
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a16",
+      "category": "answerable",
+      "query": "minimum capital requirements for market risk",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13159",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13705"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 65,
+        "dense": 18,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 84
+      },
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a17",
+      "category": "answerable",
+      "query": "CVA framework for derivative exposures of commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13399",
+        "nn13730",
+        "md13729",
+        "nn13730",
+        "md13159",
+        "md13159",
+        "md13137",
+        "md13152",
+        "md13729"
+      ],
+      "gold": [
+        "md13729"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 81,
+        "dense": 21,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 104
+      },
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.431,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a18",
+      "category": "answerable",
+      "query": "board governance and responsibilities of commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13161",
+        "md13161",
+        "md13162",
+        "md13641",
+        "md13645",
+        "md13640",
+        "md13639",
+        "md13147",
+        "md13164",
+        "md13644"
+      ],
+      "gold": [
+        "md13161"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 91,
+        "dense": 38,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 131
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a19",
+      "category": "answerable",
+      "query": "acquisition and holding of shares or voting rights in banking companies",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166",
+        "md13166"
+      ],
+      "gold": [
+        "md13166"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 90,
+        "dense": 29,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 120
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a20",
+      "category": "answerable",
+      "query": "internal audit function and audit committee requirements",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13645",
+        "md13643",
+        "md13640",
+        "md13639",
+        "md13640",
+        "md13645",
+        "md13645",
+        "md13640",
+        "md13640",
+        "md13645"
+      ],
+      "gold": [
+        "md13640"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 84,
+        "dense": 33,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 119
+      },
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a21",
+      "category": "answerable",
+      "query": "statutory audit and appointment of auditors",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639"
+      ],
+      "gold": [
+        "md13639"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 79,
+        "dense": 31,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 111
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a22",
+      "category": "answerable",
+      "query": "compliance function and chief compliance officer",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13645",
+        "md13645",
+        "md13645",
+        "md13645",
+        "md13645",
+        "md13645",
+        "md13645",
+        "md13141",
+        "md13645",
+        "md13645"
+      ],
+      "gold": [
+        "md13645"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 95,
+        "dense": 34,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 131
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a23",
+      "category": "answerable",
+      "query": "fraud risk management and reporting",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13641",
+        "md13641",
+        "md13641",
+        "md13639",
+        "md13639",
+        "md13641",
+        "md13641",
+        "md12896",
+        "md13638",
+        "md13641"
+      ],
+      "gold": [
+        "md13641"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 80,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 103
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a24",
+      "category": "answerable",
+      "query": "concurrent audit coverage for commercial banks",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13644",
+        "md13644",
+        "md13644",
+        "md13644",
+        "md11518",
+        "md13644",
+        "md13644",
+        "md13639",
+        "md13148",
+        "md10476"
+      ],
+      "gold": [
+        "md13644"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 78,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 103
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a25",
+      "category": "answerable",
+      "query": "managing risks in outsourcing arrangements",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13139",
+        "md13139",
+        "md13139",
+        "md13139",
+        "md13164",
+        "md13139",
+        "md13139",
+        "md13139",
+        "md12870",
+        "md13139"
+      ],
+      "gold": [
+        "md13139"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 84,
+        "dense": 32,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 117
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a26",
+      "category": "answerable",
+      "query": "cybersecurity, technology risk and resilience",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13643",
+        "md13643",
+        "md13643",
+        "md13642",
+        "md13643",
+        "md13643",
+        "md13643",
+        "md13643",
+        "md13643",
+        "md13643"
+      ],
+      "gold": [
+        "md13643"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 75,
+        "dense": 30,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 107
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a27",
+      "category": "answerable",
+      "query": "digital payment security controls",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13642",
+        "md13642",
+        "md13642",
+        "md13642",
+        "md13642",
+        "md13642",
+        "md13642",
+        "md12896",
+        "md13642",
+        "md13642"
+      ],
+      "gold": [
+        "md13642"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 56,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 77
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a28",
+      "category": "answerable",
+      "query": "credit card and debit card issuance and conduct",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155"
+      ],
+      "gold": [
+        "md13155"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 64,
+        "dense": 17,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 83
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a29",
+      "category": "answerable",
+      "query": "authorisation of digital banking channels",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13163",
+        "md13642",
+        "md13163",
+        "md13163",
+        "md13642",
+        "md13163",
+        "md13163",
+        "md13164",
+        "md13164",
+        "md13163"
+      ],
+      "gold": [
+        "md13163"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 63,
+        "dense": 19,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 84
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a30",
+      "category": "answerable",
+      "query": "branch authorisation and opening of new branches",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13164",
+        "md13164",
+        "md13164",
+        "md13164",
+        "md13164",
+        "md13167",
+        "md11518",
+        "md13164",
+        "md13167",
+        "md13164"
+      ],
+      "gold": [
+        "md13164"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 71,
+        "dense": 18,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 92
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a31",
+      "category": "answerable",
+      "query": "periodic updation of KYC records for NBFC customers",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943"
+      ],
+      "gold": [
+        "md12943"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 69,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 96
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a32",
+      "category": "answerable",
+      "query": "acceptance of public deposits by NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12958",
+        "md13585",
+        "md12940",
+        "md12939",
+        "md12939",
+        "md12958",
+        "md12965",
+        "md12958",
+        "md12939",
+        "md12958"
+      ],
+      "gold": [
+        "md12958"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 67,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 89
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a33",
+      "category": "answerable",
+      "query": "capital adequacy norms for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12933",
+        "md12953",
+        "md12959",
+        "md12953",
+        "md12953",
+        "md12953",
+        "md12951",
+        "md12953",
+        "md12953",
+        "md12934"
+      ],
+      "gold": [
+        "md12959"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 71,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 93
+      },
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a34",
+      "category": "answerable",
+      "query": "income recognition and asset classification for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12931",
+        "md12947",
+        "md12948",
+        "md12947",
+        "md12947",
+        "md12945",
+        "md12945",
+        "md12948",
+        "md12965",
+        "md12939"
+      ],
+      "gold": [
+        "md12948"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 64,
+        "dense": 22,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 88
+      },
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a35",
+      "category": "answerable",
+      "query": "resolution of stressed assets for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12947",
+        "md12947",
+        "md12952",
+        "md12952",
+        "md12947",
+        "md12952",
+        "md12948",
+        "md12947",
+        "md12948",
+        "md12945"
+      ],
+      "gold": [
+        "md12947"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 88,
+        "dense": 17,
+        "fuse": 3,
+        "rerank": 0,
+        "total": 110
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a36",
+      "category": "answerable",
+      "query": "securitisation transactions and minimum retention for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12959",
+        "md12951",
+        "md12951",
+        "md12951",
+        "md12951",
+        "md12951",
+        "md12951",
+        "md12959",
+        "md12951",
+        "md12959"
+      ],
+      "gold": [
+        "md12951"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 100,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 124
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a37",
+      "category": "answerable",
+      "query": "transfer and distribution of credit risk by NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12933",
+        "md12952",
+        "md12952",
+        "md12953",
+        "md12952",
+        "md12952",
+        "md12959",
+        "md12954",
+        "md12952",
+        "md12957"
+      ],
+      "gold": [
+        "md12952"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 109,
+        "dense": 38,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 150
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a38",
+      "category": "answerable",
+      "query": "concentration risk and large exposure limits for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12953",
+        "md12953",
+        "md12953",
+        "md12953",
+        "md12953",
+        "md12953",
+        "md12953",
+        "md12959",
+        "md12954",
+        "md12945"
+      ],
+      "gold": [
+        "md12953"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 93,
+        "dense": 23,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 117
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a39",
+      "category": "answerable",
+      "query": "credit risk management framework for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12949",
+        "md13590",
+        "md12949",
+        "md12949",
+        "md13592",
+        "md12949",
+        "md12954",
+        "md12953",
+        "md12933",
+        "md13592"
+      ],
+      "gold": [
+        "md12954"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 87,
+        "dense": 33,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 122
+      },
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.333,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a40",
+      "category": "answerable",
+      "query": "credit facilities and loans by NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12942",
+        "md12948",
+        "md12965",
+        "md12946",
+        "md12948",
+        "md12945",
+        "md12959",
+        "md12952",
+        "md12947",
+        "md12947"
+      ],
+      "gold": [
+        "md12957"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 80,
+        "dense": 34,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 116
+      },
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.0,
+      "recall@10": false
+    },
+    {
+      "id": "v2-a41",
+      "category": "answerable",
+      "query": "classification and valuation of the NBFC investment portfolio",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12949",
+        "md12947",
+        "md12965",
+        "md12952",
+        "md12950",
+        "md12965",
+        "md12965",
+        "md12950",
+        "md13587",
+        "md12959"
+      ],
+      "gold": [
+        "md12950"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 83,
+        "dense": 31,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 115
+      },
+      "hit@k": true,
+      "rr": 0.2,
+      "ndcg@10": 0.387,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a42",
+      "category": "answerable",
+      "query": "asset liability management for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12949",
+        "md12949",
+        "md12949",
+        "md12949",
+        "md12949",
+        "md12958",
+        "md12949",
+        "md12945",
+        "md12940",
+        "md12945"
+      ],
+      "gold": [
+        "md12949"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 110,
+        "dense": 19,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 131
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a43",
+      "category": "answerable",
+      "query": "governance framework for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13592",
+        "md12936",
+        "md13592",
+        "md13587",
+        "md12933",
+        "md13593",
+        "md12934",
+        "md12941",
+        "md13592",
+        "md13590"
+      ],
+      "gold": [
+        "md12960"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 78,
+        "dense": 22,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 102
+      },
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.0,
+      "recall@10": false
+    },
+    {
+      "id": "v2-a44",
+      "category": "answerable",
+      "query": "internal audit function for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13589",
+        "md13589",
+        "md13592",
+        "md13589",
+        "md13589",
+        "md13592",
+        "md13593",
+        "md13592",
+        "md12960",
+        "md12941"
+      ],
+      "gold": [
+        "md13589"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 112,
+        "dense": 18,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 131
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a45",
+      "category": "answerable",
+      "query": "statutory audit requirements for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13592",
+        "md13592",
+        "md13592",
+        "md13588",
+        "md13588",
+        "md13588",
+        "md13588",
+        "md12941",
+        "md12960",
+        "md13592"
+      ],
+      "gold": [
+        "md13588"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 64,
+        "dense": 30,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 95
+      },
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.431,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a46",
+      "category": "answerable",
+      "query": "compliance function for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13593",
+        "md13593",
+        "md13593",
+        "md12960",
+        "md13593",
+        "md12943",
+        "md13593",
+        "md13586",
+        "md13593",
+        "md12943"
+      ],
+      "gold": [
+        "md13593"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 61,
+        "dense": 18,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 80
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a47",
+      "category": "answerable",
+      "query": "fraud risk management for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13590",
+        "md13590",
+        "md13590",
+        "md12947",
+        "md13590",
+        "md13591",
+        "md13592",
+        "md13590",
+        "md13591",
+        "md13592"
+      ],
+      "gold": [
+        "md13590"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 59,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 83
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a48",
+      "category": "answerable",
+      "query": "outsourcing risk management for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12941",
+        "md12941",
+        "md12941",
+        "md12941",
+        "md12941",
+        "md12941",
+        "md12941",
+        "md13592",
+        "md12941",
+        "md13592"
+      ],
+      "gold": [
+        "md12941"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 69,
+        "dense": 27,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 98
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a49",
+      "category": "answerable",
+      "query": "cybersecurity and technology risk for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13591",
+        "md13592",
+        "md13592",
+        "md13592",
+        "md13592",
+        "md13591",
+        "md13592",
+        "md13592",
+        "md13592",
+        "md13592"
+      ],
+      "gold": [
+        "md13592"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 67,
+        "dense": 17,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 85
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a50",
+      "category": "answerable",
+      "query": "credit card issuance and conduct by NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12956",
+        "md12956",
+        "md13591",
+        "md12942",
+        "md13591",
+        "md12941",
+        "md12957",
+        "md13590",
+        "md12957",
+        "md12956"
+      ],
+      "gold": [
+        "md12956"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 80,
+        "dense": 31,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 113
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a51",
+      "category": "answerable",
+      "query": "digital payment security controls for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591",
+        "md13591"
+      ],
+      "gold": [
+        "md13591"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 66,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 89
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a52",
+      "category": "answerable",
+      "query": "branch authorisation for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12962",
+        "md12962",
+        "md12936",
+        "md13168",
+        "md12953",
+        "md12961",
+        "md12942",
+        "md12933",
+        "md12931",
+        "md12942"
+      ],
+      "gold": [
+        "md12962"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 76,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 104
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a53",
+      "category": "answerable",
+      "query": "NBFC registration, exemptions and regulatory framework",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12945",
+        "md12952",
+        "md12931",
+        "md12931",
+        "md12965",
+        "md12933",
+        "md13586",
+        "md12965",
+        "md12965",
+        "md12965"
+      ],
+      "gold": [
+        "md12965"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 66,
+        "dense": 28,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 94
+      },
+      "hit@k": true,
+      "rr": 0.2,
+      "ndcg@10": 0.387,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a54",
+      "category": "answerable",
+      "query": "microfinance institution directions for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12942",
+        "md12965",
+        "md12933",
+        "md12948",
+        "md12945",
+        "md12965",
+        "md12933",
+        "md12957",
+        "md12933",
+        "md12955"
+      ],
+      "gold": [
+        "md12933"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 27,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 117
+      },
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a55",
+      "category": "answerable",
+      "query": "peer-to-peer lending platform directions",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12965"
+      ],
+      "gold": [
+        "md12934"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 75,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 101
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a56",
+      "category": "answerable",
+      "query": "account aggregator directions for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12936",
+        "md12931",
+        "md12936",
+        "md12942",
+        "md12934",
+        "md12936",
+        "md12945",
+        "md12965",
+        "md12948",
+        "md12936"
+      ],
+      "gold": [
+        "md12936"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 82,
+        "dense": 19,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 103
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a57",
+      "category": "answerable",
+      "query": "responsible business conduct for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12941",
+        "md13592",
+        "md12957",
+        "md12941",
+        "md12942",
+        "md12934",
+        "md12942",
+        "md12933",
+        "md13592",
+        "md12960"
+      ],
+      "gold": [
+        "md12942"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 99,
+        "dense": 37,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 139
+      },
+      "hit@k": true,
+      "rr": 0.2,
+      "ndcg@10": 0.387,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a58",
+      "category": "answerable",
+      "query": "internal ombudsman for NBFC customer complaints",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12936",
+        "md12586",
+        "md13274",
+        "md12586",
+        "md13274",
+        "md12586",
+        "md12941",
+        "md12586",
+        "md12945",
+        "md12586"
+      ],
+      "gold": [
+        "md12586",
+        "md13274"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 88,
+        "dense": 23,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 112
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.693,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a59",
+      "category": "answerable",
+      "query": "credit information reporting by NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12946",
+        "md12946",
+        "md12957",
+        "md13592",
+        "md13590",
+        "md13587",
+        "md12955",
+        "md12952",
+        "md13590",
+        "md12943"
+      ],
+      "gold": [
+        "md12955"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 86,
+        "dense": 19,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 107
+      },
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.333,
+      "recall@10": true
+    },
+    {
+      "id": "v2-a60",
+      "category": "answerable",
+      "query": "supervisory returns for NBFCs",
+      "institution": "nbfc",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12949",
+        "md13587",
+        "md13587",
+        "md13587",
+        "md13592",
+        "md13587",
+        "md13587",
+        "md13587",
+        "md13587",
+        "md12953"
+      ],
+      "gold": [
+        "md13587"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 81,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 106
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true
+    },
+    {
+      "id": "v2-t01",
+      "category": "as_of",
+      "query": "commercial banks counterparty credit risk amendments effective April 2027",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "md13153",
+        "md13152",
+        "md13153",
+        "md12682",
+        "md13159",
+        "md13159",
+        "nn13732",
+        "md13152",
+        "md13137",
+        "md13159"
+      ],
+      "gold": [
+        "nn13730"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 106,
+        "dense": 18,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 126
+      },
+      "probe_doc_id": "nn13730",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t02",
+      "category": "as_of",
+      "query": "commercial banks counterparty credit risk amendments effective April 2027",
+      "institution": "bank",
+      "as_of": "2027-04-01",
+      "review_status": "draft",
+      "got": [
+        "nn13730",
+        "md13399",
+        "md13729",
+        "md13153",
+        "md13153",
+        "md13399",
+        "md13152",
+        "nn13730",
+        "md13729",
+        "md13729"
+      ],
+      "gold": [
+        "nn13730"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 100,
+        "dense": 20,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 122
+      },
+      "probe_doc_id": "nn13730",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t03",
+      "category": "as_of",
+      "query": "commercial banks miscellaneous amendments effective April 2027",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "nn13740",
+        "md13153",
+        "md13153",
+        "nn13732",
+        "md13151",
+        "md12799",
+        "md13637",
+        "md11959",
+        "md13160",
+        "md13139"
+      ],
+      "gold": [
+        "nn13731"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 78,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 99
+      },
+      "probe_doc_id": "nn13731",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t04",
+      "category": "as_of",
+      "query": "commercial banks miscellaneous amendments effective April 2027",
+      "institution": "bank",
+      "as_of": "2027-04-01",
+      "review_status": "draft",
+      "got": [
+        "nn13731",
+        "nn13740",
+        "md13399",
+        "nn13730",
+        "md13729",
+        "md13399",
+        "md13153",
+        "md13153",
+        "md13400",
+        "md13729"
+      ],
+      "gold": [
+        "nn13731"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 73,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 101
+      },
+      "probe_doc_id": "nn13731",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t05",
+      "category": "as_of",
+      "query": "capital charge for credit risk under the standardised approach",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13137",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13152",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13399"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 65,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 88
+      },
+      "probe_doc_id": "md13399",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t06",
+      "category": "as_of",
+      "query": "capital charge for credit risk under the standardised approach",
+      "institution": "bank",
+      "as_of": "2027-04-01",
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13137",
+        "md13729",
+        "md13159",
+        "md13705",
+        "md13399",
+        "md13159",
+        "md13159",
+        "md13705",
+        "md13399"
+      ],
+      "gold": [
+        "md13399"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 63,
+        "dense": 18,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 83
+      },
+      "probe_doc_id": "md13399",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t07",
+      "category": "as_of",
+      "query": "asset classification, provisioning and income recognition directions",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "md13146",
+        "md13148",
+        "md13146",
+        "md13156",
+        "md13639",
+        "md13148",
+        "md13148",
+        "md13145",
+        "md13146",
+        "md13145"
+      ],
+      "gold": [
+        "md13400"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 71,
+        "dense": 27,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 100
+      },
+      "probe_doc_id": "md13400",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t08",
+      "category": "as_of",
+      "query": "asset classification, provisioning and income recognition directions",
+      "institution": "bank",
+      "as_of": "2027-04-01",
+      "review_status": "draft",
+      "got": [
+        "md13146",
+        "md13400",
+        "md13148",
+        "md13400",
+        "md13146",
+        "md13148",
+        "md13400",
+        "md13148",
+        "md13156",
+        "md13639"
+      ],
+      "gold": [
+        "md13400"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 68,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 94
+      },
+      "probe_doc_id": "md13400",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t09",
+      "category": "as_of",
+      "query": "minimum capital requirements for market risk",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13137",
+        "md13159"
+      ],
+      "gold": [
+        "md13705"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 62,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 87
+      },
+      "probe_doc_id": "md13705",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t10",
+      "category": "as_of",
+      "query": "minimum capital requirements for market risk",
+      "institution": "bank",
+      "as_of": "2027-04-01",
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13159",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13705",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13705"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 73,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 95
+      },
+      "probe_doc_id": "md13705",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t11",
+      "category": "as_of",
+      "query": "CVA framework for derivative exposures of commercial banks",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13137",
+        "md13152",
+        "md13159",
+        "md13159",
+        "md13147",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13729"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 81,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 104
+      },
+      "probe_doc_id": "md13729",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t12",
+      "category": "as_of",
+      "query": "CVA framework for derivative exposures of commercial banks",
+      "institution": "bank",
+      "as_of": "2027-04-01",
+      "review_status": "draft",
+      "got": [
+        "md13159",
+        "md13399",
+        "nn13730",
+        "md13729",
+        "nn13730",
+        "md13159",
+        "md13159",
+        "md13137",
+        "md13152",
+        "md13729"
+      ],
+      "gold": [
+        "md13729"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 35,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 124
+      },
+      "probe_doc_id": "md13729",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t13",
+      "category": "as_of",
+      "query": "Kisan Credit Card scheme for commercial banks",
+      "institution": "bank",
+      "as_of": "2026-10-20",
+      "review_status": "draft",
+      "got": [
+        "md13155",
+        "md13156",
+        "md13140",
+        "md13156",
+        "md13155",
+        "md13155",
+        "md13152",
+        "md10193",
+        "md13140",
+        "md13155"
+      ],
+      "gold": [
+        "md13522"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 77,
+        "dense": 29,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 108
+      },
+      "probe_doc_id": "md13522",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t14",
+      "category": "as_of",
+      "query": "Kisan Credit Card scheme for commercial banks",
+      "institution": "bank",
+      "as_of": "2027-01-01",
+      "review_status": "draft",
+      "got": [
+        "md13522",
+        "md13522",
+        "md13155",
+        "md13156",
+        "md13140",
+        "md13156",
+        "md13155",
+        "md13155",
+        "md13152",
+        "md10193"
+      ],
+      "gold": [
+        "md13522"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 104,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 127
+      },
+      "probe_doc_id": "md13522",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t15",
+      "category": "as_of",
+      "query": "responsible business conduct directions for commercial banks",
+      "institution": "bank",
+      "as_of": "2026-03-31",
+      "review_status": "draft",
+      "got": [
+        "md13645",
+        "md13163",
+        "md12896",
+        "md13144",
+        "md12581",
+        "md13163",
+        "md13147",
+        "md13165",
+        "md13139",
+        "md13158"
+      ],
+      "gold": [
+        "md13140"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 79,
+        "dense": 30,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 112
+      },
+      "probe_doc_id": "md13140",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t16",
+      "category": "as_of",
+      "query": "responsible business conduct directions for commercial banks",
+      "institution": "bank",
+      "as_of": "2026-04-01",
+      "review_status": "draft",
+      "got": [
+        "md13140",
+        "md13645",
+        "md13140",
+        "md13163",
+        "md13140",
+        "md12896",
+        "md13144",
+        "md12581",
+        "md13163",
+        "md13147"
+      ],
+      "gold": [
+        "md13140"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 98,
+        "dense": 19,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 121
+      },
+      "probe_doc_id": "md13140",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t17",
+      "category": "as_of",
+      "query": "financial statements presentation and disclosures for commercial banks",
+      "institution": "bank",
+      "as_of": "2026-03-31",
+      "review_status": "draft",
+      "got": [
+        "md13150",
+        "md13638",
+        "md13137",
+        "md13137",
+        "md12163",
+        "md13137",
+        "md13146",
+        "md10833",
+        "md13147",
+        "md13137"
+      ],
+      "gold": [
+        "md13143"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 77,
+        "dense": 34,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 112
+      },
+      "probe_doc_id": "md13143",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t18",
+      "category": "as_of",
+      "query": "financial statements presentation and disclosures for commercial banks",
+      "institution": "bank",
+      "as_of": "2026-04-01",
+      "review_status": "draft",
+      "got": [
+        "md13143",
+        "md13150",
+        "md13143",
+        "md13143",
+        "md13143",
+        "md13143",
+        "md13143",
+        "md13638",
+        "md13143",
+        "md13143"
+      ],
+      "gold": [
+        "md13143"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 100,
+        "dense": 34,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 135
+      },
+      "probe_doc_id": "md13143",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-t19",
+      "category": "as_of",
+      "query": "transfer and distribution of credit risk by NBFCs",
+      "institution": "nbfc",
+      "as_of": "2025-12-31",
+      "review_status": "draft",
+      "got": [
+        "md12933",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md13592",
+        "md12943",
+        "md12948",
+        "md12934",
+        "md12943",
+        "md12934"
+      ],
+      "gold": [
+        "md12952"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 39,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 127
+      },
+      "probe_doc_id": "md12952",
+      "probe_present": false,
+      "expect_present": false,
+      "passed": true
+    },
+    {
+      "id": "v2-t20",
+      "category": "as_of",
+      "query": "transfer and distribution of credit risk by NBFCs",
+      "institution": "nbfc",
+      "as_of": "2026-01-01",
+      "review_status": "draft",
+      "got": [
+        "md12933",
+        "md12952",
+        "md12952",
+        "md12952",
+        "md12952",
+        "md12952",
+        "md12952",
+        "md12952",
+        "md12952",
+        "md12943"
+      ],
+      "gold": [
+        "md12952"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 29,
+        "fuse": 0,
+        "rerank": 0,
+        "total": 117
+      },
+      "probe_doc_id": "md12952",
+      "probe_present": true,
+      "expect_present": true,
+      "passed": true
+    },
+    {
+      "id": "v2-m01",
+      "category": "amendment",
+      "query": "What does the Commercial Banks Forthcoming Instructions Amendment Directions, 2026 change about counterparty credit risk?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13730",
+        "md13729",
+        "nn13732",
+        "nn13731",
+        "nn13740",
+        "md13137",
+        "md12682",
+        "nn13730",
+        "md13153",
+        "nn13730"
+      ],
+      "gold": [
+        "md13137",
+        "nn13730"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 92,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 115
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.832,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m02",
+      "category": "amendment",
+      "query": "What change was made to the deferment of option premium in the Commercial Banks Miscellaneous Directions?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13730",
+        "nn13731",
+        "md13137",
+        "md13148",
+        "md10485",
+        "nn13740",
+        "md13705",
+        "md13147",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13136",
+        "nn13731"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 84,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 107
+      },
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.387,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m03",
+      "category": "amendment",
+      "query": "What legal opinion requirement for clearing member banks was amended in the Commercial Banks Capital Adequacy Directions in October 2026?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13732",
+        "nn13730",
+        "nn13731",
+        "nn13740",
+        "md13137",
+        "nn13730",
+        "md13137",
+        "nn13730",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13159",
+        "nn13732"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 134,
+        "dense": 19,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 156
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.798,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m04",
+      "category": "amendment",
+      "query": "How is incurred CVA loss treated for exposure at default after the October 2026 amendment?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13732",
+        "nn13730",
+        "md13159",
+        "nn13732",
+        "md13729",
+        "md13159",
+        "md13159",
+        "md13399",
+        "md13159",
+        "md13159"
+      ],
+      "gold": [
+        "md13159",
+        "nn13732"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 85,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 107
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.92,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m05",
+      "category": "amendment",
+      "query": "When does the Commercial Banks Forthcoming Instructions Amendment Directions, 2026 come into force?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13730",
+        "nn13731",
+        "nn13740",
+        "nn13732",
+        "md13151",
+        "md13271",
+        "md13153",
+        "md13139",
+        "md13153",
+        "md13729"
+      ],
+      "gold": [
+        "nn13730"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 79,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 107
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m06",
+      "category": "amendment",
+      "query": "What limits for non-option derivative contracts were amended in the Commercial Banks Miscellaneous Directions?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13740",
+        "md12682",
+        "nn13731",
+        "md10485",
+        "md13136",
+        "nn13737",
+        "md13705",
+        "nn13730",
+        "md13705",
+        "md13148"
+      ],
+      "gold": [
+        "md13136",
+        "nn13740"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 84,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 111
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.85,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m07",
+      "category": "amendment",
+      "query": "What change did the Small Finance Banks Miscellaneous Amendment Directions, 2026 make to non-option derivative contract limits?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13741",
+        "nn13740",
+        "nn13731",
+        "nn13733",
+        "md12682",
+        "md13121",
+        "md13121",
+        "md13729",
+        "nn13730",
+        "nn13732"
+      ],
+      "gold": [
+        "md13105",
+        "nn13741"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 85,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 92
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.613,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m08",
+      "category": "amendment",
+      "query": "Which directions does RBI/2026-27/284 amend?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13730",
+        "nn13732",
+        "nn13731",
+        "nn13740",
+        "md13399",
+        "md13552",
+        "nn13736",
+        "md13362",
+        "nn13739",
+        "md12799"
+      ],
+      "gold": [
+        "md13137",
+        "nn13730"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 85,
+        "dense": 42,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 129
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.613,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m09",
+      "category": "amendment",
+      "query": "What is the daily minimum cash reserve maintenance requirement for scheduled banks after the October 2026 change?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13736",
+        "nn13736",
+        "md13160",
+        "md13160",
+        "nn13730",
+        "md13160",
+        "md13160",
+        "md13140",
+        "md13160",
+        "md13160"
+      ],
+      "gold": [
+        "nn13736"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 103,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 130
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m10",
+      "category": "amendment",
+      "query": "What undertaking must an authorised dealer obtain before offering an INR foreign exchange derivative?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md10485",
+        "md10485",
+        "nn13737",
+        "md10485",
+        "nn13739",
+        "nn13738",
+        "md10485",
+        "md10485",
+        "nn13737",
+        "md10485"
+      ],
+      "gold": [
+        "nn13737"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 97,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 124
+      },
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m11",
+      "category": "amendment",
+      "query": "What are the Foreign Exchange Risk Reserve requirements for authorised dealers?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13738",
+        "md10485",
+        "nn13737",
+        "md10485",
+        "md10485",
+        "md10485",
+        "md10485",
+        "md10193",
+        "md10204",
+        "nn13739"
+      ],
+      "gold": [
+        "nn13738"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 88,
+        "dense": 37,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 126
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m12",
+      "category": "amendment",
+      "query": "What changes did the October 2026 circulars make to Risk Management and Inter-Bank Dealings?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13738",
+        "nn13737",
+        "md10485",
+        "nn13739",
+        "md10485",
+        "md12765",
+        "md11510",
+        "md10485",
+        "md10201",
+        "md11200"
+      ],
+      "gold": [
+        "nn13737",
+        "nn13738",
+        "nn13739"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 100,
+        "dense": 32,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 134
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.967,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m13",
+      "category": "amendment",
+      "query": "What does the UAPA notification say about the UNSC 1267/1989 sanctions list amendment?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13742",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md11200",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md10202",
+        "md10485"
+      ],
+      "gold": [
+        "nn13742"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 114,
+        "dense": 36,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 152
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m14",
+      "category": "amendment",
+      "query": "Which entities are addressed by the October 2026 UAPA notification?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13742",
+        "md13141",
+        "md13141",
+        "md11200",
+        "md13141",
+        "md13141",
+        "md10198",
+        "md10395",
+        "md13141",
+        "nn13736"
+      ],
+      "gold": [
+        "nn13742"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 109
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m15",
+      "category": "amendment",
+      "query": "What is the reference number of the amendment to the Commercial Banks Prudential Norms on Capital Adequacy Directions?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13732",
+        "nn13730",
+        "md13729",
+        "md13399",
+        "md13729",
+        "md13152",
+        "md13152",
+        "md13729",
+        "md13159",
+        "nn13730"
+      ],
+      "gold": [
+        "nn13732"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 109,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 135
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m16",
+      "category": "amendment",
+      "query": "What is the reference number of the Small Finance Banks Miscellaneous Amendment Directions, 2026?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13741",
+        "nn13731",
+        "nn13733",
+        "nn13740",
+        "md13121",
+        "md13121",
+        "nn13730",
+        "md13628",
+        "nn13734",
+        "nn13732"
+      ],
+      "gold": [
+        "nn13741"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 94,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 101
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m17",
+      "category": "amendment",
+      "query": "What paragraph of the Commercial Banks Capital Adequacy Directions deals with legal opinion for clearing member banks?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13732",
+        "nn13730",
+        "md13159",
+        "md13137",
+        "md13159",
+        "md13159",
+        "md13137",
+        "nn13730",
+        "nn13730",
+        "md13152"
+      ],
+      "gold": [
+        "md13159",
+        "nn13732"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 107,
+        "dense": 28,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 136
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.92,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m18",
+      "category": "amendment",
+      "query": "What paragraph of the Payments Banks Prudential Norms on Capital Adequacy Directions was amended by RBI/2026-27/288?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13734",
+        "nn13733",
+        "nn13735",
+        "nn13732",
+        "nn13730",
+        "nn13731",
+        "nn13741",
+        "nn13740",
+        "md13399",
+        "md13585"
+      ],
+      "gold": [
+        "md13097",
+        "nn13734"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 101,
+        "dense": 4,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 108
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.613,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m19",
+      "category": "amendment",
+      "query": "What is the effective date of the Kisan Credit Card Scheme Directions for commercial banks, 2026?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13522",
+        "md13522",
+        "md13399",
+        "md13151",
+        "nn13730",
+        "md13143",
+        "md13155",
+        "nn13731",
+        "md13641",
+        "md13400"
+      ],
+      "gold": [
+        "md13522"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 89,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 110
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-m20",
+      "category": "amendment",
+      "query": "What is the effective date of the Commercial Banks Minimum Capital Requirements for Market Risk Directions, 2026?",
+      "institution": "bank",
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13705",
+        "nn13730",
+        "md13399",
+        "md13151",
+        "md13159",
+        "nn13732",
+        "md13137",
+        "md13705",
+        "md13152",
+        "md13729"
+      ],
+      "gold": [
+        "md13705"
+      ],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 89,
+        "dense": 20,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 111
+      },
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true
+    },
+    {
+      "id": "v2-u01",
+      "category": "unanswerable",
+      "query": "What are SEBI's disclosure requirements for listed companies?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md11200",
+        "md13085",
+        "md12975",
+        "md12938",
+        "md13071",
+        "md13148",
+        "md13116",
+        "md13094",
+        "md12937",
+        "md13159"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 80,
+        "dense": 13,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 95
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u02",
+      "category": "unanswerable",
+      "query": "What is IRDAI's solvency ratio requirement for insurers?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md10738",
+        "md10738",
+        "md13007",
+        "md10738",
+        "md10738",
+        "md10738",
+        "md13130",
+        "md13162",
+        "md10738",
+        "md12961"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 70,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 76
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u03",
+      "category": "unanswerable",
+      "query": "What are the US Federal Reserve's capital rules for bank holding companies?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13134",
+        "md13086",
+        "md13104",
+        "md13166",
+        "md13086",
+        "md13104",
+        "md13159",
+        "md13104",
+        "md13074",
+        "md13086"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 3,
+        "encode": 74,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 82
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u04",
+      "category": "unanswerable",
+      "query": "What is the FCA's consumer duty for UK financial firms?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12936",
+        "md12958",
+        "md12953",
+        "md13639",
+        "md13143",
+        "md13605",
+        "md13011",
+        "md13621",
+        "md13041",
+        "md13630"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 69,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 76
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u05",
+      "category": "unanswerable",
+      "query": "What are ESMA's margining requirements for central counterparties?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12682",
+        "md12682",
+        "nn13730",
+        "md13137",
+        "md13137",
+        "nn13730",
+        "md12938",
+        "md13399",
+        "nn13730",
+        "md13127"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 72,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 79
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u06",
+      "category": "unanswerable",
+      "query": "What is the HMRC reporting threshold for cash transactions?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12928",
+        "md13112",
+        "md13042",
+        "md13067",
+        "md13144",
+        "md12946",
+        "md13017",
+        "md12971",
+        "md13605",
+        "md13639"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 72,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 78
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u07",
+      "category": "unanswerable",
+      "query": "What are MAS Singapore's outsourcing requirements for banks?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13088",
+        "md13012",
+        "md12941",
+        "md13012",
+        "md13062",
+        "md13062",
+        "md13088",
+        "md13139",
+        "md13088",
+        "md13139"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 80,
+        "dense": 8,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 90
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u08",
+      "category": "unanswerable",
+      "query": "What is the Basel Committee's latest liquidity coverage ratio calibration?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13147",
+        "md13115",
+        "md13638",
+        "md13159",
+        "md13629",
+        "md12949",
+        "md13159",
+        "md12983",
+        "md13147",
+        "md13147"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 95,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 104
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u09",
+      "category": "unanswerable",
+      "query": "What are the SEC's rules on climate risk disclosure?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12938",
+        "md13159",
+        "md13127",
+        "md12983",
+        "md13111",
+        "md13106",
+        "md12940",
+        "md13138",
+        "md13106",
+        "md12970"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 77,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 85
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u10",
+      "category": "unanswerable",
+      "query": "What is the ECB's supervisory review process for significant institutions?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13204",
+        "md13159",
+        "md13127",
+        "md12581",
+        "md13127",
+        "md13159",
+        "md13127",
+        "md13159",
+        "md13276",
+        "md13273"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 86,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 94
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u11",
+      "category": "unanswerable",
+      "query": "What is today's RBI repo rate and did the MPC change it?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12920",
+        "md12938",
+        "md13020",
+        "md13639",
+        "md13020",
+        "md13070",
+        "md11959",
+        "md12799",
+        "md13070",
+        "md13093"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 96
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u12",
+      "category": "unanswerable",
+      "query": "Summarise the RBI's latest monetary policy statement.",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md11500",
+        "md12108",
+        "md12061",
+        "md12580",
+        "md10202",
+        "md12715",
+        "md13005",
+        "md12592",
+        "md13081",
+        "md12682"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 89,
+        "dense": 7,
+        "fuse": 2,
+        "rerank": 0,
+        "total": 99
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u13",
+      "category": "unanswerable",
+      "query": "What did the RBI announce in its October 2026 press release on developmental and regulatory policies?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13552",
+        "nn13736",
+        "nn13742",
+        "nn13741",
+        "md11959",
+        "nn13740",
+        "nn13731",
+        "md12784",
+        "md13214",
+        "md12108"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 90,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 98
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u14",
+      "category": "unanswerable",
+      "query": "What is the current USD/INR reference rate published by RBI?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13005",
+        "md13081",
+        "md10485",
+        "md13056",
+        "md13128",
+        "md12983",
+        "md13159",
+        "nn13738",
+        "md10485",
+        "nn13739"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 73,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 79
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u15",
+      "category": "unanswerable",
+      "query": "What is the deposit insurance cover provided by DICGC?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13011",
+        "md13105",
+        "md13092",
+        "md13136",
+        "md13105",
+        "md12990",
+        "md13066",
+        "md13138",
+        "md13087",
+        "md13061"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 91,
+        "dense": 8,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 102
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u16",
+      "category": "unanswerable",
+      "query": "How can a customer file a complaint against a specific bank with the RBI Ombudsman?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13271",
+        "md13272",
+        "md13362",
+        "md12586",
+        "md12586",
+        "md13039",
+        "md13275",
+        "md12586",
+        "md13276",
+        "md12957"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 82,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 92
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u17",
+      "category": "unanswerable",
+      "query": "What are the bank holiday dates for October 2026 in Maharashtra?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "nn13736",
+        "nn13731",
+        "nn13741",
+        "nn13740",
+        "md13552",
+        "md12765",
+        "md10198",
+        "md10485",
+        "nn13730",
+        "nn13733"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 89,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 98
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u18",
+      "category": "unanswerable",
+      "query": "What penalty did RBI impose on a bank for KYC violations in 2026?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13360",
+        "md13360",
+        "md10476",
+        "md13587",
+        "md12939",
+        "md13399",
+        "nn13741",
+        "nn13736",
+        "nn13740",
+        "md13140"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 93,
+        "dense": 8,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 104
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u19",
+      "category": "unanswerable",
+      "query": "What is the RBI's framework for central bank digital currency pilots?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md13642",
+        "md13624",
+        "md13633",
+        "md13591",
+        "md13615",
+        "md13008",
+        "md10204",
+        "md13034",
+        "md13164",
+        "md13132"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 122,
+        "dense": 8,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 133
+      },
+      "scored": false,
+      "passed": null
+    },
+    {
+      "id": "v2-u20",
+      "category": "unanswerable",
+      "query": "What is the RBI's stance on cryptocurrency trading in India?",
+      "institution": null,
+      "as_of": null,
+      "review_status": "draft",
+      "got": [
+        "md12870",
+        "md12995",
+        "md13021",
+        "md12995",
+        "md12938",
+        "md10476",
+        "md13094",
+        "md13162",
+        "md10833",
+        "md13162"
+      ],
+      "gold": [],
+      "top_score": null,
+      "n_hits": 10,
+      "retrieval_abstain": false,
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 102,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 0,
+        "total": 110
+      },
+      "scored": false,
+      "passed": null
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "ts": "2026-10-17T18-10-47",
+  "answer_pin": "groq:openai/gpt-oss-120b",
+  "abstain_score": -6.0,
+  "negatives": {
+    "n": 10,
+    "pipeline_abstain_rate": 1.0,
+    "retrieval_abstain_rate": 0.2,
+    "llm_abstain_rate": 1.0,
+    "extractive_fallbacks": 0
+  },
+  "negative_rows": [
+    {
+      "query": "What are the SEC disclosure requirements for US-listed companies?",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": 0.435,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "nvidia/nemotron-3-super-120b-a12b",
+      "note": "US regulator, out of scope"
+    },
+    {
+      "query": "What is the Federal Reserve's current federal funds rate target?",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -5.426,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "US monetary policy, out of scope"
+    },
+    {
+      "query": "Explain the EU's MiFID II best execution requirements for brokers.",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -4.024,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "EU regulation, out of scope"
+    },
+    {
+      "query": "What is the UK FCA consumer duty implementation deadline?",
+      "retrieval_abstain": true,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -8.0,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "UK regulator, out of scope"
+    },
+    {
+      "query": "Who won the ICC Cricket World Cup in 2023?",
+      "retrieval_abstain": true,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -8.846,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "trivia, out of scope"
+    },
+    {
+      "query": "What are IRDAI's solvency margin rules for life insurers?",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -2.183,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "insurance regulator, out of scope"
+    },
+    {
+      "query": "What is SEBI's framework for insider trading by company insiders?",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": 3.996,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "securities regulator, out of scope"
+    },
+    {
+      "query": "How do I file my personal income tax return in India?",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": 1.636,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "taxation, out of scope"
+    },
+    {
+      "query": "What is the RBI's monetary policy repo rate decision timeline for FY2027?",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -2.932,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "monetary policy announcements are not in the Master Directions corpus"
+    },
+    {
+      "query": "Summarise the RBI Governor's speech on fintech at Davos 2026.",
+      "retrieval_abstain": false,
+      "llm_abstain": true,
+      "mode": "abstain",
+      "top_rerank": -3.729,
+      "n_hits": 6,
+      "pipeline_abstained": true,
+      "answer_model": "gemini-3.5-flash-lite",
+      "note": "speeches are not in the Master Directions corpus"
+    }
+  ],
+  "in_scope": {
+    "n": 23,
+    "pipeline_abstain_rate": 0.087,
+    "retrieval_abstain_rate": 0.0,
+    "llm_abstain_rate": 0.087
+  },
+  "in_scope_source": "evals/results/answers_2026-10-17T17-09-29_full.json"
+}

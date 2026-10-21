@@ -1,0 +1,872 @@
+{
+  "k": 5,
+  "retrieve_k": 10,
+  "rerank": true,
+  "rerank_depth": 30,
+  "rerank_max_length": 512,
+  "rows": [
+    {
+      "query": "periodic updation of KYC records for NBFC customers",
+      "got": [
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md13040",
+        "md13141",
+        "md13014",
+        "md13090",
+        "md12988"
+      ],
+      "gold": [
+        "md12943"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.948,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032002,
+        "bm25_rank": 3,
+        "dense_rank": 2,
+        "dense_score": 0.8572,
+        "rerank": 7.46
+      },
+      "timings_ms": {
+        "bm25": 5,
+        "encode": 35474,
+        "dense": 12,
+        "fuse": 1,
+        "rerank": 11257,
+        "total": 46750
+      }
+    },
+    {
+      "query": "periodic updation of KYC records for high risk customers of banks",
+      "got": [
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13637",
+        "md13141",
+        "md13140"
+      ],
+      "gold": [
+        "md13141"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 3.939,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.866,
+        "rerank": 6.885
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 132,
+        "dense": 41,
+        "fuse": 1,
+        "rerank": 12533,
+        "total": 12709
+      }
+    },
+    {
+      "query": "minimum capital adequacy ratio requirement for commercial banks",
+      "got": [
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13137",
+        "md13159",
+        "md13159",
+        "md13167",
+        "md13159",
+        "md13168"
+      ],
+      "gold": [
+        "md13159",
+        "md13399"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.178,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8064,
+        "rerank": 5.936
+      },
+      "timings_ms": {
+        "bm25": 3,
+        "encode": 125,
+        "dense": 27,
+        "fuse": 4,
+        "rerank": 14556,
+        "total": 14715
+      }
+    },
+    {
+      "query": "liquidity coverage ratio LCR requirement for banks",
+      "got": [
+        "md13147",
+        "md13160",
+        "md13148",
+        "md13157",
+        "md13639",
+        "md13143",
+        "md13147",
+        "md13160",
+        "md13147",
+        "md13147"
+      ],
+      "gold": [
+        "md13147",
+        "md13159"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.179,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8663,
+        "rerank": 7.604
+      },
+      "timings_ms": {
+        "bm25": 5,
+        "encode": 220,
+        "dense": 52,
+        "fuse": 1,
+        "rerank": 13919,
+        "total": 14197
+      }
+    },
+    {
+      "query": "capital requirement for housing finance companies",
+      "got": [
+        "md12939",
+        "md12939",
+        "md12939",
+        "md12944",
+        "md12939",
+        "md12939",
+        "md12939",
+        "md12939",
+        "md12939",
+        "md12951"
+      ],
+      "gold": [
+        "md12939"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 3.824,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031099,
+        "bm25_rank": 8,
+        "dense_rank": 1,
+        "dense_score": 0.7932,
+        "rerank": 7.797
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 88,
+        "dense": 31,
+        "fuse": 1,
+        "rerank": 12716,
+        "total": 12838
+      }
+    },
+    {
+      "query": "credit card issuance norms for banks",
+      "got": [
+        "md13155",
+        "md13156",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13155",
+        "md13156",
+        "md13156",
+        "md13155",
+        "md13141"
+      ],
+      "gold": [
+        "md13155",
+        "md13156"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.609,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026879,
+        "bm25_rank": 5,
+        "dense_rank": 27,
+        "dense_score": 0.7386,
+        "rerank": 4.82
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 92,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 11319,
+        "total": 11441
+      }
+    },
+    {
+      "query": "issuance and conduct of credit cards by NBFCs",
+      "got": [
+        "md12956",
+        "md12956",
+        "md12933",
+        "md12941",
+        "md13591",
+        "md13591",
+        "md12943",
+        "md12957",
+        "md12942",
+        "md12961"
+      ],
+      "gold": [
+        "md12956"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 1,
+        "dense_rank": 2,
+        "dense_score": 0.8118,
+        "rerank": 6.71
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 98,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 13988,
+        "total": 14113
+      }
+    },
+    {
+      "query": "asset classification norms 90 days overdue provisioning for banks",
+      "got": [
+        "md13400",
+        "md13146",
+        "md13146",
+        "md13145",
+        "md13146",
+        "md13148",
+        "md13145",
+        "md13146",
+        "md13146",
+        "md13146"
+      ],
+      "gold": [
+        "md13146",
+        "md13400"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.099,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031754,
+        "bm25_rank": 2,
+        "dense_rank": 4,
+        "dense_score": 0.8008,
+        "rerank": 6.451
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 104,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 10220,
+        "total": 10351
+      }
+    },
+    {
+      "query": "treatment of wilful defaulters suit filing by banks",
+      "got": [
+        "md13144",
+        "md13144",
+        "md13145",
+        "md13144",
+        "md13145",
+        "md13144",
+        "md13144",
+        "md13144",
+        "md13144",
+        "md13144"
+      ],
+      "gold": [
+        "md13144",
+        "md13145"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.786,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030886,
+        "bm25_rank": 1,
+        "dense_rank": 9,
+        "dense_score": 0.7436,
+        "rerank": 6.021
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 74,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 12365,
+        "total": 12468
+      }
+    },
+    {
+      "query": "peer to peer lending platform leverage ratio for NBFC",
+      "got": [
+        "md12934",
+        "md12934",
+        "md12959",
+        "md12934",
+        "md12934",
+        "md12934",
+        "md12959",
+        "md12934",
+        "md12934",
+        "md12965"
+      ],
+      "gold": [
+        "md12934"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 3.421,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 1,
+        "dense_rank": 2,
+        "dense_score": 0.8219,
+        "rerank": 4.342
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 100,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 10913,
+        "total": 11040
+      }
+    },
+    {
+      "query": "microfinance loan eligibility household income limit",
+      "got": [
+        "md12957",
+        "md12957",
+        "md12957",
+        "md12933",
+        "md12942",
+        "md12942",
+        "md12948",
+        "md12955",
+        "md12933",
+        "md12948"
+      ],
+      "gold": [
+        "md12933"
+      ],
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.732,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.7993,
+        "rerank": 6.069
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 79,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 11078,
+        "total": 11183
+      }
+    },
+    {
+      "query": "core investment companies registration and net asset requirement",
+      "got": [
+        "md12948",
+        "md12965",
+        "md13592",
+        "md12965",
+        "md12937",
+        "md12961",
+        "md12937",
+        "md11200",
+        "md12937",
+        "md12939"
+      ],
+      "gold": [
+        "md12937"
+      ],
+      "hit@k": true,
+      "rr": 0.2,
+      "ndcg@10": 1.021,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032018,
+        "bm25_rank": 1,
+        "dense_rank": 4,
+        "dense_score": 0.7562,
+        "rerank": 4.243
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 93,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 10855,
+        "total": 10954
+      }
+    },
+    {
+      "query": "securitisation transactions minimum retention requirement",
+      "got": [
+        "md12983",
+        "md13159",
+        "md13127",
+        "md12945",
+        "md13150",
+        "md12970",
+        "md13150",
+        "md13127",
+        "md13159",
+        "md13118"
+      ],
+      "gold": [
+        "md12951",
+        "md13150"
+      ],
+      "hit@k": true,
+      "rr": 0.2,
+      "ndcg@10": 0.442,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.025253,
+        "bm25_rank": 6,
+        "dense_rank": 39,
+        "dense_score": 0.7592,
+        "rerank": 6.647
+      },
+      "timings_ms": {
+        "bm25": 5,
+        "encode": 119,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 10601,
+        "total": 10730
+      }
+    },
+    {
+      "query": "code of conduct for recovery agents and repossession",
+      "got": [
+        "md13140",
+        "md13108",
+        "md12942",
+        "md12939",
+        "md13063",
+        "md13052",
+        "md12930",
+        "md13027",
+        "md13140",
+        "md12956"
+      ],
+      "gold": [
+        "md12942",
+        "md13140"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.104,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031099,
+        "bm25_rank": 1,
+        "dense_rank": 8,
+        "dense_score": 0.7469,
+        "rerank": 7.82
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 134,
+        "dense": 9,
+        "fuse": 1,
+        "rerank": 10380,
+        "total": 10525
+      }
+    },
+    {
+      "query": "fit and proper criteria for directors of commercial banks",
+      "got": [
+        "md13161",
+        "md11518",
+        "md13166",
+        "md12896",
+        "md13161",
+        "md13161",
+        "md13161",
+        "md13167",
+        "md13166",
+        "md11518"
+      ],
+      "gold": [
+        "md13161"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.076,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031778,
+        "bm25_rank": 5,
+        "dense_rank": 1,
+        "dense_score": 0.824,
+        "rerank": 6.86
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 132,
+        "dense": 30,
+        "fuse": 1,
+        "rerank": 10192,
+        "total": 10357
+      }
+    },
+    {
+      "query": "approval for setting up digital banking channels by banks",
+      "got": [
+        "md13163",
+        "md13163",
+        "md13163",
+        "md13642",
+        "md13163",
+        "md13163",
+        "md13642",
+        "md13642",
+        "md13164",
+        "md13642"
+      ],
+      "gold": [
+        "md13163"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 2.874,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8169,
+        "rerank": 8.52
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 100,
+        "dense": 25,
+        "fuse": 3,
+        "rerank": 9119,
+        "total": 9248
+      }
+    },
+    {
+      "query": "foreign exchange risk reserve requirement for authorised dealers",
+      "got": [
+        "nn13738",
+        "md10485",
+        "nn13737",
+        "md10193",
+        "md10485",
+        "md10485",
+        "md10485",
+        "nn13739",
+        "md10485",
+        "md10485"
+      ],
+      "gold": [
+        "nn13738"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8139,
+        "rerank": 8.339
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 114,
+        "dense": 33,
+        "fuse": 1,
+        "rerank": 18962,
+        "total": 19110
+      }
+    },
+    {
+      "query": "branch authorisation for NBFC opening of new branches",
+      "got": [
+        "md12962",
+        "md12933",
+        "md13586",
+        "md12962",
+        "md12942",
+        "md12961",
+        "md12958",
+        "md12942",
+        "md12943",
+        "md12945"
+      ],
+      "gold": [
+        "md12962"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.431,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8353,
+        "rerank": 7.798
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 137,
+        "dense": 33,
+        "fuse": 2,
+        "rerank": 17297,
+        "total": 17470
+      }
+    },
+    {
+      "query": "know your customer requirements for co-operative banks",
+      "got": [
+        "md13014",
+        "md12988",
+        "md13064",
+        "md13141",
+        "md13040",
+        "md13004",
+        "md13014",
+        "md12988",
+        "md12987",
+        "md13034"
+      ],
+      "gold": [
+        "md12988",
+        "md13014"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.398,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026743,
+        "bm25_rank": 11,
+        "dense_rank": 19,
+        "dense_score": 0.7149,
+        "rerank": 3.728
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 85,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 9207,
+        "total": 9299
+      }
+    },
+    {
+      "query": "income recognition and asset classification norms for regional rural banks",
+      "got": [
+        "md13044",
+        "md13053",
+        "md13044",
+        "md13071",
+        "md13116",
+        "md13148",
+        "md13094",
+        "md13044",
+        "md13400",
+        "md12947"
+      ],
+      "gold": [
+        "md13044"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.815,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.023438,
+        "bm25_rank": 4,
+        "dense_rank": 68,
+        "dense_score": 0.7367,
+        "rerank": 5.995
+      },
+      "timings_ms": {
+        "bm25": 3,
+        "encode": 131,
+        "dense": 8,
+        "fuse": 1,
+        "rerank": 9207,
+        "total": 9350
+      }
+    },
+    {
+      "query": "compounding of contraventions under FEMA",
+      "got": [
+        "md10202",
+        "md12839",
+        "md10190",
+        "md10190",
+        "md12839",
+        "md10190",
+        "md10190",
+        "md10190",
+        "md12839",
+        "md10190"
+      ],
+      "gold": [
+        "md10190"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 2.225,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030478,
+        "bm25_rank": 11,
+        "dense_rank": 1,
+        "dense_score": 0.8809,
+        "rerank": 10.214
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 86,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 14918,
+        "total": 15011
+      }
+    },
+    {
+      "query": "statutory audit requirements for commercial banks",
+      "got": [
+        "md13639",
+        "md13639",
+        "md13153",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13639",
+        "md13147",
+        "md13639",
+        "md13148"
+      ],
+      "gold": [
+        "md13639"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 3.439,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.7755,
+        "rerank": 7.263
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 82,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 9595,
+        "total": 9705
+      }
+    },
+    {
+      "query": "prepaid payment instrument issuance and loading limits",
+      "got": [
+        "md12156",
+        "md13052",
+        "md13123",
+        "md13155",
+        "md12956",
+        "md12715",
+        "md13027",
+        "md12156",
+        "md12156",
+        "md12156"
+      ],
+      "gold": [
+        "md12156"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.906,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.028158,
+        "bm25_rank": 1,
+        "dense_rank": 25,
+        "dense_score": 0.7092,
+        "rerank": 3.667
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 105,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 17644,
+        "total": 17755
+      }
+    }
+  ],
+  "recall": 1.0,
+  "mrr": 0.8688405797101448,
+  "recall@10": 1.0,
+  "ndcg@10": 2.0902927344818387
+}

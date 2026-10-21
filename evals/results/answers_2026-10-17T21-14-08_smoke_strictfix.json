@@ -1,0 +1,234 @@
+{
+  "ts": "2026-10-17T21-14-08",
+  "answer_pin": "groq:openai/gpt-oss-120b",
+  "k": 6,
+  "strict_pin": false,
+  "corpus_version": "v1-53b832bb59",
+  "records": [
+    {
+      "query": "periodic updation of KYC records for NBFC customers",
+      "note": "NBFC KYC directions",
+      "institution": null,
+      "gold_doc_ids": [
+        "md12943"
+      ],
+      "retrieved_doc_ids": [
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md12943",
+        "md13040"
+      ],
+      "gold_in_context": true,
+      "gold_rank": 1,
+      "contexts": [
+        "(v) The NBFC shall adopt a risk-based approach with respect to periodic updation of KYC. The NBFC shall clearly specify in its internal policy, duly approved by the Board of Directors of the NBFC or any committee of the Board to which power has been delegated, any additional and exceptional measures, it adopts that are not otherwise mandated under the above instructions, such as requirement of obtaining recent photograph, requirement of physical presence of the customer, requirement of periodic updation of KYC only in the branch of the NBFC where account is maintained, a more frequent periodicity of KYC updation than the minimum specified periodicity etc.\n\n(6) The NBFC shall advise the customers that in order to comply with the PML Rules, in case of any update in the documents submitted by the customer at the time of establishment of business relationship / account-based relationship and thereafter, as necessary; customers shall submit to the NBFC the update of such documents. This shall be done within 30 days of the update to the documents for the purpose of updating the records at the NBFC’s end.\n\n(7) Due Notices for Periodic Updation of KYC: The NBFC shall intimate its customers, in advance, to update their KYC. Prior to the due date of periodic updation of KYC, the NBFC shall give at least three advance intimations, including at least one intimation by letter, at appropriate intervals to its customers through available communication options / channels for complying with the requirement of periodic updation of KYC. Subsequent to the due date, the NBFC shall give at least three reminders, including at least one reminder by letter, at appropriate intervals, to such customers who have still not complied with the requirements, despite advance intimations. The letter of intimation / reminder may, inter alia, contain easy-tounderstand instructions for updating KYC, escalation mechanism for seeking help, if required, and the consequences, if any, of failure to update their KYC in time. Issue of such advance intimation / reminder shall be duly recorded in the NBFC’s system against each customer for audit trail. The NBFC shall expeditiously implement the same but not later than January 01, 2026.",
+        "(i) No change in KYC information: In case of no change in the KYC information of the LE customer, the NBFC shall obtain a self-declaration in this regard from the LE customer through its email id registered with the NBFC, ATMs, digital channels (including mobile application of NBFC), letter from an official authorised by the LE in this regard, board resolution, etc. Further, the NBFC shall ensure during this process that Beneficial Ownership (BO) information available with them is accurate and shall update the same, if required, to keep it as up-to-date as possible.\n\n(ii) Change in KYC information: In case of change in KYC information, the NBFC shall undertake the KYC process equivalent to that applicable for onboarding a new LE customer. (5) Additional measures: In addition to the above, the NBFC shall ensure that:\n\n(i) The NBFC has customer’s KYC document as per the current CDD standards available with it. This is applicable even if there is no change in customer information but the documents available with the NBFC are not as per the current CDD standards. Further, in case the validity of the CDD documents available with the NBFC has expired at the time of periodic updation of KYC, the NBFC shall undertake the KYC process equivalent to that applicable for onboarding a new customer.\n\n(ii) The NBFC verifies the Customer’s PAN details, if available, from the database of the issuing authority at the time of periodic updation of KYC.\n\n(iii) The NBFC provides an acknowledgment to the customer mentioning the date of receipt of the relevant document(s), including self-declaration from the customer, for carrying out updation / periodic updation. Further, the NBFC shall ensure that it promptly updates the information / documents obtained from the customers at the time of updation / periodic updation of KYC in its records / database and provide an intimation, mentioning the date of updation of KYC details, to the customer.\n\n(iv) In order to ensure customer convenience, the NBFC may consider making available the facility of updation / periodic updation of KYC at any branch, in terms of their internal KYC policy duly approved by the Board of Directors of the NBFC or any committee of the Board to which power has been delegated.",
+        "(4) The ‘live run’ of the CKYCR started from July 15, 2016 in phased manner beginning with new ‘individual accounts’. NBFC shall upload the KYC data pertaining to all new individual accounts opened on or after from April 1, 2017, with CKYCR in terms of the provisions of the Rules ibid.\n\n(5) The NBFC shall upload KYC records pertaining to accounts of LEs opened on or after April 1, 2021, with CKYCR in terms of the provisions of the Rules ibid. The NBFC shall upload KYC records as per the LE Template released by CERSAI.\n\n(6) Once KYC Identifier is generated by CKYCR, the NBFC shall ensure that the same is communicated to the individual / LE as the case may be.\n\n(7) In order to ensure that all KYC records are incrementally uploaded on to CKYCR, the NBFC shall upload / update the KYC data pertaining to accounts of individual customers and LEs opened prior to the above-mentioned dates as per clauses (5) and (6), respectively, at the time of periodic updation as specified in paragraph 42 of these Directions, or earlier, when the updated KYC information is obtained / received from the customer. Also, whenever the NBFC obtains additional or updated information from any customer as per clause (10) below in this paragraph or Rule 9 (1C) of the PML Rules, the NBFC shall within seven days or within such period as may be notified by the Central Government, furnish the updated information to CKYCR, which shall update the KYC records of the existing customer in CKYCR. CKYCR shall thereafter inform electronically all the reporting entities who have dealt with the concerned customer regarding updation of KYC record of the said customer. Once CKYCR informs the NBFC regarding an update in the KYC record of an existing customer, the NBFC shall retrieve the updated KYC records from CKYCR and update the KYC record maintained by the NBFC.\n\n(8) The NBFC shall ensure that during periodic updation, the customers are migrated to the current CDD standard.",
+        "(1) The NBFC shall put in place a system of periodic review of risk categorisation of accounts, with such periodicity being at least once in every six months and shall establish the need for applying enhanced due diligence measures.\n\n(2) The NBFC shall closely monitor the transactions in accounts of marketing firms, especially accounts of Multi-level Marketing (MLM) companies.\n\nExplanation: The NBFC shall subject high-risk accounts to more intensified monitoring.\n\n42. Updation / Periodic Updation of KYC (1) The NBFC shall adopt a risk-based approach for periodic updation of KYC ensuring that it keeps the information or data collected under CDD is kept up-to-date and relevant, particularly where there is high risk. However, the NBFC shall carry out periodic updation at least once in every two years for high-risk customers, once in every eight years for medium risk customers and once in every 10 years for low-risk customers from the date of opening of the account / last KYC updation. The NBFC shall document its policy in this regard as part of the NBFC’s internal KYC policy duly approved by the Board of Directors of NBFC or any committee of the Board to which power has been delegated.\n\n(2) Notwithstanding the provisions given above, in respect of an individual customer who is categorised as low-risk, the NBFC shall allow all transactions and ensure the updation of KYC within one year of its falling due for KYC or up to June 30, 2026, whichever is later. The NBFC shall subject accounts of such customers to regular monitoring. This shall also apply to low-risk individual customers for whom periodic updation of KYC has already fallen due.\n\n(3) Individuals:\n\n(i) No change in KYC information: In case of no change in the KYC information, the NBFC shall obtain a self-declaration from the customer in this regard through the customer’s email-id registered with the NBFC, customer’s mobile number registered with the NBFC, digital channels (including mobile application of NBFC) letter, etc.",
+        "(9) For the purpose of establishing an account-based relationship, updation / periodic updation or for verification of identity of a customer, the NBFC shall seek the KYC Identifier from the customer or retrieve the KYC Identifier, if available, from the CKYCR and proceed to obtain KYC records online by using such KYC Identifier and shall not require a customer to submit the same KYC records or information or any other additional identification documents or details, unless–\n\n(i) there is a change in the information of the customer as existing in the records of CKYCR; or\n\n(ii) the KYC record or information retrieved is incomplete or is not as per the current applicable KYC norms; or\n\n(iii) the validity period of downloaded documents has lapsed; or\n\n(iv) the NBFC considers it necessary in order to verify the identity or address (including current address) of the customer, or to perform enhanced due diligence or to build an appropriate risk profile of the customer.\n\n[1Explanation: The RE that has last uploaded or updated the customer’s KYC records in the CKYCR shall be responsible for verifying the identity and / or address of the customer, as applicable. Accordingly, any NBFC downloading and relying on such records from the CKCYR shall not be required to re-verify the authenticity of the customer’s identity and / or address, provided the KYC records downloaded from CKYCR are current and compliant with the PML Act, 2002 / PML Rules, 2005. The NBFC downloading and relying on KYC records downloaded from the CKCYR shall remain responsible for all aspects of CDD procedure and provisions of these Directions, except verification of identity and / or address of the customer.]\n\n64. Reporting requirement under Foreign Account Tax Compliance Act (FATCA) and Common Reporting Standards (CRS): Under FATCA and CRS, the NBFC shall adhere to the provisions of Income Tax Rules 114F, 114G and 114H and determine whether they are a Reporting Financial Institution as defined in Income Tax Rule 114F and if so, shall take following steps for complying with the reporting requirements:\n\n(1) Register on the related e-filing portal of Income Tax Department as Reporting Financial Institutions at the link https://incometaxindiaefiling.gov.in/ post login --> My Account --> Register as Reporting Financial Institution.",
+        "(iii) The bank provides an acknowledgment to the customer mentioning the date of receipt of the relevant document(s), including self-declaration from the customer, for carrying out updation / periodic updation. Further, the bank shall ensure that it promptly updates the information / documents obtained from the customers at the time of updation / periodic updation of KYC in its records / database and provide an intimation, mentioning the date of updation of KYC details, to the customer. (iv) In order to ensure customer convenience, the bank may consider making available the facility of updation / periodic updation of KYC at any branch, in terms of their internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated. (v) The bank shall adopt a risk-based approach with respect to periodic updation of KYC. The bank shall clearly specify in its internal policy, duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated, any additional and exceptional measures, it adopts that are not otherwise mandated under the above instructions, such as requirement of obtaining recent photograph, requirement of physical presence of the customer, requirement of periodic updation of KYC only in the branch of the bank where account is maintained, a more frequent periodicity of KYC updation than the minimum specified periodicity etc. (6) The bank shall advise the customers that in order to comply with the PML Rules, in case of any update in the documents submitted by the customer at the time of establishment of business relationship / account-based relationship and thereafter, as necessary; customers shall submit to the bank the update of such documents. This shall be done within 30 days of the update to the documents for the purpose of updating the records at the bank’s end."
+      ],
+      "top_rerank": 7.357,
+      "retrieval_abstain": false,
+      "retrieval_timings_ms": {
+        "bm25": 2,
+        "encode": 27818,
+        "dense": 11,
+        "fuse": 1,
+        "rerank": 14779,
+        "total": 42611
+      },
+      "mode": "llm",
+      "abstain": false,
+      "answer_md": "NBFCs must adopt a risk‑based approach to periodic KYC updation and record any additional or exceptional measures in a Board‑approved internal KYC policy (C1). The prescribed minimum periodicity is at least once every two years for high‑risk customers, every eight years for medium‑risk customers and every ten years for low‑risk customers, while low‑risk individual customers must update within one year of the due date or by 30 June 2026, whichever is later (C4). Where there is no change in KYC information, the NBFC may obtain a self‑declaration from the customer via email, mobile, digital channel or letter (C2). Any change in KYC information requires the NBFC to carry out the full KYC process applicable to a new customer, including PAN verification, providing an acknowledgment of receipt and promptly updating its records (C2). The NBFC must issue at least three advance intimations (including one by letter) before the KYC due date and three reminders (including one by letter) after the due date, recording each intimation/reminder in its system for audit trail, with implementation required no later than 1 January 2026 (C1).",
+      "claims": [
+        {
+          "text": "NBFCs must adopt a risk‑based approach to periodic KYC updation and record any additional or exceptional measures in a Board‑approved internal KYC policy.",
+          "citations": [
+            "C1"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "The prescribed minimum periodicity is at least once every two years for high‑risk customers, every eight years for medium‑risk customers and every ten years for low‑risk customers, while low‑risk individual customers must update within one year of the due date or by 30 June 2026, whichever is later.",
+          "citations": [
+            "C4"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "Where there is no change in KYC information, the NBFC may obtain a self‑declaration from the customer via email, mobile, digital channel or letter.",
+          "citations": [
+            "C2"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "Any change in KYC information requires the NBFC to carry out the full KYC process applicable to a new customer, including PAN verification, providing an acknowledgment of receipt and promptly updating its records.",
+          "citations": [
+            "C2"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "The NBFC must issue at least three advance intimations (including one by letter) before the KYC due date and three reminders (including one by letter) after the due date, recording each intimation/reminder in its system for audit trail, with implementation required no later than 1 January 2026.",
+          "citations": [
+            "C1"
+          ],
+          "number_issues": [
+            "1"
+          ]
+        }
+      ],
+      "claims_dropped": 0,
+      "claims_ungrounded": 1,
+      "parse_retries": 0,
+      "answer_model": "openai/gpt-oss-120b",
+      "answer_provider": "groq",
+      "answer_cached": true,
+      "answer_latency_s": 5.62,
+      "answer_errors": [],
+      "end_to_end_s": 48.23
+    },
+    {
+      "query": "periodic updation of KYC records for high risk customers of banks",
+      "note": "Commercial Banks KYC directions",
+      "institution": "bank",
+      "gold_doc_ids": [
+        "md13141"
+      ],
+      "retrieved_doc_ids": [
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141",
+        "md13141"
+      ],
+      "gold_in_context": true,
+      "gold_rank": 1,
+      "contexts": [
+        "(3) High account turnover inconsistent with the size of the balance maintained.\n\n(4) Deposit of third-party cheques, drafts, etc. in the existing and newly opened accounts followed by cash withdrawals for large amounts.\n\nFor ongoing due diligence, the bank may consider adopting appropriate innovations including artificial intelligence and machine learning (AI and ML) technologies to support effective monitoring.\n\n41. The bank shall align the extent of monitoring with the risk category of the customer.\n\n(1) The bank shall put in place a system of periodic review of risk categorisation of accounts, with such periodicity being at least once in every six months, and shall establish the need for applying enhanced due diligence measures.\n\n(2) The bank shall closely monitor the transactions in accounts of marketing firms, especially accounts of Multi-level Marketing (MLM) companies.\n\nExplanation: The bank shall subject high-risk accounts to more intensified monitoring.\n\nExplanation: Cases where a large number of cheque books are sought by the company and / or multiple small deposits (generally in cash) across the country in one bank account and / or where a large number of cheques are issued bearing similar amounts / dates, shall be immediately reported to RBI and other appropriate authorities such as FIU-IND.\n\n42. Updation / Periodic Updation of KYC\n\n(1) The bank shall adopt a risk-based approach for periodic updation of KYC ensuring that it keeps the information or data collected under CDD is kept up-to-date and relevant, particularly where there is high risk. However, the bank shall carry out periodic updation at least once in every two years for high-risk customers, once in every eight years for medium risk customers and once in every 10 years for low-risk customers from the date of opening of the account / last KYC updation. The bank shall document its policy in this regard as part of the bank’s internal KYC policy duly approved by the Board of Directors of bank or any committee of the Board to which power has been delegated.",
+        "(iii) The bank provides an acknowledgment to the customer mentioning the date of receipt of the relevant document(s), including self-declaration from the customer, for carrying out updation / periodic updation. Further, the bank shall ensure that it promptly updates the information / documents obtained from the customers at the time of updation / periodic updation of KYC in its records / database and provide an intimation, mentioning the date of updation of KYC details, to the customer.\n\n(iv) In order to ensure customer convenience, the bank may consider making available the facility of updation / periodic updation of KYC at any branch, in terms of their internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated.\n\n(v) The bank shall adopt a risk-based approach with respect to periodic updation of KYC. The bank shall clearly specify in its internal policy, duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated, any additional and exceptional measures, it adopts that are not otherwise mandated under the above instructions, such as requirement of obtaining recent photograph, requirement of physical presence of the customer, requirement of periodic updation of KYC only in the branch of the bank where account is maintained, a more frequent periodicity of KYC updation than the minimum specified periodicity etc.\n\n(6) The bank shall advise the customers that in order to comply with the PML Rules, in case of any update in the documents submitted by the customer at the time of establishment of business relationship / account-based relationship and thereafter, as necessary; customers shall submit to the bank the update of such documents. This shall be done within 30 days of the update to the documents for the purpose of updating the records at the bank’s end.",
+        "(2) Notwithstanding the provisions given above, in respect of an individual customer who is categorised as low-risk, the bank shall allow all transactions and ensure the updation of KYC within one year of its falling due for KYC or up to June 30, 2026, whichever is later. The bank shall subject accounts of such customers to regular monitoring. This shall also apply to low-risk individual customers for whom periodic updation of KYC has already fallen due.\n\n(3) Individuals:\n\n(i) No change in KYC information: In case of no change in the KYC information, the bank shall obtain a self-declaration from the customer in this regard through the customer’s email-id registered with the bank, customer’s mobile number registered with the bank, ATMs, or digital channels (such as online banking / internet banking, mobile application of bank) letter, etc.\n\n(ii) Change in address: In case of a change only in the address details of the customer, the bank shall obtain a self-declaration of the new address from the customer through customer’s email-id registered with the bank, customer’s mobile number registered with the bank, ATMs, digital channels (such as online banking / internet banking, mobile application of bank), letter, etc., and shall verify the declared address through positive confirmation within two months, by means such as address verification letter, contact point verification, deliverables, etc.\n\n(iii) Further, the bank at its option, may obtain a copy of OVD or deemed OVD, as defined in sub-clause (xiv) of clause (1) of paragraph 5, or the equivalent e-documents thereof, as defined in sub-clause (x) of clause (1) of paragraph 5, for the purpose of proof of address, declared by the customer at the time of updation / periodic updation. However, the bank shall clearly specify such requirement, in its internal KYC policy duly approved by the Board of Directors of the bank or any committee of the Board to which power has been delegated.",
+        "(7) Due Notices for Periodic Updation of KYC: The bank shall intimate its customers, in advance, to update their KYC. Prior to the due date of periodic updation of KYC, the bank shall give at least three advance intimations, including at least one intimation by letter, at appropriate intervals to its customers through available communication options / channels for complying with the requirement of periodic updation of KYC. Subsequent to the due date, the bank shall give at least three reminders, including at least one reminder by letter, at appropriate intervals, to such customers who have still not complied with the requirements, despite advance intimations. The letter of intimation / reminder may, inter alia, contain easy-to-understand instructions for updating KYC, escalation mechanism for seeking help, if required, and the consequences, if any, of failure to update their KYC in time. Issue of such advance intimation / reminder shall be duly recorded in the bank’s system against each customer for audit trail. The bank shall expeditiously implement the same but not later than January 01, 2026.",
+        "(iv) Use of Business Correspondent (BC) by banks for Updation / Periodic Updation of KYC: The bank may obtain a self-declaration from the customer in case of no change in KYC information or change only in the address details through an authorised BC of the bank. The bank shall enable its BC systems for recording these self-declarations and supporting documents thereof in electronic form in the bank’s systems.\n\nThe bank shall obtain the self-declaration including the supporting documents, if required, in the electronic mode from the customer through the BC, after successful biometric based e-KYC authentication. Until the bank makes an option available in the electronic mode, the customer may submit such declaration in physical form. The BC shall authenticate the self-declaration and supporting documents submitted in person by the customer and promptly forward the same to the concerned bank branch. The BC shall provide the customer an acknowledgment of receipt of such declaration /submission of documents.\n\nThe bank shall update the customer’s KYC records and intimate the customer once the records get updated in the system, as required under clause (5) of paragraph 42 of the Direction. It is, however, reiterated that the concerned bank retains the ultimate responsibility for periodic updation of KYC.\n\n(v) Accounts of customers, who were minor at the time of opening account, on their becoming major: In case of customers for whom the bank opened an account when they were minors, the bank shall obtain fresh photographs upon their becoming a major and, at that time, shall ensure that CDD documents as per the current CDD standards are available. Wherever required, the bank may carry out fresh KYC of such customers, i.e., customers for whom it opened account when they were minor, upon their becoming a major.\n\n(vi) The bank may use Aadhaar OTP based e-KYC in non-face-to-face mode for updation / periodic updation. To clarify, conditions stipulated in paragraph 25 are not applicable in case of updation / periodic updation of KYC through Aadhaar OTP based e-KYC in non-face to face mode.",
+        "(6), respectively, at the time of periodic updation as specified in paragraph 42 of these Directions, or earlier, when the updated KYC information is obtained / received from the customer. Also, whenever the bank obtains additional or updated information from any customer as per clause (10) below in this paragraph or Rule 9 (1C) of the PML Rules, the bank shall within seven days or within such period as may be notified by the Central Government, furnish the updated information to CKYCR, which shall update the KYC records of the existing customer in CKYCR. CKYCR shall thereafter inform electronically all the reporting entities who have dealt with the concerned customer regarding updation of KYC record of the said customer. Once CKYCR informs the bank regarding an update in the KYC record of an existing customer, the bank shall retrieve the updated KYC records from CKYCR and update the KYC record maintained by the bank.\n\n(9) The bank shall ensure that during periodic updation, the customers are migrated to the current CDD standard.\n\n(10) For the purpose of establishing an account-based relationship, updation / periodic updation or for verification of identity of a customer, the bank shall seek the KYC Identifier from the customer or retrieve the KYC Identifier, if available, from the CKYCR and proceed to obtain KYC records online by using such KYC Identifier and shall not require a customer to submit the same KYC records or information or any other additional identification documents or details, unless–\n\n(i) there is a change in the information of the customer as existing in the records of CKYCR; or\n\n(ii) the KYC record or information retrieved is incomplete or is not as per the current applicable KYC norms; or\n\n(iii) the validity period of downloaded documents has lapsed; or"
+      ],
+      "top_rerank": 6.878,
+      "retrieval_abstain": false,
+      "retrieval_timings_ms": {
+        "bm25": 2,
+        "encode": 94,
+        "dense": 27,
+        "fuse": 1,
+        "rerank": 12721,
+        "total": 12844
+      },
+      "mode": "llm",
+      "abstain": false,
+      "answer_md": "For high‑risk customers the bank must carry out periodic KYC updation at least once every two years from the date of account opening or the last updation. The bank must have a documented risk‑based KYC policy, approved by its Board of Directors or a delegated committee, that sets this frequency and any extra measures. On each updation the bank must acknowledge receipt of the documents, promptly update its records/database and inform the customer of the updation date. The bank must also send at least three advance intimations (including one by letter) before the due date and, if required, three reminders after the due date, recording each communication for audit purposes.",
+      "claims": [
+        {
+          "text": "For high‑risk customers the bank must carry out periodic KYC updation at least once every two years from the date of account opening or the last updation.",
+          "citations": [
+            "C1"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "The bank must have a documented risk‑based KYC policy, approved by its Board of Directors or a delegated committee, that sets this frequency and any extra measures.",
+          "citations": [
+            "C1",
+            "C2"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "On each updation the bank must acknowledge receipt of the documents, promptly update its records/database and inform the customer of the updation date.",
+          "citations": [
+            "C2"
+          ],
+          "grounded": true
+        },
+        {
+          "text": "The bank must also send at least three advance intimations (including one by letter) before the due date and, if required, three reminders after the due date, recording each communication for audit purposes.",
+          "citations": [
+            "C4"
+          ],
+          "grounded": true
+        }
+      ],
+      "claims_dropped": 0,
+      "claims_ungrounded": 0,
+      "parse_retries": 0,
+      "answer_model": "openai/gpt-oss-120b",
+      "answer_provider": "groq",
+      "answer_cached": true,
+      "answer_latency_s": 0.01,
+      "answer_errors": [],
+      "end_to_end_s": 12.88
+    },
+    {
+      "query": "minimum capital adequacy ratio requirement for commercial banks",
+      "note": "Capital adequacy / credit risk capital charge",
+      "institution": "bank",
+      "gold_doc_ids": [
+        "md13159",
+        "md13399"
+      ],
+      "retrieved_doc_ids": [
+        "md13159",
+        "md13159",
+        "md13159",
+        "md13137",
+        "md13159",
+        "md13159"
+      ],
+      "gold_in_context": true,
+      "gold_rank": 1,
+      "contexts": [
+        "Chapter III Regulatory capital\n\nA Composition of regulatory capital\n\nA.1 General\n\n9. The capital adequacy framework shall be based on three components or three Pillars. Pillar 1 is the Minimum Capital Requirement while Pillar 2 and Pillar 3 are the Supervisory Review and Evaluation Process (SREP) and Market Discipline, respectively. A bank shall maintain a minimum Pillar 1 Capital to Risk-weighted Assets Ratio (CRAR) of 9 per cent on an on-going basis (other than capital buffers) as prescribed under these Directions. The Reserve Bank will take into account the relevant risk factors and the internal capital adequacy assessments of each bank to ensure that the capital held by a bank is commensurate with its overall risk profile. This would include, among others, the effectiveness of the bank’s risk management systems in identifying, assessing / measuring, monitoring, and managing various risks including interest rate risk in the banking book, liquidity risk, concentration risk, and residual risk. Accordingly, the Reserve Bank will consider prescribing a higher level of minimum capital ratio for each bank under the Pillar 2 framework on the basis of the bank’s risk profile and risk management systems. Further, in terms of the Pillar 2 requirements, a bank is expected to operate at a level well above the minimum requirement. A bank shall compute Basel III capital ratios in the following manner:\n\nRWAs = Credit Risk RWAs + Market Risk RWAs + Operational Risk RWAs A.2 Elements of regulatory capital\n\n10. Total regulatory capital shall consist of the sum of the following categories:\n\n(i) Tier 1 Capital (going-concern capital):\n\n(a) Common Equity Tier 1 (CET1) Capital;\n\n(b) Additional Tier 1 (AT1) Capital;\n\n(ii) Tier 2 Capital (gone-concern capital).\n\nA.3 Limits and minima\n\n11. The limits and minimum capital requirements are as under:\n\n(1) A bank shall maintain a Minimum Total Capital (MTC) of 9 per cent of the RWAs on an ongoing basis i.e., Capital to Risk-Weighted Assets Ratio (CRAR) shall be at least 9 per cent on an ongoing basis. This has been further divided into different components as described under following paragraphs;\n\n(2) CET1 capital shall be at least 5.5 per cent of the RWAs on an ongoing basis;",
+        "(4) The distribution constraints imposed on a bank when its capital levels fall into the range increase as the bank’s capital levels approach the minimum requirements. The Table 46 below shows the minimum capital conservation ratios a bank shall meet at various levels of the CET1 capital ratios:\n\nTable 46: Minimum capital conservation standards for individual bank\n\nCET1 ratio after including the current periods retained earnings | Minimum capital conservation ratios (expressed as a percentage of earnings)\n5.5% - 6.125% | 100%\n>6.125% - 6.75% | 80%\n>6.75% - 7.375% | 60%\n>7.375% - 8.0% | 40%\n>8.0% | 0%\n\nFor example, a bank with a CET1 capital ratio in the range of 6.125 per cent to 6.75 per cent shall be required to conserve 80 per cent of its earnings in the subsequent financial year (i.e., payout no more than 20 per cent in terms of dividends, share buybacks and discretionary bonus payments is allowed).\n\n(5) The CET1 ratio includes amounts used to meet the minimum CET1 capital requirement of 5.5 per cent but excludes any additional CET1 needed to meet the 7 per cent Tier 1 and 9 per cent total capital requirements. For example, a bank maintains CET1 capital of 9 per cent and has no AT1 or Tier 2 capital. Therefore, the bank shall meet all minimum capital requirements, but shall have a zero-conservation buffer and therefore, the bank shall be subject to 100 per cent constraint on distributions of capital by way of dividends, share-buybacks and discretionary bonuses.\n\n(6) The capital conservation buffer can be drawn down only when a bank faces a systemic or idiosyncratic stress.\n\n(7) A bank shall not choose in normal times to operate in the buffer range simply to compete with other banks and win market share. This aspect shall be specifically looked into by the Reserve Bank during the SREP. If, at any time, a bank is found to have allowed its CCB to fall in normal times, particularly by increasing its risk weighted assets without a commensurate increase in the CET1 Ratio (although adhering to the restrictions on distributions), this shall be viewed seriously. Such a bank shall be required to bring the buffer to the desired level within a time limit prescribed by the Reserve Bank.",
+        "(3) Tier 1 capital shall be at least 7 per cent of the RWAs on an ongoing basis. Thus, within the minimum Tier 1 capital, AT1 capital can be admitted maximum at 1.5 per cent of the RWAs;\n\n(4) Total capital (Tier 1 capital + Tier 2 capital) shall be at least 9 per cent of the RWAs on an ongoing basis. Thus, within the minimum CRAR of 9 per cent, Tier 2 capital can be admitted maximum up to 2 per cent of the RWAs.\n\nExplanation - If a bank has complied with the minimum CET1 capital ratio, prescribed in these Directions, excess CET1 capital can be admitted for compliance with the minimum Tier 1 capital ratio of 7 per cent of the RWAs. Further, if a bank has complied with the minimum CET1 and Tier 1 capital ratios, prescribed in these Directions, the excess CET1 and / or AT1 capital can be admitted for compliance with the minimum CRAR of 9 per cent of the RWAs;\n\n(5) In addition to the minimum CET1 capital of 5.5 per cent of the RWAs, a bank shall also maintain a Capital Conservation Buffer (CCB) of 2.5 per cent of the RWAs in the form of CET1 capital. Details of operational aspects of CCB have been furnished in paragraphs 250 to 252; (6) The capital requirements are summarised in Table 1 below:\n\nTable 1: Minimum capital requirement applicable to a bank\n\nSr. No. | Regulatory Capital | As % to RWAs\n(i) | Minimum CET1 Ratio | 5.5\n(ii) | Minimum Tier 1 Capital Ratio | 7.0\n(iii) | Maximum AT1 capital (within minimum Tier 1 capital ratio of 7 per cent) [(ii) – (i)] | 1.5\n(iv) | Minimum Total Capital Ratio (MTC) | 9.0\n(v) | Maximum Tier 2 Capital (within minimum Total Capital Ratio of 9 per cent) [(iv) – (ii)] | 2.0\n(vi) | Capital Conservation Buffer (comprised of CET1 capital) | 2.5\n(vii) | Minimum CET1 Ratio plus CCB [(i) + (vi)] | 8.0\n(viii) | Minimum Total Capital Ratio plus CCB [(iv) + (vi)] | 11.5\n\nB Common Equity Tier 1 (CET1) capital\n\nB.1 CET1 capital - Indian banks\n\n12. CET1 capital shall comprise the following:",
+        "Chapter IV – Minimum Capital Requirements for Operational Risk\n\nA. Interim arrangement\n\n22. The existing Basic Indicator Approach (BIA) for measuring minimum operational risk capital (ORC) requirements shall be replaced by the new Standardised Approach (hereafter referred to as the ‘Basel III Standardised Approach’ or ‘Basel III SA’) with coming into effect of these Directions. 23. Until then, the minimum operational risk regulatory capital requirements shall be computed in accordance with the instructions contained Reserve Bank of India (Commercial Banks - Prudential Norms on Capital Adequacy) Directions, 2025. Explanation: A bank is not required to undertake a parallel run with respect to Basel III SA. Accordingly, a comparison of ORC requirements calculated using Basel III SA and the discontinued approaches including BIA shall not be required.\n\nB. Scope\n\n24. The scope of application shall be in accordance with the Reserve Bank of India (Commercial Banks - Prudential Norms on Capital Adequacy) Directions, 2025.\n\nC. Definitions\n\n25. In this chapter, unless the context otherwise requires, the terms herein shall bear the meanings assigned to them below:\n\n(1) ‘Gross loss’ means a loss before recoveries of any type.\n\n(2) ‘Net loss’ means the loss after taking into account the impact of recoveries.\n\n(3) ‘Operational risk’ means the risk of loss resulting from inadequate or failed internal processes, people, and systems, or from external events. This includes legal risk, but excludes strategic and reputational risk.\n\nExplanation: Legal risk shall include, but not limited to, exposure to fines, penalties, or punitive damages resulting from supervisory actions, as well as private settlements.\n\n(4) ‘Recovery’ is an independent occurrence, related to the original loss event, separate in time, in which funds or inflows of economic benefits are received from a third party. Examples of recoveries include payments received from insurers, repayments received from perpetrators of fraud, and recoveries of misdirected transfers.\n\nD. Components of Basel III Standardised Approach (Basel III SA)\n\n26. Basel III SA calculation methodology is based on the following components:\n\n(1) the Business Indicator (BI), which is a financial-statement-based proxy for operational risk;\n\n(2) the Business Indicator Component (BIC), which is calculated by multiplying the BI by a set of marginal coefficients (αi); and",
+        "Chapter VII Leverage Ratio framework\n\nA Definition, minimum requirement, and scope of application of the Leverage Ratio\n\n262. The Basel III leverage ratio is defined as the capital measure (the numerator) divided by the exposure measure (the denominator), with this ratio expressed as a percentage.\n\nLeverage Ratio = Capital Measure Exposure Measure\n\nThe minimum leverage ratio for a Domestic Systemically Important Bank (D- SIB) shall be 4 per cent and 3.5 per cent for other banks. Both the capital measure and the exposure measure along with leverage ratio are to be disclosed on a quarter-end basis. However, a bank shall meet the minimum leverage ratio requirement at all times.\n\nB Scope of consolidation\n\n263. The scope of consolidation of leverage ratio shall be as under:\n\n(1) The Basel III leverage ratio framework shall follow the same scope of regulatory consolidation as is used for the risk-based capital framework.\n\n(2) In cases where a banking, financial, insurance or commercial entity is outside the scope of regulatory consolidation, only the investment in the capital of such entities (i.e., only the carrying value of the investment, as opposed to the underlying assets and other exposures of the investee) shall be included in the leverage ratio exposure measure. However, investments in the capital of such entities that are deducted from Tier 1 capital (i.e., either deduction from CET1 capital or deduction from AT1 capital following corresponding deduction approach) as set out in paragraph 28 - Regulatory adjustments / deductions shall be excluded from the leverage ratio exposure measure.\n\nC Capital measure\n\n264. The capital measure for the leverage ratio is the Tier 1 capital (as defined under paragraph 10) of the risk-based capital framework, taking into account various regulatory adjustments / deductions. In other words, the capital measure used for the leverage ratio at any particular point in time is the Tier 1 capital measure applied at that time under the risk-based framework.\n\nD Exposure measure\n\n265. General measurement principle\n\n(1) The exposure measure for the leverage ratio shall follow the accounting value, subject to the following:\n\n(i) on-balance sheet, non-derivative exposures shall be included in the exposure measure net of specific provisions or accounting valuation adjustments (e.g., accounting credit valuation adjustments, prudent valuation adjustments); and",
+        "(2) The components, elements, and eligibility criteria of the regulatory capital instruments for a foreign bank operating in India under the Wholly Owned Subsidiary (WOS) model shall be applicable as they are to the other domestic banks as stipulated in these Directions. The WOS of a foreign bank operating in India shall meet the Basel III requirements on a continuous basis from the time of its entry / conversion. The WOS shall, however, maintain a minimum capital adequacy ratio, on a continuous basis for an initial period of three years from the commencement of its operations, at 10 per cent. In addition, the WOS shall maintain the Capital Conservation Buffer (CCB) and other buffers as applicable.\n\nCapital adequacy at solo level\n\n(3) While assessing the capital adequacy of a bank at solo level, all regulatory adjustments indicated in paragraph 28 are required to be made. In addition, investments in the capital instruments of the subsidiaries, which are consolidated in the consolidated financial statements of the group, shall be deducted from the corresponding capital instruments issued by the bank.\n\n(4) In case of any shortfall in the regulatory capital requirements in the unconsolidated entity (e.g., insurance subsidiary), the shortfall shall be fully deducted from the Common Equity Tier 1 (CET1) capital.\n\nCapital adequacy at group / consolidated level\n\n(5) For capital adequacy at consolidated level, all banking and other financial subsidiaries except the subsidiaries engaged in insurance and any non-financial activities (both regulated and unregulated) shall be fully consolidated.\n\n(6) The insurance and non-financial subsidiaries / joint ventures / associates of a bank shall not be consolidated for the purpose of capital adequacy. The equity and other regulatory capital investments in the insurance and non-financial subsidiaries shall be deducted from consolidated regulatory capital of the group. The Equity and other regulatory capital investments in the unconsolidated insurance and non-financial entities of a bank (which also include joint ventures / associates of the parent bank) shall be treated in terms of paragraphs 28(8) and 74 respectively.\n\n(7) All regulatory adjustments indicated in paragraph 28 shall be made to the consolidated capital of the banking group as indicated therein."
+      ],
+      "top_rerank": 6.055,
+      "retrieval_abstain": false,
+      "retrieval_timings_ms": {
+        "bm25": 1,
+        "encode": 139,
+        "dense": 43,
+        "fuse": 1,
+        "rerank": 13721,
+        "total": 13904
+      },
+      "mode": "llm",
+      "abstain": false,
+      "answer_md": "For commercial banks the minimum Capital to Risk‑Weighted Assets Ratio (CRAR) – i.e., the total capital requirement – is 9 per cent on an ongoing basis (excluding capital buffers). This is the Minimum Total Capital (MTC) as set out in the Directions, with the Pillar 1 minimum CRAR of 9 per cent.",
+      "claims": [
+        {
+          "text": "Minimum total capital (CRAR) of 9 per cent on an ongoing basis for commercial banks.",
+          "citations": [
+            "C1",
+            "C3"
+          ],
+          "grounded": true
+        }
+      ],
+      "claims_dropped": 0,
+      "claims_ungrounded": 0,
+      "parse_retries": 0,
+      "answer_model": "openai/gpt-oss-120b",
+      "answer_provider": "groq",
+      "answer_cached": false,
+      "answer_latency_s": 3.33,
+      "answer_errors": [],
+      "end_to_end_s": 17.27
+    }
+  ]
+}
