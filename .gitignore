@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+
+# Working data - rebuildable and/or per-deployment
+data/raw/
+data/state/
+data/cache/
+*.log
+
+# Kaggle GPU builds (staging + downloaded outputs are per-run)
+kaggle/out*/
+kaggle/_stage/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Deploy artifacts (documents.jsonl, chunks.jsonl, data/index/*) ARE committed so
+# a fresh clone runs immediately; regenerate with scripts/sync.py + build_index.py
