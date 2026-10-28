@@ -9,6 +9,12 @@ data/raw/
 data/state/
 data/cache/
 *.log
+*.log.err
+*.log.meta
+
+# Optional LangChain vector store (rebuild with scripts/build_lc_store.py).
+# The app uses data/index/dense_fp16.npy directly; this duplicate is 53 MB.
+data/index/lc_faiss/
 
 # Kaggle GPU builds (staging + downloaded outputs are per-run)
 kaggle/out*/
