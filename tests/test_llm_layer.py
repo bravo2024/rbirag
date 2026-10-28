@@ -381,11 +381,30 @@ def test_provider_status_reports_key_source(monkeypatch):
     monkeypatch.delenv("GROQ_API_KEY", raising=False)
     monkeypatch.setitem(sys.modules, "streamlit", _fake_streamlit(
         {"api_keys": {"GROQ_API_KEY": "nested"}}))
-    monkeypatch.setattr(llm, "available_models", lambda p: [])
+    monkeypatch.setattr(llm, "discover_models", lambda p, *a, **k: [])
     rows = {r["provider"]: r for r in llm.provider_status()}
     assert rows["groq"]["key"] == "key set (secrets)"
     assert rows["groq"]["key_source"] == "secrets"
     assert rows["kilo-free"]["key_source"] == "none"
+
+
+def test_provider_status_does_not_count_the_static_fallback(monkeypatch):
+    """A failed /models call must read as unavailable, not as N models: the
+    static list is an offline fallback and opencode-free's ids are dead."""
+    monkeypatch.setattr(llm, "discover_models", lambda p, *a, **k: [])
+    rows = {r["provider"]: r for r in llm.provider_status()}
+    assert rows["opencode-free"]["live_models"] == 0
+    assert rows["opencode-free"]["first"] == ""
+
+
+def test_provider_status_counts_live_models(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setenv("GROQ_API_KEY", "k")
+    monkeypatch.setattr(llm, "discover_models", lambda p, *a, **k: (
+        ["openai/gpt-oss-120b", "qwen/qwen3.8-27b"] if p == "groq" else []))
+    rows = {r["provider"]: r for r in llm.provider_status()}
+    assert rows["groq"]["live_models"] == 2
+    assert rows["groq"]["first"] == "openai/gpt-oss-120b"
 
 
 # ---------------------------------------------------------------------------

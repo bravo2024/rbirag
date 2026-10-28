@@ -81,8 +81,10 @@ PROVIDERS: dict[str, dict] = {
         "reasoning_exclude": True,
         "app_attribution": True,
     },
-    # Kept configurable but left out of the default order: this free tier now
-    # rejects calls from outside its own client (HTTP 403, checked 2026-10-02).
+    # Kept configurable but left out of the default order. Checked again
+    # 2026-10-29: the anonymous key is rejected (401 on /models) and the three
+    # curated ids answer 400 "Model is unavailable", so it cannot serve until
+    # a real OPENCODE_ZEN_API_KEY and current model ids are supplied.
     "opencode-free": {
         "base": "https://opencode.ai/zen/v1",
         "key_env": "OPENCODE_ZEN_API_KEY",
@@ -410,7 +412,12 @@ def provider_status() -> list[dict]:
             key_state = "no key"
         live: list[str] = []
         if cfg.get("anonymous") or key:
-            live = [m for m in available_models(pname) if _usable(pname, m)]
+            # Only a successful /models call is evidence the provider can
+            # serve. The static list is an offline fallback, not a status.
+            discovered = discover_models(pname)
+            if discovered:
+                live = [m for m in _ordered_models(pname, discovered)
+                        if _usable(pname, m)]
         rows.append({"provider": pname, "key": key_state, "key_source": source,
                      "live_models": len(live), "first": live[0] if live else ""})
     return rows
