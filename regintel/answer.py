@@ -33,6 +33,85 @@ Rules:
 Reply with strict JSON only:
 {"abstain": false, "answer": "...", "claims": [{"text": "...", "citations": ["C1", "C3"]}]}"""
 
+# Small talk never reaches retrieval: a greeting scores below the abstain
+# cutoff, so the grounded path would refuse it. This prompt answers it
+# directly, with no citations, and steers real questions back to the corpus.
+CHAT_PROMPT = """You are RBIRAG, a friendly assistant for Reserve Bank of India (RBI) regulation. \
+You answer from a corpus of RBI Master Directions, circulars and notifications for compliance \
+and audit teams at commercial banks and NBFCs, and every grounded answer cites the instrument \
+and paragraph.
+
+For greetings, thanks, goodbyes and questions about yourself, reply warmly and briefly \
+(under 4 sentences). If asked what you can do, mention that you can:
+- answer questions on capital adequacy, KYC/AML, provisioning and NPAs, exposure and \
+liquidity norms, returns and forms, and recent circulars;
+- point to the exact instrument and paragraph behind each answer, with a link to the RBI source;
+- filter by institution type (commercial bank, NBFC, or all) and by date.
+
+Rules:
+1. Never invent a regulatory requirement, threshold, date or form name. You have no corpus in \
+front of you for this turn, so do not state regulatory facts.
+2. If the user asks an actual regulatory question, invite them to ask it directly so it can be \
+answered from the corpus with citations.
+3. No citations are needed here. Plain prose, no JSON."""
+
+CHAT_FALLBACK = (
+    "Hi \u2014 I'm RBIRAG, a regulatory assistant for RBI Master Directions and "
+    "notifications. Ask me about capital adequacy, KYC, provisioning, exposure or "
+    "liquidity norms, or a specific circular, and I'll answer from the corpus with "
+    "citations to the instrument and paragraph.")
+
+# Exact normalised messages that are conversation, not questions. Matching the
+# whole message (not a substring) keeps real questions such as "how are you
+# calculating CRAR?" on the grounded path.
+_SMALLTALK = {
+    "hi", "hii", "hiya", "hey", "heya", "hello", "helo", "hola", "namaste", "greetings",
+    "yo", "sup", "howdy", "good morning", "good afternoon", "good evening", "good night",
+    "thanks", "thank you", "thankyou", "thx", "ty", "cheers", "appreciate it",
+    "much appreciated", "thanks a lot", "thank you so much", "thanks very much",
+    "bye", "byebye", "goodbye", "see you", "see ya", "later", "take care",
+    "ok", "okay", "k", "got it", "cool", "nice", "great", "awesome", "perfect",
+    "sounds good", "alright", "sure", "yes", "no", "hmm", "hm",
+    "how are you", "how are you doing", "hows it going", "whats up", "wassup",
+    "who are you", "what are you", "what is your name", "whats your name", "your name",
+    "what can you do", "what do you do", "what can i ask", "what can i ask you",
+    "how do i use this", "how does this work", "how does it work",
+    "what is this", "what is this app", "what is rbirag", "whats rbirag",
+    "help", "help me", "i need help", "can you help", "can you help me",
+    "are you there", "you there", "test", "testing",
+}
+
+_SMALLTALK_RX = [
+    re.compile(p) for p in (
+        r"^(hi|hey|hello|namaste|greetings)( there| bot| rbirag)?$",
+        r"^(good )?(morning|afternoon|evening|night)$",
+        r"^(who|what) (are|r) (you|u)( exactly)?$",
+        r"^whats (your name|this|this app|rbirag)$",
+        r"^(what|which) (can|could) (you|u) (do|help( me)?( with)?)$",
+        r"^how (are|r) (you|u)( doing| today)?$",
+        r"^(how )?(do|does) (i|you) (use|work)( this| it)?$",
+        r"^(can|could) you help( me)?$",
+        r"^(i )?(need|want) help$",
+        r"^(are|r) (you|u) (there|online|awake)$",
+        r"^(thanks|thank you|thx|ty)( a lot| so much| very much)?$",
+        r"^(bye|goodbye|see (you|ya)|take care|later)( for now)?$",
+        r"^(ok|okay|k|got it|cool|nice|great|awesome|perfect|sounds good|alright|sure|"
+        r"yes|no|hmm+|hm+)$",
+    )
+]
+
+
+def is_smalltalk(query: str) -> bool:
+    """True when the whole message is greeting/small talk rather than a
+    regulatory question. Deliberately a full-message match: a question that
+    merely starts with "hi" or contains "help" stays on the retrieval path."""
+    text = (query or "").lower().replace("\u2019", "'").strip()
+    text = re.sub(r"[^a-z0-9\s]", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return False
+    return text in _SMALLTALK or any(rx.match(text) for rx in _SMALLTALK_RX)
+
 
 def scope_label(entity_scope: str | None, entities: list[str] | None) -> str:
     """Human label of who a passage applies to ("Commercial Banks, Authorised Dealers")."""
@@ -315,3 +394,57 @@ def refuse(query: str, hits: list[Hit], threshold: float) -> dict:
         "latency_s": 0.0,
         "errors": [],
     }
+
+
+def chat_reply(query: str, history: list[dict] | None = None, use_llm: bool = True,
+               llm_pin: tuple[str, str] | None = None,
+               strict_pin: bool = False) -> dict:
+    """Conversational reply for greetings and questions about the assistant.
+
+    Same result shape as ``answer()`` so the UI renders it identically, with
+    ``mode="chat"``, no citations and nothing for the audit trail to resolve.
+    Falls back to a fixed greeting when the LLM is off or unreachable, so a
+    "hi" is never answered with a retrieval refusal.
+    """
+    t0 = time.time()
+    result = {
+        "query": query,
+        "mode": "chat",
+        "abstain": False,
+        "low_confidence": False,
+        "answer_md": CHAT_FALLBACK,
+        "claims": [],
+        "claims_dropped": 0,
+        "claims_ungrounded": 0,
+        "parse_retries": 0,
+        "citations": [],
+        "model": None,
+        "provider": None,
+        "pin": list(llm_pin) if llm_pin else None,
+        "cached": False,
+        "latency_s": 0.0,
+        "errors": [],
+    }
+    if not (use_llm and llm.available()):
+        result["latency_s"] = round(time.time() - t0, 2)
+        return result
+
+    messages = [{"role": "system", "content": CHAT_PROMPT}]
+    for turn in (history or [])[-4:]:
+        role = turn.get("role")
+        content = (turn.get("content") or "").strip()
+        if role in ("user", "assistant") and content:
+            messages.append({"role": role, "content": content[:400]})
+    messages.append({"role": "user", "content": query})
+    try:
+        call = llm.chat(messages, temperature=0.4, max_tokens=400, pin=llm_pin,
+                        strict_pin=strict_pin)
+        text = (call.get("text") or "").strip()
+        if not text:
+            raise ValueError("empty completion")
+        result.update(answer_md=text, model=call["model"], provider=call["provider"],
+                      cached=call["cached"])
+    except Exception as exc:  # noqa: BLE001
+        result["errors"] = [f"{type(exc).__name__}: {str(exc)[:200]}"]
+    result["latency_s"] = round(time.time() - t0, 2)
+    return result

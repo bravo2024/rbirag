@@ -118,15 +118,18 @@ unresolvable claims are dropped and counted. Surviving claims are
 number-grounded: every number must appear in the passage it cites, and a
 mismatch is flagged in the UI. Provider failover is Groq → Gemini → NVIDIA
 Build → Kilo, with model ids discovered live from each provider's `/models`
-endpoint and failing models parked for 30 min (permanent), 10 min (timeout) or
-60 s (rate limit). A truncated JSON reply is retried once with a doubled token
-budget. With no provider reachable the same response shape is filled
-extractively.
+endpoint. Curated ids are tried before discovered ones, and Gemini alternates
+flash and flash-lite so a quota-hit family cannot hide a working model. Failing
+models are parked for 30 min (permanent), 10 min (timeout) or 60 s (rate limit).
+A truncated JSON reply is retried once with a doubled token budget. With no
+provider reachable the same response shape is filled extractively.
 
 **App.** Four tabs. *Ask* is a chat over the corpus with the institution toggle
-and an in-force-on date, and every answer carries its mode, serving model,
-latency, validated claims and an expandable audit trail with per-passage
-citation cards and retrieval ranks. *Circulars* browses every instrument with
+and an in-force-on date. Greetings and questions about the assistant are answered
+conversationally rather than refused; everything else goes through retrieval, and
+every answer carries its mode, serving model, latency, validated claims and an
+expandable audit trail with per-passage citation cards and retrieval ranks.
+*Circulars* browses every instrument with
 metadata, entity and theme chips, extraction provenance and the full parsed text
 page by page. *Compare* puts two instruments side by side with
 paragraph-overlap highlighting (≥62% similar), useful for the bank versus NBFC

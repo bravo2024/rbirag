@@ -212,8 +212,9 @@ def sidebar_filters() -> dict:
             live = f"{row['live_models']} models" if row["live_models"] else "models unavailable"
             first = f" \u00b7 first: `{row['first']}`" if row["first"] else ""
             st.markdown(f"**{row['provider']}** \u00b7 {row['key']} \u00b7 {live}{first}")
-        st.caption("Keys are read from .env or the environment. Groq, Gemini and "
-                   "NVIDIA Build offer free tiers.")
+        st.caption("Keys come from the environment or Streamlit secrets \u2014 a flat "
+                   "`GROQ_API_KEY = \"...\"` or one section deep, e.g. `[api_keys]`. "
+                   "Groq, Gemini and NVIDIA Build offer free tiers.")
 
     return {
         "entities": frozenset(config.INSTITUTIONS[inst_key]["entities"]),
@@ -372,6 +373,7 @@ def render_assistant(msg: dict, docs: dict | None = None) -> None:
     mode = ans["mode"]
     label, cls = {"llm": ("Grounded answer", "ok"),
                   "extractive": ("Extractive answer", "warn"),
+                  "chat": ("Conversational", "mute"),
                   "abstain": ("Refused", "warn")}.get(mode, (mode, "mute"))
     pills = [f"<span class='rbi-pill {cls}'>{label}</span>"]
     if ans.get("provider") or ans.get("model"):
@@ -381,7 +383,8 @@ def render_assistant(msg: dict, docs: dict | None = None) -> None:
         pills.append("<span class='rbi-pill mute'>cached</span>")
     if ans.get("latency_s") is not None:
         pills.append(f"<span class='rbi-pill mute'>{ans['latency_s']:.1f} s</span>")
-    pills.append(f"<span class='rbi-pill mute'>{escape(filt['institution_label'])}</span>")
+    if mode != "chat":
+        pills.append(f"<span class='rbi-pill mute'>{escape(filt['institution_label'])}</span>")
     st.markdown(f"<div class='rbi-meta'>{''.join(pills)}</div>", unsafe_allow_html=True)
     if ans.get("low_confidence") and ans["mode"] == "llm":
         st.warning("Retrieval confidence is low \u2014 verify every claim against the cited text.")
@@ -463,20 +466,31 @@ def ask_tab(eng: Engine | None, docs: dict, ui: dict) -> None:
     with st.chat_message("user"):
         st.markdown(q)
     with st.chat_message("assistant"):
-        with st.spinner("Retrieving relevant passages\u2026"):
-            filt = filters_from(ui)
-            result = eng.retrieve(q, filters=filt, k=ui["top_k"], rerank=ui["rerank"],
-                                  abstain_score=ui["abstain_score"])
-        if result["abstain"] and result["hits"] and ui["gate"]:
-            ans = answer_mod.refuse(q, result["hits"],
-                                    threshold=float(result["trace"].get(
-                                        "abstain_threshold", ui["abstain_score"])))
+        if answer_mod.is_smalltalk(q):
+            history = []
+            for prev in st.session_state.chat[-3:]:
+                history.append({"role": "user", "content": prev["q"]})
+                history.append({"role": "assistant", "content": prev["answer"]["answer_md"]})
+            with st.spinner("Thinking\u2026"):
+                ans = answer_mod.chat_reply(q, history=history,
+                                            use_llm=not ui["retrieve_only"],
+                                            llm_pin=ui["llm_pin"])
+            result = {"hits": [], "abstain": False, "trace": {"mode": "chat"}}
         else:
-            with st.spinner("Drafting the grounded answer\u2026"):
-                ans = answer_mod.answer(q, result["hits"],
-                                        low_confidence=bool(result["abstain"] and result["hits"]),
-                                        use_llm=not ui["retrieve_only"],
-                                        llm_pin=ui["llm_pin"])
+            with st.spinner("Retrieving relevant passages\u2026"):
+                filt = filters_from(ui)
+                result = eng.retrieve(q, filters=filt, k=ui["top_k"], rerank=ui["rerank"],
+                                      abstain_score=ui["abstain_score"])
+            if result["abstain"] and result["hits"] and ui["gate"]:
+                ans = answer_mod.refuse(q, result["hits"],
+                                        threshold=float(result["trace"].get(
+                                            "abstain_threshold", ui["abstain_score"])))
+            else:
+                with st.spinner("Drafting the grounded answer\u2026"):
+                    ans = answer_mod.answer(q, result["hits"],
+                                            low_confidence=bool(result["abstain"] and result["hits"]),
+                                            use_llm=not ui["retrieve_only"],
+                                            llm_pin=ui["llm_pin"])
         msg = {"q": q, "answer": ans, "trace": result["trace"], "filters": ui}
         audit.append_query(session=st.session_state.session_id, query=q,
                            filters={k: list(v) if isinstance(v, frozenset) else v

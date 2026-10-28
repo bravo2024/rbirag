@@ -1,7 +1,9 @@
 """Provider registry: discovery, ranking, parking, call order — no network."""
 from __future__ import annotations
 
+import sys
 import time
+import types
 
 from regintel import llm
 
@@ -328,3 +330,83 @@ def test_strict_pin_unservable_says_why(monkeypatch, tmp_path):
         raise AssertionError("expected RuntimeError")
     except RuntimeError as exc:
         assert "no fallback allowed" in str(exc) and "no key" in str(exc)
+
+
+# ---------------------------------------------------------------------------
+# Secrets: flat keys and one level of nesting (the Cloud editor's section form)
+# ---------------------------------------------------------------------------
+def _fake_streamlit(secrets):
+    mod = types.ModuleType("streamlit")
+    mod.secrets = secrets
+    return mod
+
+
+def test_key_from_env(monkeypatch):
+    monkeypatch.setenv("GROQ_API_KEY", "env-key")
+    assert llm._key_from("GROQ_API_KEY") == ("env-key", "env")
+
+
+def test_key_from_flat_secrets(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setitem(sys.modules, "streamlit", _fake_streamlit({"GROQ_API_KEY": "flat"}))
+    assert llm._key_from("GROQ_API_KEY") == ("flat", "secrets")
+
+
+def test_key_from_nested_secrets(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setitem(sys.modules, "streamlit", _fake_streamlit(
+        {"api_keys": {"GROQ_API_KEY": "nested"}, "other": {"X": "y"}}))
+    assert llm._key_from("GROQ_API_KEY") == ("nested", "secrets")
+
+
+def test_key_missing(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setitem(sys.modules, "streamlit", _fake_streamlit({}))
+    assert llm._key_from("GROQ_API_KEY") == ("", "missing")
+
+
+def test_key_survives_broken_secrets(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+
+    class _Broken:
+        @property
+        def secrets(self):
+            raise RuntimeError("No secrets found")
+
+    monkeypatch.setitem(sys.modules, "streamlit", _Broken())
+    assert llm._get_key("GROQ_API_KEY") == ""
+
+
+def test_provider_status_reports_key_source(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setitem(sys.modules, "streamlit", _fake_streamlit(
+        {"api_keys": {"GROQ_API_KEY": "nested"}}))
+    monkeypatch.setattr(llm, "available_models", lambda p: [])
+    rows = {r["provider"]: r for r in llm.provider_status()}
+    assert rows["groq"]["key"] == "key set (secrets)"
+    assert rows["groq"]["key_source"] == "secrets"
+    assert rows["kilo-free"]["key_source"] == "none"
+
+
+# ---------------------------------------------------------------------------
+# Model ordering: curated first, and no single family can fill the budget
+# ---------------------------------------------------------------------------
+def test_curated_model_leads_even_when_discovery_omits_it(monkeypatch):
+    llm._MODELS_CACHE["groq"] = (time.time(), ["qwen/qwen3.8-27b", "openai/gpt-oss-20b"])
+    try:
+        assert llm._models_for("groq")[0] == "openai/gpt-oss-120b"
+    finally:
+        llm._MODELS_CACHE.pop("groq", None)
+
+
+def test_gemini_rotates_families_so_flash_lite_is_reachable(monkeypatch):
+    ids = [f"gemini-{v}-flash" for v in ("3.8", "3.7", "3.6", "3.5", "2.5")] + \
+          [f"gemini-{v}-flash-lite" for v in ("3.5", "3.1", "2.5")]
+    llm._MODELS_CACHE["gemini"] = (time.time(), ids)
+    try:
+        models = llm._models_for("gemini")[:llm.MODELS_PER_PROVIDER]
+    finally:
+        llm._MODELS_CACHE.pop("gemini", None)
+    assert "gemini-3.1-flash-lite" in models
+    assert models[0] == "gemini-3.8-flash"
+    assert len(set(models)) == len(models)

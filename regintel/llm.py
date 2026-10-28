@@ -43,7 +43,7 @@ PROVIDERS: dict[str, dict] = {
         "base": "https://api.groq.com/openai/v1",
         "key_env": "GROQ_API_KEY",
         "max_tokens": 32768,
-        "models": ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "llama-3.1-8b-instant"],
+        "models": ["openai/gpt-oss-120b"],
     },
     # Gemini API, free tier only. Free vs paid is decided by the Google Cloud
     # project behind the key: a key from an AI Studio project with no billing
@@ -135,16 +135,57 @@ TIMEOUT = "timeout"
 FREE_TIER_LOCKED = {"gemini"}  # only MODEL_RANK matches may ever be called
 
 
-def _get_key(env_name: str) -> str:
-    key = os.environ.get(env_name, "")
-    if not key:
-        try:
-            import streamlit as st  # noqa: PLC0415
+def _lookup_secret(name: str) -> str:
+    """Read one key from Streamlit secrets.
 
-            key = st.secrets.get(env_name, "")  # type: ignore[assignment]
-        except Exception:
-            key = ""
-    return key or ""
+    Accepts both layouts people actually use in the Cloud editor: a flat
+    top-level ``GROQ_API_KEY = "..."`` and a single section such as
+    ``[api_keys]`` holding the same key. Streamlit raises when no secrets
+    file exists at all, so every access is guarded.
+    """
+    try:
+        import streamlit as st  # noqa: PLC0415
+
+        secrets = st.secrets
+    except Exception:  # noqa: BLE001 - not running under Streamlit
+        return ""
+    try:
+        value = secrets.get(name, "")
+        if value:
+            return str(value)
+    except Exception:  # noqa: BLE001
+        pass
+    # One level of nesting: [api_keys] / [keys] / [secrets] GROQ_API_KEY = ...
+    try:
+        for section in list(secrets):
+            try:
+                block = secrets[section]
+            except Exception:  # noqa: BLE001
+                continue
+            getter = getattr(block, "get", None)
+            if getter is None:
+                continue
+            value = getter(name, "")
+            if value:
+                return str(value)
+    except Exception:  # noqa: BLE001
+        pass
+    return ""
+
+
+def _key_from(env_name: str) -> tuple[str, str]:
+    """(key, source) with source in {"env", "secrets", "missing"}."""
+    key = os.environ.get(env_name, "")
+    if key:
+        return key, "env"
+    key = _lookup_secret(env_name)
+    if key:
+        return key, "secrets"
+    return "", "missing"
+
+
+def _get_key(env_name: str) -> str:
+    return _key_from(env_name)[0]
 
 
 def attribution_headers(cfg: dict) -> dict:
@@ -257,24 +298,58 @@ def _rank_models(pname: str, ids: list[str]) -> list[str]:
     return ranked
 
 
+def _interleave(ranked: list[str], pname: str) -> list[str]:
+    """Round-robin across model families so one rate-limited family cannot
+    fill the whole per-provider budget. Gemini currently answers on
+    flash-lite while every flash returns 429; without this the first five
+    slots are all flash and flash-lite is never called."""
+    families: dict[int, list[str]] = {}
+    for m in ranked:
+        fam = next((k for k, pat in enumerate(MODEL_RANK.get(pname, []))
+                    if re.search(pat, m, re.I)), 99)
+        families.setdefault(fam, []).append(m)
+    queues = [families[k] for k in sorted(families)]
+    out: list[str] = []
+    while any(queues):
+        for q in queues:
+            if q:
+                out.append(q.pop(0))
+    return out
+
+
+def _ordered_models(pname: str, live: list[str]) -> list[str]:
+    """Models to try for one provider, best first.
+
+    Curated ids lead even when live discovery omits them, so a known-good
+    model is never dropped because /models paginated or listed it late.
+    Gemini is the exception: its curated ids are older versions, so the
+    ranked live list decides, rotated across families.
+    """
+    cfg = PROVIDERS.get(pname, {})
+    ranked = _rank_models(pname, live)
+    if cfg.get("prefer_newest"):
+        return _interleave(ranked, pname)
+    if cfg.get("anonymous"):
+        # Free gateways rotate their catalogue weekly; the live list is the
+        # only trustworthy source, and the curated list is the offline fallback.
+        return ranked or list(cfg.get("models", []))
+    out = [m for m in cfg.get("models", []) if _allowed(pname, m)]
+    out += [m for m in ranked if m not in out]
+    return out
+
+
 def available_models(provider: str, free_only: bool = True) -> list[str]:
-    """Live models for the picker: curated ids that are still advertised,
-    then the rest of the live list ranked strongest-first. Falls back to the
+    """Live models for the picker, strongest first. Falls back to the
     curated list when discovery fails."""
     cfg = PROVIDERS.get(provider, {})
     static = list(cfg.get("models", []))
     discovered = discover_models(provider)
     if not discovered:
         return static
-    curated = [] if cfg.get("prefer_newest") else \
-        [m for m in static if m in discovered and _allowed(provider, m)]
-    ranked = _rank_models(provider, discovered)
-    if free_only:
-        ranked = [m for m in ranked if "free" in m.lower()] or ranked
-    # Only ranked models are offered: providers advertise dozens of ids that
-    # 404 or are not chat models (NVIDIA lists 80, a handful answer).
-    rest = [m for m in ranked if m not in curated]
-    return (curated + rest) or static
+    ordered = _ordered_models(provider, discovered)
+    if free_only and cfg.get("anonymous"):
+        ordered = [m for m in ordered if "free" in m.lower()] or ordered
+    return ordered or static
 
 
 def _models_for(pname: str) -> list[str]:
@@ -283,12 +358,8 @@ def _models_for(pname: str) -> list[str]:
     cfg = PROVIDERS[pname]
     hit = _MODELS_CACHE.get(pname)
     if hit and time.time() - hit[0] < _MODELS_TTL:
-        live = set(hit[1])
-        models = [] if cfg.get("prefer_newest") else [m for m in cfg["models"] if m in live]
-        models += [m for m in _rank_models(pname, hit[1]) if m not in models]
-    else:
-        models = list(cfg["models"])
-    return models
+        return _ordered_models(pname, hit[1])
+    return list(cfg["models"])
 
 
 def warm_model_registry() -> None:
@@ -330,18 +401,18 @@ def provider_status() -> list[dict]:
     rows: list[dict] = []
     for pname in dict.fromkeys(ORDER + list(PROVIDERS)):
         cfg = PROVIDERS[pname]
-        key = _get_key(cfg["key_env"])
+        key, source = _key_from(cfg["key_env"])
         if cfg.get("anonymous"):
-            key_state = "anonymous"
+            key_state, source = "anonymous", "none"
         elif key:
-            key_state = "key set"
+            key_state = f"key set ({source})"
         else:
             key_state = "no key"
         live: list[str] = []
         if cfg.get("anonymous") or key:
             live = [m for m in available_models(pname) if _usable(pname, m)]
-        rows.append({"provider": pname, "key": key_state, "live_models": len(live),
-                     "first": live[0] if live else ""})
+        rows.append({"provider": pname, "key": key_state, "key_source": source,
+                     "live_models": len(live), "first": live[0] if live else ""})
     return rows
 
 
@@ -533,7 +604,12 @@ def chat(messages: list[dict], temperature: float = 0.2, max_tokens: int = 1400,
                     last_exc = exc
                     status = _status_of(exc)
                     attempts.append(f"{pname}/{model}: {status or type(exc).__name__}: {str(exc)[:110]}")
-                    if status in (429, 500, 502, 503, 504) and try_no == 0:
+                    transient = status in (429, 500, 502, 503, 504)
+                    if status == 429 and "exceeded your current quota" in str(exc).lower():
+                        # Daily free-tier quota, not a per-minute limit: a 1.5 s
+                        # retry cannot succeed and only doubles the wait.
+                        transient = False
+                    if transient and try_no == 0:
                         time.sleep(1.5)
                         continue
                     _hold(pname, model, status)
