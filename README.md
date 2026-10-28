@@ -28,7 +28,7 @@ when". Both entity columns run off the same corpus with one toggle.
 
 | | |
 |---|---|
-| **Corpus** | 398 instruments · 14,186 passages · 16,016 pages (synced 2026-10-20) |
+| **Corpus** | 406 instruments · 14,474 passages · 16,407 pages (synced 2026-10-29) |
 | **Retrieval** | BM25 (legal-identifier tokenizer) + bge-small-en-v1.5 dense (FAISS) → RRF k=60 → cross-encoder rerank |
 | **Gold set** | recall@5 **96%** (96/100) · MRR **0.827** · nDCG@10 **0.859** |
 | **Held-out set** | recall@5 **12/12** · MRR **0.819** |
@@ -36,7 +36,11 @@ when". Both entity columns run off the same corpus with one toggle.
 | **Answers** | provider failover, claim-level citation validation, number grounding, extractive fallback |
 | **Answer quality** | RAGAS faithfulness **0.913** · relevancy **0.803** · context precision **0.544** (83/100 answered) |
 | **Latency** | ~65 ms retrieval, ~8–13 s with rerank on a 4-core laptop |
-| **Tests** | 120 passing (`pytest tests`) |
+| **Tests** | 164 passing (`pytest tests`) |
+
+Retrieval and answer metrics were measured on the 2026-10-28 corpus (398
+instruments). The corpus refreshes daily from the RBI feed, so counts drift
+while the evaluation stays pinned to that snapshot.
 
 ## Quickstart
 
