@@ -20,7 +20,7 @@ def test_second_judge_receives_a_real_pin_tuple(monkeypatch):
     seen = {}
 
     def fake_run_eval(samples, judge_pin=None, metrics=None, show_progress=False,
-                      strict_pin=False):
+                      strict_pin=False, **kw):
         seen.update(pin=judge_pin, strict=strict_pin)
         rows = [{"faithfulness": 0.5, "judge_served": {"gemini/gemini-3.7-flash": 2}}
                 for _ in samples]

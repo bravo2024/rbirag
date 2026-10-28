@@ -49,7 +49,7 @@ def _filters(case: dict) -> QueryFilters | None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel v2 eval set")
+    ap = argparse.ArgumentParser(description="RBIRAG v2 eval set")
     ap.add_argument("--file", default=str(SET_FILE))
     ap.add_argument("--k", type=int, default=5)
     ap.add_argument("--no-rerank", action="store_true")

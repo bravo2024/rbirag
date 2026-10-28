@@ -1,4 +1,4 @@
-"""RegIntel — RBI Regulatory Intelligence RAG.
+"""RBIRAG — RBI Regulatory Intelligence RAG.
 
 Live RBI notifications (RSS) + Master Directions backfill -> layout-aware
 extraction -> structure-aware chunking -> hybrid retrieval (BM25 + dense +

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the RegIntel GPU index build on Kaggle, then verify it locally.
+"""Run the RBIRAG GPU index build on Kaggle, then verify it locally.
 
     python scripts/kaggle_build_index.py                # stage, push, wait, fetch, verify
     python scripts/kaggle_build_index.py --skip-dataset # dataset already current
@@ -226,7 +226,7 @@ def verify() -> dict:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="Kaggle GPU index build for RegIntel")
+    ap = argparse.ArgumentParser(description="Kaggle GPU index build for RBIRAG")
     ap.add_argument("--skip-dataset", action="store_true", help="dataset already current")
     ap.add_argument("--skip-push", action="store_true", help="fetch the last outputs only")
     ap.add_argument("--verify-only", action="store_true")

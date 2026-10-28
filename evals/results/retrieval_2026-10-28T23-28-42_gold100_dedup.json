@@ -1,0 +1,3377 @@
+{
+  "k": 5,
+  "retrieve_k": 10,
+  "rerank": true,
+  "rerank_depth": 30,
+  "rerank_max_length": 512,
+  "queries_file": "evals/queries.jsonl",
+  "rows": [
+    {
+      "query": "periodic updation of KYC records for NBFC customers",
+      "got": [
+        "md12943",
+        "md13040",
+        "md13141",
+        "md13014",
+        "md13090",
+        "md12988"
+      ],
+      "gold": [
+        "md12943"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032002,
+        "bm25_rank": 3,
+        "dense_rank": 2,
+        "dense_score": 0.8572,
+        "rerank": 7.357
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 31862,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 10165,
+        "total": 42036
+      }
+    },
+    {
+      "query": "periodic updation of KYC records for high risk customers of banks",
+      "got": [
+        "md13141",
+        "md13637",
+        "md13140"
+      ],
+      "gold": [
+        "md13141"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.866,
+        "rerank": 6.878
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 78,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8268,
+        "total": 8370
+      }
+    },
+    {
+      "query": "minimum capital adequacy ratio requirement for commercial banks",
+      "got": [
+        "md13159",
+        "md13137",
+        "md13167"
+      ],
+      "gold": [
+        "md13159",
+        "md13399"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.613,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8064,
+        "rerank": 6.055
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 73,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 9931,
+        "total": 10028
+      }
+    },
+    {
+      "query": "liquidity coverage ratio LCR requirement for banks",
+      "got": [
+        "md13147",
+        "md13160",
+        "md13148",
+        "md13157",
+        "md13143",
+        "md13639"
+      ],
+      "gold": [
+        "md13147",
+        "md13159"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.613,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8663,
+        "rerank": 7.161
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 58,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 8975,
+        "total": 9058
+      }
+    },
+    {
+      "query": "capital requirement for housing finance companies",
+      "got": [
+        "md12939",
+        "md12944"
+      ],
+      "gold": [
+        "md12939"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031099,
+        "bm25_rank": 8,
+        "dense_rank": 1,
+        "dense_score": 0.7932,
+        "rerank": 7.797
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 66,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8450,
+        "total": 8540
+      }
+    },
+    {
+      "query": "credit card issuance norms for banks",
+      "got": [
+        "md13155",
+        "md13156"
+      ],
+      "gold": [
+        "md13155",
+        "md13156"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026879,
+        "bm25_rank": 5,
+        "dense_rank": 27,
+        "dense_score": 0.7386,
+        "rerank": 4.82
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 54,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 8252,
+        "total": 8332
+      }
+    },
+    {
+      "query": "issuance and conduct of credit cards by NBFCs",
+      "got": [
+        "md12956",
+        "md12933",
+        "md12941",
+        "md13591",
+        "md12943",
+        "md12957"
+      ],
+      "gold": [
+        "md12956"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 1,
+        "dense_rank": 2,
+        "dense_score": 0.8118,
+        "rerank": 5.705
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 61,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 8800,
+        "total": 8885
+      }
+    },
+    {
+      "query": "asset classification norms 90 days overdue provisioning for banks",
+      "got": [
+        "md13400",
+        "md13146",
+        "md13145",
+        "md13148"
+      ],
+      "gold": [
+        "md13146",
+        "md13400"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031754,
+        "bm25_rank": 2,
+        "dense_rank": 4,
+        "dense_score": 0.8008,
+        "rerank": 6.451
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 58,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8502,
+        "total": 8584
+      }
+    },
+    {
+      "query": "treatment of wilful defaulters suit filing by banks",
+      "got": [
+        "md13144",
+        "md13145"
+      ],
+      "gold": [
+        "md13144",
+        "md13145"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032002,
+        "bm25_rank": 3,
+        "dense_rank": 2,
+        "dense_score": 0.7936,
+        "rerank": 6.011
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8361,
+        "total": 8442
+      }
+    },
+    {
+      "query": "peer to peer lending platform leverage ratio for NBFC",
+      "got": [
+        "md12934",
+        "md12959",
+        "md12965"
+      ],
+      "gold": [
+        "md12934"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 1,
+        "dense_rank": 2,
+        "dense_score": 0.8219,
+        "rerank": 4.406
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 8882,
+        "total": 8961
+      }
+    },
+    {
+      "query": "microfinance loan eligibility household income limit",
+      "got": [
+        "md12957",
+        "md12942",
+        "md12933",
+        "md12948",
+        "md12955"
+      ],
+      "gold": [
+        "md12933"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.7993,
+        "rerank": 5.671
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 62,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 8774,
+        "total": 8859
+      }
+    },
+    {
+      "query": "core investment companies registration and net asset requirement",
+      "got": [
+        "md12948",
+        "md12965",
+        "md13592",
+        "md12937",
+        "md12961",
+        "md11200",
+        "md12939",
+        "md12958"
+      ],
+      "gold": [
+        "md12937"
+      ],
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.431,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032018,
+        "bm25_rank": 1,
+        "dense_rank": 4,
+        "dense_score": 0.7562,
+        "rerank": 4.19
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 56,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 8718,
+        "total": 8782
+      }
+    },
+    {
+      "query": "securitisation transactions minimum retention requirement",
+      "got": [
+        "md12983",
+        "md13159",
+        "md13127",
+        "md13150",
+        "md12945",
+        "md12970",
+        "md13118",
+        "md12976",
+        "md12951"
+      ],
+      "gold": [
+        "md12951",
+        "md13150"
+      ],
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.449,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.025253,
+        "bm25_rank": 6,
+        "dense_rank": 39,
+        "dense_score": 0.7592,
+        "rerank": 6.647
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 56,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 8799,
+        "total": 8861
+      }
+    },
+    {
+      "query": "code of conduct for recovery agents and repossession",
+      "got": [
+        "md13140",
+        "md13108",
+        "md12942",
+        "md12930",
+        "md12956",
+        "md13027",
+        "md13052",
+        "md13063"
+      ],
+      "gold": [
+        "md12942",
+        "md13140"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 0.92,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031099,
+        "bm25_rank": 1,
+        "dense_rank": 8,
+        "dense_score": 0.7469,
+        "rerank": 7.805
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 63,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 7763,
+        "total": 7834
+      }
+    },
+    {
+      "query": "fit and proper criteria for directors of commercial banks",
+      "got": [
+        "md13161",
+        "md11518",
+        "md12896",
+        "md13166",
+        "md13167"
+      ],
+      "gold": [
+        "md13161"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031778,
+        "bm25_rank": 5,
+        "dense_rank": 1,
+        "dense_score": 0.824,
+        "rerank": 6.368
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8839,
+        "total": 8920
+      }
+    },
+    {
+      "query": "approval for setting up digital banking channels by banks",
+      "got": [
+        "md13163",
+        "md13642",
+        "md13164"
+      ],
+      "gold": [
+        "md13163"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8169,
+        "rerank": 8.52
+      },
+      "timings_ms": {
+        "bm25": 3,
+        "encode": 58,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 8361,
+        "total": 8447
+      }
+    },
+    {
+      "query": "foreign exchange risk reserve requirement for authorised dealers",
+      "got": [
+        "nn13738",
+        "md10485",
+        "nn13737",
+        "md10193",
+        "nn13739"
+      ],
+      "gold": [
+        "nn13738"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8139,
+        "rerank": 8.324
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 70,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 8354,
+        "total": 8451
+      }
+    },
+    {
+      "query": "branch authorisation for NBFC opening of new branches",
+      "got": [
+        "md12962",
+        "md12933",
+        "md13586",
+        "md12943",
+        "md12961",
+        "md12942",
+        "md12958"
+      ],
+      "gold": [
+        "md12962"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8353,
+        "rerank": 7.497
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 62,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 9219,
+        "total": 9303
+      }
+    },
+    {
+      "query": "know your customer requirements for co-operative banks",
+      "got": [
+        "md13064",
+        "md13141",
+        "md13040",
+        "md13014",
+        "md12988",
+        "md13004",
+        "md13013",
+        "md13034"
+      ],
+      "gold": [
+        "md12988",
+        "md13014"
+      ],
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.501,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.025794,
+        "bm25_rank": 24,
+        "dense_rank": 12,
+        "dense_score": 0.7163,
+        "rerank": 3.415
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 78,
+        "dense": 8,
+        "fuse": 1,
+        "rerank": 9537,
+        "total": 9627
+      }
+    },
+    {
+      "query": "income recognition and asset classification norms for regional rural banks",
+      "got": [
+        "md13044",
+        "md13053",
+        "md13071",
+        "md13116",
+        "md13148",
+        "md13094",
+        "md13400",
+        "md12947"
+      ],
+      "gold": [
+        "md13044"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.023438,
+        "bm25_rank": 4,
+        "dense_rank": 68,
+        "dense_score": 0.7367,
+        "rerank": 5.432
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 80,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 9105,
+        "total": 9192
+      }
+    },
+    {
+      "query": "compounding of contraventions under FEMA",
+      "got": [
+        "md10202",
+        "md12839",
+        "md10190"
+      ],
+      "gold": [
+        "md10190"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030478,
+        "bm25_rank": 11,
+        "dense_rank": 1,
+        "dense_score": 0.8809,
+        "rerank": 10.214
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 66,
+        "dense": 9,
+        "fuse": 2,
+        "rerank": 9905,
+        "total": 9983
+      }
+    },
+    {
+      "query": "statutory audit requirements for commercial banks",
+      "got": [
+        "md13639",
+        "md13153",
+        "md13147",
+        "md13146"
+      ],
+      "gold": [
+        "md13639"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.7755,
+        "rerank": 7.263
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 72,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 9009,
+        "total": 9107
+      }
+    },
+    {
+      "query": "prepaid payment instrument issuance and loading limits",
+      "got": [
+        "md12156",
+        "md13123",
+        "md13052",
+        "md13027",
+        "md13155",
+        "md12956",
+        "md12715"
+      ],
+      "gold": [
+        "md12156"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.028158,
+        "bm25_rank": 1,
+        "dense_rank": 25,
+        "dense_score": 0.7092,
+        "rerank": 3.667
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 66,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 8098,
+        "total": 8172
+      }
+    },
+    {
+      "query": "minimum capital adequacy ratio for small finance banks",
+      "got": [
+        "md13135",
+        "md13127",
+        "md12939",
+        "md13159",
+        "md12935",
+        "md12983",
+        "md12930"
+      ],
+      "gold": [
+        "md13127"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8485,
+        "rerank": 9.431
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 62,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 9229,
+        "total": 9299
+      }
+    },
+    {
+      "query": "capital adequacy ratio requirement for payments banks",
+      "got": [
+        "md13135",
+        "md13127",
+        "md12933",
+        "md13159",
+        "md13097",
+        "md12935",
+        "md12939",
+        "md12983",
+        "md12938"
+      ],
+      "gold": [
+        "md13097"
+      ],
+      "hit@k": true,
+      "rr": 0.2,
+      "ndcg@10": 0.387,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026862,
+        "bm25_rank": 31,
+        "dense_rank": 3,
+        "dense_score": 0.7994,
+        "rerank": 5.392
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 54,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7684,
+        "total": 7743
+      }
+    },
+    {
+      "query": "kisan credit card scheme for small finance bank borrowers",
+      "got": [
+        "md13523",
+        "md13522",
+        "md13524",
+        "md13525",
+        "md13044",
+        "md13028",
+        "md13124",
+        "md13123"
+      ],
+      "gold": [
+        "md13523"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032266,
+        "bm25_rank": 3,
+        "dense_rank": 1,
+        "dense_score": 0.722,
+        "rerank": 6.216
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 64,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7922,
+        "total": 7993
+      }
+    },
+    {
+      "query": "managing risks in outsourcing for local area banks",
+      "got": [
+        "md13062",
+        "md13084",
+        "md12934",
+        "md13075",
+        "md12938",
+        "md12986",
+        "md13625",
+        "md13634",
+        "md13060",
+        "md13164"
+      ],
+      "gold": [
+        "md13062"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.016393,
+        "bm25_rank": 1,
+        "dense_rank": null,
+        "dense_score": 0.0,
+        "rerank": 7.214
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 53,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 7910,
+        "total": 7970
+      }
+    },
+    {
+      "query": "interest rate on deposits for urban co-operative banks",
+      "got": [
+        "md13029",
+        "md13020",
+        "md13203",
+        "md13013",
+        "md13003",
+        "md13022",
+        "md12987",
+        "md13031"
+      ],
+      "gold": [
+        "md13029"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8152,
+        "rerank": 6.164
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 60,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 8350,
+        "total": 8416
+      }
+    },
+    {
+      "query": "fraud risk management framework for urban co-operative banks",
+      "got": [
+        "md13614",
+        "md13613",
+        "md13025",
+        "md13616",
+        "md13602",
+        "md13618",
+        "md13623",
+        "md13024",
+        "md13641"
+      ],
+      "gold": [
+        "md13614"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031514,
+        "bm25_rank": 5,
+        "dense_rank": 2,
+        "dense_score": 0.7928,
+        "rerank": 6.544
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 50,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7074,
+        "total": 7129
+      }
+    },
+    {
+      "query": "fraud monitoring and reporting requirements for commercial banks",
+      "got": [
+        "md13641",
+        "md13643",
+        "md13637",
+        "md13642"
+      ],
+      "gold": [
+        "md13641"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031514,
+        "bm25_rank": 2,
+        "dense_rank": 5,
+        "dense_score": 0.7649,
+        "rerank": 4.721
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 52,
+        "dense": 32,
+        "fuse": 1,
+        "rerank": 7118,
+        "total": 7205
+      }
+    },
+    {
+      "query": "cybersecurity and technology resilience framework for small finance banks",
+      "got": [
+        "md13634",
+        "md13597",
+        "md13625",
+        "md13633",
+        "md13583",
+        "md13616",
+        "md13592"
+      ],
+      "gold": [
+        "md13634"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8001,
+        "rerank": 6.904
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 62,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 8070,
+        "total": 8137
+      }
+    },
+    {
+      "query": "digital payment security controls for commercial banks",
+      "got": [
+        "md13642",
+        "md13163"
+      ],
+      "gold": [
+        "md13642"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031258,
+        "bm25_rank": 3,
+        "dense_rank": 5,
+        "dense_score": 0.7956,
+        "rerank": 6.176
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 55,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 7560,
+        "total": 7637
+      }
+    },
+    {
+      "query": "cyber resilience for non-bank prepaid payment instrument issuers",
+      "got": [
+        "md12715",
+        "md13275",
+        "md13591",
+        "md12896",
+        "md13625",
+        "md13624"
+      ],
+      "gold": [
+        "md12715"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032002,
+        "bm25_rank": 3,
+        "dense_rank": 2,
+        "dense_score": 0.7618,
+        "rerank": 6.753
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 65,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7924,
+        "total": 7995
+      }
+    },
+    {
+      "query": "interest rate on deposits for small finance banks",
+      "got": [
+        "md13125",
+        "md13523",
+        "md13108",
+        "md13117",
+        "md13096",
+        "md13157"
+      ],
+      "gold": [
+        "md13125"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031498,
+        "bm25_rank": 3,
+        "dense_rank": 4,
+        "dense_score": 0.7792,
+        "rerank": 4.931
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 58,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 7661,
+        "total": 7726
+      }
+    },
+    {
+      "query": "interest rate on deposits for payments banks",
+      "got": [
+        "md13096",
+        "md13003",
+        "md13157",
+        "md13125",
+        "md13054",
+        "md13029"
+      ],
+      "gold": [
+        "md13096"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.029324,
+        "bm25_rank": 13,
+        "dense_rank": 4,
+        "dense_score": 0.8062,
+        "rerank": 5.757
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 57,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7658,
+        "total": 7721
+      }
+    },
+    {
+      "query": "internal ombudsman mechanism for commercial banks",
+      "got": [
+        "md13271",
+        "md12586"
+      ],
+      "gold": [
+        "md13271"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.028665,
+        "bm25_rank": 6,
+        "dense_rank": 14,
+        "dense_score": 0.747,
+        "rerank": 7.523
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 59,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 7103,
+        "total": 7188
+      }
+    },
+    {
+      "query": "priority sector lending targets for small finance banks",
+      "got": [
+        "md11959",
+        "md12799",
+        "md11060"
+      ],
+      "gold": [
+        "md12799"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030622,
+        "bm25_rank": 2,
+        "dense_rank": 9,
+        "dense_score": 0.79,
+        "rerank": 7.858
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 82,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 8278,
+        "total": 8370
+      }
+    },
+    {
+      "query": "know your customer requirements for asset reconstruction companies",
+      "got": [
+        "md12927",
+        "md12930",
+        "nn13742",
+        "md12929",
+        "md13152",
+        "md12999",
+        "md13025",
+        "md12979"
+      ],
+      "gold": [
+        "md12927"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.016129,
+        "bm25_rank": 2,
+        "dense_rank": null,
+        "dense_score": 0.0,
+        "rerank": 4.227
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 62,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 7663,
+        "total": 7734
+      }
+    },
+    {
+      "query": "treatment of wilful defaulters by asset reconstruction companies",
+      "got": [
+        "md12928",
+        "md12991",
+        "md12946",
+        "md12947",
+        "md13067",
+        "md13017",
+        "md12971",
+        "md13042"
+      ],
+      "gold": [
+        "md12928"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026197,
+        "bm25_rank": 1,
+        "dense_rank": 42,
+        "dense_score": 0.7421,
+        "rerank": 6.286
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7474,
+        "total": 7537
+      }
+    },
+    {
+      "query": "internal ombudsman for credit information companies",
+      "got": [
+        "md13276",
+        "md12586",
+        "md13275",
+        "md13271",
+        "md13273",
+        "md13274"
+      ],
+      "gold": [
+        "md13276"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.024892,
+        "bm25_rank": 17,
+        "dense_rank": 24,
+        "dense_score": 0.7263,
+        "rerank": 7.478
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 6277,
+        "total": 6340
+      }
+    },
+    {
+      "query": "credit information reporting by non-banking financial companies",
+      "got": [
+        "md12939",
+        "md12955",
+        "md12933",
+        "md12954",
+        "md12946"
+      ],
+      "gold": [
+        "md12955"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.025014,
+        "bm25_rank": 1,
+        "dense_rank": 56,
+        "dense_score": 0.6944,
+        "rerank": 5.946
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 55,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 7763,
+        "total": 7841
+      }
+    },
+    {
+      "query": "credit information reporting by commercial banks",
+      "got": [
+        "md13154",
+        "md13144"
+      ],
+      "gold": [
+        "md13154"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.7768,
+        "rerank": 5.021
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 54,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 7837,
+        "total": 7916
+      }
+    },
+    {
+      "query": "dividend declaration norms for non-banking financial companies",
+      "got": [
+        "md12936",
+        "md12944",
+        "md12939",
+        "md12933",
+        "md12965",
+        "md13585"
+      ],
+      "gold": [
+        "md12944"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031258,
+        "bm25_rank": 3,
+        "dense_rank": 5,
+        "dense_score": 0.7653,
+        "rerank": 6.763
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8109,
+        "total": 8190
+      }
+    },
+    {
+      "query": "dividend declaration norms for small finance banks",
+      "got": [
+        "md13328",
+        "md13319",
+        "md13135",
+        "md13327",
+        "md13630",
+        "md13015",
+        "md13324",
+        "md12936",
+        "md12938"
+      ],
+      "gold": [
+        "md13328"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.8006,
+        "rerank": 6.714
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 69,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 6498,
+        "total": 6572
+      }
+    },
+    {
+      "query": "debit card issuance and conduct for payments banks",
+      "got": [
+        "md13095",
+        "md13077",
+        "md13027",
+        "md13052",
+        "md13001",
+        "md13155",
+        "md13123"
+      ],
+      "gold": [
+        "md13095"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030886,
+        "bm25_rank": 1,
+        "dense_rank": 9,
+        "dense_score": 0.7905,
+        "rerank": 6.149
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 66,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 7537,
+        "total": 7611
+      }
+    },
+    {
+      "query": "margining requirements for non-centrally cleared OTC derivatives",
+      "got": [
+        "md12682",
+        "nn13730",
+        "md13137",
+        "md13729",
+        "md12983",
+        "md13097"
+      ],
+      "gold": [
+        "md12682"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.028589,
+        "bm25_rank": 1,
+        "dense_rank": 22,
+        "dense_score": 0.7469,
+        "rerank": 5.471
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 65,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7902,
+        "total": 7973
+      }
+    },
+    {
+      "query": "capital adequacy norms for all India financial institutions",
+      "got": [
+        "nn13735",
+        "md12978",
+        "md12983",
+        "md12933",
+        "md13135",
+        "md12976",
+        "md12959",
+        "md13124",
+        "md13127"
+      ],
+      "gold": [
+        "md12983"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.024145,
+        "bm25_rank": 1,
+        "dense_rank": 69,
+        "dense_score": 0.7498,
+        "rerank": 6.793
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 56,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7898,
+        "total": 7960
+      }
+    },
+    {
+      "query": "managing risks in outsourcing for all India financial institutions",
+      "got": [
+        "md12967",
+        "md12938",
+        "md12934",
+        "md13107",
+        "md13131",
+        "md12979",
+        "md12986",
+        "md13084",
+        "md13132",
+        "md13060"
+      ],
+      "gold": [
+        "md12967"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.022763,
+        "bm25_rank": 1,
+        "dense_rank": 97,
+        "dense_score": 0.7474,
+        "rerank": 7.895
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7777,
+        "total": 7840
+      }
+    },
+    {
+      "query": "credit information reporting by all India financial institutions",
+      "got": [
+        "md12980",
+        "md12971",
+        "md12991",
+        "md12937",
+        "md12926",
+        "md13122",
+        "md13596",
+        "md13026",
+        "md13076"
+      ],
+      "gold": [
+        "md12980"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.024604,
+        "bm25_rank": 2,
+        "dense_rank": 58,
+        "dense_score": 0.7312,
+        "rerank": 7.481
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 67,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7547,
+        "total": 7620
+      }
+    },
+    {
+      "query": "fraud risk management for all India financial institutions",
+      "got": [
+        "md13596",
+        "md12979",
+        "md13068",
+        "md13641",
+        "md12972",
+        "md13614"
+      ],
+      "gold": [
+        "md13596"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.029551,
+        "bm25_rank": 1,
+        "dense_rank": 16,
+        "dense_score": 0.7546,
+        "rerank": 6.786
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 58,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 8009,
+        "total": 8073
+      }
+    },
+    {
+      "query": "asset liability management for all India financial institutions",
+      "got": [
+        "md12974",
+        "md13111",
+        "md13143",
+        "md12979",
+        "md13124",
+        "md12971",
+        "md12970",
+        "md12932",
+        "md13081",
+        "md13160"
+      ],
+      "gold": [
+        "md12974"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.022305,
+        "bm25_rank": 9,
+        "dense_rank": 68,
+        "dense_score": 0.7244,
+        "rerank": 6.123
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 57,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 9060,
+        "total": 9125
+      }
+    },
+    {
+      "query": "resolution of stressed assets for all India financial institutions",
+      "got": [
+        "md12971",
+        "md12973",
+        "md12972",
+        "md12977",
+        "md13144",
+        "md13112",
+        "md12947"
+      ],
+      "gold": [
+        "md12972"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026393,
+        "bm25_rank": 1,
+        "dense_rank": 40,
+        "dense_score": 0.7529,
+        "rerank": 7.548
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 82,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 8905,
+        "total": 8996
+      }
+    },
+    {
+      "query": "capital adequacy norms for regional rural banks",
+      "got": [
+        "md13055",
+        "md13049",
+        "md12799",
+        "md13004",
+        "md13327",
+        "md13159",
+        "md13135",
+        "md13127",
+        "md12983"
+      ],
+      "gold": [
+        "md13055"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032002,
+        "bm25_rank": 2,
+        "dense_rank": 3,
+        "dense_score": 0.7812,
+        "rerank": 6.204
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 57,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7754,
+        "total": 7817
+      }
+    },
+    {
+      "query": "cash reserve ratio and statutory liquidity ratio for regional rural banks",
+      "got": [
+        "md13056",
+        "md13005",
+        "md13045",
+        "md13055",
+        "md13081",
+        "md13031",
+        "md13160"
+      ],
+      "gold": [
+        "md13056"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031498,
+        "bm25_rank": 3,
+        "dense_rank": 4,
+        "dense_score": 0.8085,
+        "rerank": 7.325
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 57,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7516,
+        "total": 7579
+      }
+    },
+    {
+      "query": "treatment of wilful defaulters by regional rural banks",
+      "got": [
+        "md13043",
+        "md13042",
+        "md12991",
+        "md13068",
+        "md13113",
+        "md13145",
+        "md12972",
+        "md12992",
+        "md13067"
+      ],
+      "gold": [
+        "md13042"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032258,
+        "bm25_rank": 2,
+        "dense_rank": 2,
+        "dense_score": 0.7804,
+        "rerank": 6.007
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 58,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 8000,
+        "total": 8065
+      }
+    },
+    {
+      "query": "concentration risk management for regional rural banks",
+      "got": [
+        "md13049",
+        "md12998",
+        "md13050",
+        "md13127",
+        "md13074",
+        "md13159",
+        "md13024",
+        "md12999"
+      ],
+      "gold": [
+        "md13049"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032002,
+        "bm25_rank": 2,
+        "dense_rank": 3,
+        "dense_score": 0.8181,
+        "rerank": 7.309
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 56,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7012,
+        "total": 7074
+      }
+    },
+    {
+      "query": "asset liability management for regional rural banks",
+      "got": [
+        "md13045",
+        "md13050",
+        "md13049",
+        "md12994",
+        "md13053",
+        "md13043",
+        "md13044",
+        "md13056",
+        "md13098"
+      ],
+      "gold": [
+        "md13045"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.027888,
+        "bm25_rank": 1,
+        "dense_rank": 27,
+        "dense_score": 0.7344,
+        "rerank": 5.277
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 52,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 6744,
+        "total": 6802
+      }
+    },
+    {
+      "query": "credit facilities for regional rural banks",
+      "got": [
+        "md13053",
+        "md13041",
+        "md13050",
+        "md13042",
+        "md13028",
+        "md13002",
+        "md13047",
+        "md13156"
+      ],
+      "gold": [
+        "md13053"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.028309,
+        "bm25_rank": 6,
+        "dense_rank": 16,
+        "dense_score": 0.7347,
+        "rerank": 4.941
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 71,
+        "dense": 6,
+        "fuse": 1,
+        "rerank": 7156,
+        "total": 7235
+      }
+    },
+    {
+      "query": "capital adequacy norms for local area banks",
+      "got": [
+        "md13080",
+        "md13074",
+        "md12799",
+        "md13159",
+        "md12959",
+        "md13127",
+        "md13135"
+      ],
+      "gold": [
+        "md13080"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.021792,
+        "bm25_rank": 9,
+        "dense_rank": 77,
+        "dense_score": 0.7262,
+        "rerank": 5.493
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 72,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 8012,
+        "total": 8089
+      }
+    },
+    {
+      "query": "cash reserve ratio and statutory liquidity ratio for local area banks",
+      "got": [
+        "md13081",
+        "md13070",
+        "md13160",
+        "md13056",
+        "md13005",
+        "md13031",
+        "md13128"
+      ],
+      "gold": [
+        "md13081"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031054,
+        "bm25_rank": 2,
+        "dense_rank": 7,
+        "dense_score": 0.7761,
+        "rerank": 7.204
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 81,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7702,
+        "total": 7788
+      }
+    },
+    {
+      "query": "responsible business conduct for local area banks",
+      "got": [
+        "md13078",
+        "md13083",
+        "md13063",
+        "md13084",
+        "md13140"
+      ],
+      "gold": [
+        "md13063"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.025744,
+        "bm25_rank": 2,
+        "dense_rank": 44,
+        "dense_score": 0.695,
+        "rerank": 6.631
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 182,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 6725,
+        "total": 6912
+      }
+    },
+    {
+      "query": "treatment of wilful defaulters by local area banks",
+      "got": [
+        "md13068",
+        "md13067",
+        "md13144",
+        "md12991",
+        "md13043",
+        "md13113",
+        "md13145"
+      ],
+      "gold": [
+        "md13067"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032266,
+        "bm25_rank": 3,
+        "dense_rank": 1,
+        "dense_score": 0.7896,
+        "rerank": 5.927
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 71,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7618,
+        "total": 7696
+      }
+    },
+    {
+      "query": "income recognition and asset classification norms for local area banks",
+      "got": [
+        "md13071",
+        "md13116",
+        "md13148",
+        "md13094",
+        "md13400",
+        "md13078",
+        "md13114",
+        "md13069",
+        "md12947"
+      ],
+      "gold": [
+        "md13069"
+      ],
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.315,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030886,
+        "bm25_rank": 1,
+        "dense_rank": 9,
+        "dense_score": 0.7637,
+        "rerank": 6.495
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 71,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7020,
+        "total": 7096
+      }
+    },
+    {
+      "query": "supervisory returns for local area banks",
+      "got": [
+        "md13604",
+        "md13638",
+        "md13629",
+        "md13620",
+        "md13587",
+        "md12949"
+      ],
+      "gold": [
+        "md13604"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.7898,
+        "rerank": 6.656
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 76,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 6562,
+        "total": 6647
+      }
+    },
+    {
+      "query": "capital adequacy norms for urban co-operative banks",
+      "got": [
+        "md13030",
+        "md13015",
+        "md13029",
+        "md13024",
+        "md13203",
+        "md13004",
+        "md13011",
+        "md13159",
+        "md13613",
+        "md13135"
+      ],
+      "gold": [
+        "md13030"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031746,
+        "bm25_rank": 3,
+        "dense_rank": 3,
+        "dense_score": 0.7741,
+        "rerank": 5.741
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 78,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 7570,
+        "total": 7655
+      }
+    },
+    {
+      "query": "income recognition and asset classification norms for urban co-operative banks",
+      "got": [
+        "md13018",
+        "md13019",
+        "md13028",
+        "md13203",
+        "md13148",
+        "md13071",
+        "md13116",
+        "md13094",
+        "md13015",
+        "md13002"
+      ],
+      "gold": [
+        "md13019"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.02198,
+        "bm25_rank": 1,
+        "dense_rank": 119,
+        "dense_score": 0.7132,
+        "rerank": 6.147
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 80,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7103,
+        "total": 7188
+      }
+    },
+    {
+      "query": "interest rates on advances for urban co-operative banks",
+      "got": [
+        "md13022",
+        "md13028",
+        "md13020",
+        "md13029",
+        "md12996",
+        "md13013",
+        "md13027",
+        "md13024",
+        "md13016"
+      ],
+      "gold": [
+        "md13022"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032258,
+        "bm25_rank": 2,
+        "dense_rank": 2,
+        "dense_score": 0.7996,
+        "rerank": 5.061
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 76,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7417,
+        "total": 7499
+      }
+    },
+    {
+      "query": "compliance function for urban co-operative banks",
+      "got": [
+        "md13618",
+        "md13613",
+        "md13012",
+        "md13204",
+        "md12995",
+        "md13616",
+        "md13610",
+        "md13025"
+      ],
+      "gold": [
+        "md13618"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.8938,
+        "rerank": 9.701
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 73,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 6482,
+        "total": 6561
+      }
+    },
+    {
+      "query": "concurrent audit for urban co-operative banks",
+      "got": [
+        "md13617",
+        "md13613",
+        "md13013",
+        "md13612",
+        "md13203",
+        "md13614",
+        "md13644"
+      ],
+      "gold": [
+        "md13617"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 1,
+        "dense_rank": 2,
+        "dense_score": 0.7888,
+        "rerank": 7.215
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 76,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 8317,
+        "total": 8400
+      }
+    },
+    {
+      "query": "licensing and regulatory classification for urban co-operative banks",
+      "got": [
+        "md13203",
+        "md13610",
+        "md13017",
+        "md13012",
+        "md13135",
+        "md13067",
+        "md12971",
+        "md13614",
+        "md13618",
+        "md13616"
+      ],
+      "gold": [
+        "md13203"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8212,
+        "rerank": 7.669
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 74,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7419,
+        "total": 7500
+      }
+    },
+    {
+      "query": "capital adequacy norms for rural co-operative banks",
+      "got": [
+        "md13004",
+        "md12989",
+        "md12998",
+        "md13030",
+        "md13159",
+        "md13002",
+        "md12952",
+        "md12977"
+      ],
+      "gold": [
+        "md13004"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031754,
+        "bm25_rank": 2,
+        "dense_rank": 4,
+        "dense_score": 0.7839,
+        "rerank": 6.081
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 72,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7656,
+        "total": 7734
+      }
+    },
+    {
+      "query": "cash reserve ratio and statutory liquidity ratio for rural co-operative banks",
+      "got": [
+        "md13005",
+        "md13031",
+        "md13056",
+        "md13004"
+      ],
+      "gold": [
+        "md13005"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032258,
+        "bm25_rank": 2,
+        "dense_rank": 2,
+        "dense_score": 0.8268,
+        "rerank": 7.843
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 84,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 6858,
+        "total": 6950
+      }
+    },
+    {
+      "query": "interest rate on deposits for rural co-operative banks",
+      "got": [
+        "md13003",
+        "md12987",
+        "md13029",
+        "md12996",
+        "md13054",
+        "md12994",
+        "md13005"
+      ],
+      "gold": [
+        "md13003"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.8276,
+        "rerank": 5.956
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 52,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 7681,
+        "total": 7741
+      }
+    },
+    {
+      "query": "fraud risk management for rural co-operative banks",
+      "got": [
+        "md13602",
+        "md12999",
+        "md12998",
+        "md13614",
+        "md12994",
+        "md13002",
+        "md12986"
+      ],
+      "gold": [
+        "md13602"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031778,
+        "bm25_rank": 1,
+        "dense_rank": 5,
+        "dense_score": 0.784,
+        "rerank": 6.604
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 68,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 6362,
+        "total": 6438
+      }
+    },
+    {
+      "query": "asset liability management for rural co-operative banks",
+      "got": [
+        "md12994",
+        "md12999",
+        "md12998",
+        "md13008",
+        "md13005",
+        "md13602",
+        "md12993",
+        "md12988"
+      ],
+      "gold": [
+        "md12994"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032266,
+        "bm25_rank": 1,
+        "dense_rank": 3,
+        "dense_score": 0.7998,
+        "rerank": 6.28
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 59,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 7520,
+        "total": 7586
+      }
+    },
+    {
+      "query": "managing risks in outsourcing for rural co-operative banks",
+      "got": [
+        "md12986",
+        "md13001",
+        "md13012",
+        "md12999",
+        "md13002",
+        "md13131",
+        "md12998"
+      ],
+      "gold": [
+        "md12986"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032266,
+        "bm25_rank": 1,
+        "dense_rank": 3,
+        "dense_score": 0.817,
+        "rerank": 7.14
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 65,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 9378,
+        "total": 9448
+      }
+    },
+    {
+      "query": "cash reserve ratio and statutory liquidity ratio for payments banks",
+      "got": [
+        "md13098",
+        "md13005",
+        "md13031",
+        "md13160",
+        "md13128",
+        "md13056",
+        "md13081"
+      ],
+      "gold": [
+        "md13098"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.02967,
+        "bm25_rank": 10,
+        "dense_rank": 5,
+        "dense_score": 0.7845,
+        "rerank": 6.727
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 100,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 11165,
+        "total": 11271
+      }
+    },
+    {
+      "query": "fraud risk management for payments banks",
+      "got": [
+        "md12896",
+        "md13641",
+        "md13623",
+        "md13633",
+        "md13624",
+        "md13643",
+        "md13625",
+        "md13605",
+        "md13639"
+      ],
+      "gold": [
+        "md13623"
+      ],
+      "hit@k": true,
+      "rr": 0.333,
+      "ndcg@10": 0.5,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.782,
+        "rerank": 5.563
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 270,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 12448,
+        "total": 12743
+      }
+    },
+    {
+      "query": "supervisory returns for payments banks",
+      "got": [
+        "md13620",
+        "md13638",
+        "md13604",
+        "md13629",
+        "md12949",
+        "md13619",
+        "md13587",
+        "md12994"
+      ],
+      "gold": [
+        "md13620"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.799,
+        "rerank": 5.449
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 73,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7838,
+        "total": 7917
+      }
+    },
+    {
+      "query": "branch authorisation for payments banks",
+      "got": [
+        "md13101",
+        "md13102",
+        "md13084",
+        "md13164",
+        "md13205",
+        "md13204",
+        "md13060"
+      ],
+      "gold": [
+        "md13102"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026438,
+        "bm25_rank": 2,
+        "dense_rank": 37,
+        "dense_score": 0.745,
+        "rerank": 5.022
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 111,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 9289,
+        "total": 9405
+      }
+    },
+    {
+      "query": "responsible business conduct for payments banks",
+      "got": [
+        "md13101",
+        "md13034",
+        "md13008",
+        "md13059",
+        "md13083",
+        "md13131",
+        "md13163",
+        "md12939",
+        "md13140",
+        "md13124"
+      ],
+      "gold": [
+        "md13089"
+      ],
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.0,
+      "recall@10": false,
+      "top_score": {
+        "rrf": 0.022696,
+        "bm25_rank": 43,
+        "dense_rank": 17,
+        "dense_score": 0.7272,
+        "rerank": 4.607
+      },
+      "timings_ms": {
+        "bm25": 3,
+        "encode": 91,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 8824,
+        "total": 8921
+      }
+    },
+    {
+      "query": "cash reserve ratio and statutory liquidity ratio for small finance banks",
+      "got": [
+        "md13128",
+        "md13160",
+        "md13005",
+        "md13031",
+        "md13115"
+      ],
+      "gold": [
+        "md13128"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.7937,
+        "rerank": 7.275
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 87,
+        "dense": 9,
+        "fuse": 1,
+        "rerank": 9000,
+        "total": 9097
+      }
+    },
+    {
+      "query": "credit facilities for small finance banks",
+      "got": [
+        "md13120",
+        "md13111",
+        "md13112",
+        "md13121",
+        "md13119",
+        "md13115",
+        "md13042",
+        "md13124"
+      ],
+      "gold": [
+        "md13124"
+      ],
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.315,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.021378,
+        "bm25_rank": 10,
+        "dense_rank": 81,
+        "dense_score": 0.6903,
+        "rerank": 4.217
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 68,
+        "dense": 3,
+        "fuse": 1,
+        "rerank": 8292,
+        "total": 8365
+      }
+    },
+    {
+      "query": "branch authorisation for small finance banks",
+      "got": [
+        "md13131",
+        "md13132",
+        "md12061",
+        "md13164",
+        "md13135",
+        "md13272"
+      ],
+      "gold": [
+        "md13132"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.023536,
+        "bm25_rank": 1,
+        "dense_rank": 80,
+        "dense_score": 0.74,
+        "rerank": 5.493
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 91,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 8466,
+        "total": 8566
+      }
+    },
+    {
+      "query": "compliance function for small finance banks",
+      "got": [
+        "md13636",
+        "md13627",
+        "md13645",
+        "md13609",
+        "md13593"
+      ],
+      "gold": [
+        "md13636"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030478,
+        "bm25_rank": 1,
+        "dense_rank": 11,
+        "dense_score": 0.7916,
+        "rerank": 6.854
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 71,
+        "dense": 7,
+        "fuse": 1,
+        "rerank": 7956,
+        "total": 8036
+      }
+    },
+    {
+      "query": "internal audit function for small finance banks",
+      "got": [
+        "md13631",
+        "md13589",
+        "md13613",
+        "md13640",
+        "md13606",
+        "md13622"
+      ],
+      "gold": [
+        "md13631"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.028442,
+        "bm25_rank": 1,
+        "dense_rank": 23,
+        "dense_score": 0.7422,
+        "rerank": 6.012
+      },
+      "timings_ms": {
+        "bm25": 4,
+        "encode": 85,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 7081,
+        "total": 7174
+      }
+    },
+    {
+      "query": "securitisation transactions for small finance banks",
+      "got": [
+        "md13118",
+        "md13127",
+        "md12951",
+        "md12799",
+        "md12976"
+      ],
+      "gold": [
+        "md13118"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.021473,
+        "bm25_rank": 4,
+        "dense_rank": 111,
+        "dense_score": 0.7531,
+        "rerank": 6.31
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 81,
+        "dense": 4,
+        "fuse": 1,
+        "rerank": 8927,
+        "total": 9014
+      }
+    },
+    {
+      "query": "interest rates on advances for commercial banks",
+      "got": [
+        "md13522",
+        "md13149",
+        "md13156",
+        "md13147",
+        "md13157",
+        "md13705",
+        "md13143"
+      ],
+      "gold": [
+        "md13149"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026378,
+        "bm25_rank": 4,
+        "dense_rank": 33,
+        "dense_score": 0.7216,
+        "rerank": 3.968
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 69,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 8292,
+        "total": 8388
+      }
+    },
+    {
+      "query": "concentration risk management for commercial banks",
+      "got": [
+        "md13159",
+        "md13152",
+        "md13139",
+        "md13399",
+        "md13153"
+      ],
+      "gold": [
+        "md13152"
+      ],
+      "hit@k": true,
+      "rr": 0.5,
+      "ndcg@10": 0.631,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032522,
+        "bm25_rank": 2,
+        "dense_rank": 1,
+        "dense_score": 0.8448,
+        "rerank": 6.23
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 64,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 8341,
+        "total": 8431
+      }
+    },
+    {
+      "query": "interest rate on deposits for commercial banks",
+      "got": [
+        "md13157",
+        "md13140",
+        "md13522"
+      ],
+      "gold": [
+        "md13157"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031498,
+        "bm25_rank": 4,
+        "dense_rank": 3,
+        "dense_score": 0.7771,
+        "rerank": 4.126
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 76,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 8597,
+        "total": 8698
+      }
+    },
+    {
+      "query": "concurrent audit for commercial banks",
+      "got": [
+        "md13644",
+        "md13637",
+        "md11518",
+        "md13136"
+      ],
+      "gold": [
+        "md13644"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031025,
+        "bm25_rank": 6,
+        "dense_rank": 3,
+        "dense_score": 0.7912,
+        "rerank": 6.872
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 77,
+        "dense": 22,
+        "fuse": 1,
+        "rerank": 8613,
+        "total": 8713
+      }
+    },
+    {
+      "query": "climate finance and climate change risk for commercial banks",
+      "got": [
+        "md13138",
+        "md13153",
+        "md13399",
+        "md13705",
+        "md13147",
+        "md13139"
+      ],
+      "gold": [
+        "md13138"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.7782,
+        "rerank": 8.04
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 78,
+        "dense": 23,
+        "fuse": 1,
+        "rerank": 8174,
+        "total": 8277
+      }
+    },
+    {
+      "query": "supervisory returns for commercial banks",
+      "got": [
+        "md13638",
+        "md13641",
+        "md13637",
+        "md13160",
+        "md13147"
+      ],
+      "gold": [
+        "md13638"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.7853,
+        "rerank": 4.252
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 72,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 7810,
+        "total": 7908
+      }
+    },
+    {
+      "query": "credit risk management for non-banking financial companies",
+      "got": [
+        "md12954",
+        "md12933",
+        "md12953",
+        "md12940",
+        "md12939",
+        "md13589"
+      ],
+      "gold": [
+        "md12954"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.030092,
+        "bm25_rank": 13,
+        "dense_rank": 1,
+        "dense_score": 0.8659,
+        "rerank": 8.482
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 71,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 8008,
+        "total": 8103
+      }
+    },
+    {
+      "query": "classification and valuation of investment portfolio for non-banking financial companies",
+      "got": [
+        "md12939",
+        "md12947",
+        "md12949",
+        "md12933",
+        "md12965",
+        "md10476",
+        "md12952",
+        "md13585"
+      ],
+      "gold": [
+        "md12950"
+      ],
+      "hit@k": false,
+      "rr": 0.0,
+      "ndcg@10": 0.0,
+      "recall@10": false,
+      "top_score": {
+        "rrf": 0.025388,
+        "bm25_rank": 2,
+        "dense_rank": 48,
+        "dense_score": 0.7066,
+        "rerank": 6.867
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 73,
+        "dense": 24,
+        "fuse": 1,
+        "rerank": 8041,
+        "total": 8140
+      }
+    },
+    {
+      "query": "resolution of stressed assets for non-banking financial companies",
+      "got": [
+        "md12947",
+        "md12952",
+        "md12965",
+        "md12946",
+        "md12948",
+        "md12933",
+        "md12945"
+      ],
+      "gold": [
+        "md12947"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.026882,
+        "bm25_rank": 33,
+        "dense_rank": 2,
+        "dense_score": 0.862,
+        "rerank": 6.579
+      },
+      "timings_ms": {
+        "bm25": 2,
+        "encode": 97,
+        "dense": 25,
+        "fuse": 1,
+        "rerank": 8089,
+        "total": 8213
+      }
+    },
+    {
+      "query": "cybersecurity framework for non-banking financial companies",
+      "got": [
+        "md13592",
+        "md13591",
+        "md13589",
+        "md13593",
+        "md12936",
+        "md12954",
+        "md12965",
+        "md12934"
+      ],
+      "gold": [
+        "md13592"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.031099,
+        "bm25_rank": 1,
+        "dense_rank": 8,
+        "dense_score": 0.7404,
+        "rerank": 5.68
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 79,
+        "dense": 21,
+        "fuse": 1,
+        "rerank": 9373,
+        "total": 9474
+      }
+    },
+    {
+      "query": "acceptance of public deposits by non-banking financial companies",
+      "got": [
+        "md12939",
+        "md12592",
+        "md12965",
+        "md12958",
+        "md13585"
+      ],
+      "gold": [
+        "md12958"
+      ],
+      "hit@k": true,
+      "rr": 0.25,
+      "ndcg@10": 0.431,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.029643,
+        "bm25_rank": 14,
+        "dense_rank": 2,
+        "dense_score": 0.7991,
+        "rerank": 7.958
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 105,
+        "dense": 27,
+        "fuse": 1,
+        "rerank": 9475,
+        "total": 9608
+      }
+    },
+    {
+      "query": "account aggregator framework for non-banking financial companies",
+      "got": [
+        "md12936",
+        "md12965",
+        "md12959",
+        "md12942",
+        "md13593",
+        "md12934",
+        "md12586",
+        "md13592"
+      ],
+      "gold": [
+        "md12936"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.7772,
+        "rerank": 7.211
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 75,
+        "dense": 26,
+        "fuse": 1,
+        "rerank": 8835,
+        "total": 8939
+      }
+    },
+    {
+      "query": "cybersecurity framework for credit information companies",
+      "got": [
+        "md13583",
+        "md13051",
+        "md13122",
+        "md12980",
+        "md13026",
+        "md13643",
+        "md13625",
+        "md13634",
+        "md13616"
+      ],
+      "gold": [
+        "md13583"
+      ],
+      "hit@k": true,
+      "rr": 1.0,
+      "ndcg@10": 1.0,
+      "recall@10": true,
+      "top_score": {
+        "rrf": 0.032787,
+        "bm25_rank": 1,
+        "dense_rank": 1,
+        "dense_score": 0.7984,
+        "rerank": 6.691
+      },
+      "timings_ms": {
+        "bm25": 1,
+        "encode": 126,
+        "dense": 5,
+        "fuse": 1,
+        "rerank": 9918,
+        "total": 10051
+      }
+    }
+  ],
+  "recall": 0.96,
+  "mrr": 0.8270000000000001,
+  "recall@10": 0.98,
+  "ndcg@10": 0.8591528779561193
+}

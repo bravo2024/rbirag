@@ -1,4 +1,4 @@
-"""LangChain Embeddings wrapper around the RegIntel bge encoder.
+"""LangChain Embeddings wrapper around the RBIRAG bge encoder.
 
 LangChain components (FAISS store, tools, retrievers) use the exact same
 vectors as the engine — query prefix included for queries, raw passages for

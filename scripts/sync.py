@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""RegIntel ingestion CLI.
+"""RBIRAG ingestion CLI.
 
     python scripts/sync.py --source rss               # poll the live RSS feed
     python scripts/sync.py --source backfill          # crawl the MD listings
@@ -27,7 +27,7 @@ from regintel import ingest  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel corpus sync")
+    ap = argparse.ArgumentParser(description="RBIRAG corpus sync")
     ap.add_argument("--source", choices=["rss", "backfill", "both"], default="rss")
     ap.add_argument("--limit", type=int, default=None, help="max new docs per source")
     ap.add_argument("--refresh", action="store_true",

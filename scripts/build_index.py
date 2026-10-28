@@ -27,7 +27,7 @@ from regintel.index.bm25 import BM25Index, tokenize  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel index builder")
+    ap = argparse.ArgumentParser(description="RBIRAG index builder")
     ap.add_argument("--full", action="store_true", help="full dense re-encode")
     ap.add_argument("--bm25-only", action="store_true")
     args = ap.parse_args(argv)

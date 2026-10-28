@@ -1,4 +1,4 @@
-"""LangChain layer for RegIntel.
+"""LangChain layer for RBIRAG.
 
 The hybrid engine stays the retrieval core; this package exposes it to the
 LangChain ecosystem (retriever, LCEL answer chain, persisted FAISS store,

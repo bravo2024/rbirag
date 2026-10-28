@@ -25,7 +25,7 @@ except Exception:  # noqa: BLE001
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel LangChain FAISS store builder")
+    ap = argparse.ArgumentParser(description="RBIRAG LangChain FAISS store builder")
     ap.add_argument("--smoke", metavar="QUERY", help="run one similarity search after building")
     ap.add_argument("--k", type=int, default=3)
     args = ap.parse_args(argv)

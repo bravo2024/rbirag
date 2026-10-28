@@ -1,4 +1,4 @@
-# RegIntel answer evaluation — 2026-10-18T00-33-57
+# RBIRAG answer evaluation — 2026-10-18T00-33-57
 
 Requested pins: answer `nvidia-build:nvidia/nemotron-3-super-120b-a12b` · judge `gemini:gemini-3.5-flash-lite` · judge 2 `kilo-free:poolside/laguna-s-2.1:free` · strict pin: True · corpus `v1-53b832bb59` · k=6 · scored 19/23 answers (mode=llm).
 

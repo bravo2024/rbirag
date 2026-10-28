@@ -30,10 +30,11 @@ when". Both entity columns run off the same corpus with one toggle.
 |---|---|
 | **Corpus** | 398 instruments · 14,186 passages · 16,016 pages (synced 2026-10-20) |
 | **Retrieval** | BM25 (legal-identifier tokenizer) + bge-small-en-v1.5 dense (FAISS) → RRF k=60 → cross-encoder rerank |
-| **Gold set** | recall@5 **100%** (23/23) · MRR **0.836** · nDCG@10 **0.837** |
+| **Gold set** | recall@5 **96%** (96/100) · MRR **0.827** · nDCG@10 **0.859** |
 | **Held-out set** | recall@5 **12/12** · MRR **0.819** |
 | **Abstention** | refused **10 of 11** out-of-scope probes; **17 of 18** on a never-tuned held-out set |
 | **Answers** | provider failover, claim-level citation validation, number grounding, extractive fallback |
+| **Answer quality** | RAGAS faithfulness **0.913** · relevancy **0.803** · context precision **0.544** (83/100 answered) |
 | **Latency** | ~65 ms retrieval, ~8–13 s with rerank on a 4-core laptop |
 | **Tests** | 120 passing (`pytest tests`) |
 
@@ -134,33 +135,40 @@ every query since deployment and exports the trace as JSONL.
 
 ## Evaluation
 
-**Retrieval.** 23 curated questions with gold document ids, then a 12-question
-held-out set authored after the defaults were frozen (gold ids resolved from
-titles only, never used for tuning).
+**Retrieval.** 100 curated questions with gold document ids, covering every
+entity class in the corpus — commercial banks, NBFCs, small finance and payments
+banks, local-area, urban and rural co-operative banks, regional rural banks, all
+India financial institutions and credit information companies. Then a
+12-question held-out set authored after the defaults were frozen (gold ids
+resolved from titles only, never used for tuning).
 
 | set | n | recall@5 | MRR | nDCG@10 |
 |---|---|---|---|---|
-| gold | 23 | **100%** | 0.836 | 0.837 |
+| gold | 100 | **96%** | 0.827 | 0.859 |
+| gold, rerank off | 100 | 89% | 0.683 | 0.745 |
 | held-out | 12 | **100%** | 0.819 | 0.866 |
 | 120-question draft, answerable + amendment | 80 | 95.0% | 0.795 | 0.816 |
 | same, rerank on | 80 | 92.5% | 0.812 | 0.826 |
 
-Rerank is a clear win on the 23-question set and a slight loss on the broader
-draft set: it does not rescue any of the four misses and adds two top-5 misses
-of its own (both still inside top 10). The four misses are all generic NBFC
-queries whose title appears only in the preliminary passage while several
-sibling directions match the topic. That is a real retrieval weakness, not a
-label error, and the draft labels have not been domain-reviewed yet.
+Rerank is worth **+7 points of recall@5 and +0.14 MRR** on the 100-question set.
+On the 120-question draft it is a slight loss: it rescues none of the four
+misses and adds two top-5 misses of its own (both still inside top 10). The four
+gold misses are sibling-topic confusions rather than label errors — a local-area
+bank query for income recognition returns that bank class's investment-portfolio
+direction, and an NBFC portfolio question returns the HFC omnibus direction,
+which is large enough to match almost any NBFC topic. The draft labels have not
+been domain-reviewed yet.
 
 **Abstention.** The +2.0 threshold was calibrated on the gold set plus 11
 negative probes, then checked once at the unchanged value on 18 new negatives
 written before any score was seen.
 
-| probe set | refused at retrieval |
+| probe set | refused |
 |---|---|
-| calibration negatives | 10 / 11 |
+| calibration negatives (retrieval gate) | 10 / 11 |
 | held-out negatives (never tuned) | **17 / 18** |
-| in-scope questions (false abstention) | 4 / 23 |
+| in-scope gold questions (retrieval gate) | 0 / 100 |
+| in-scope gold questions (answer layer) | 17 / 100 |
 
 The gate catches other-regulator and off-topic questions reliably. It does not
 catch RBI-flavoured questions whose topic is absent from the corpus: the
@@ -168,24 +176,42 @@ held-out miss is a press-release probe scoring +5.01, above the lowest in-scope
 top passage (+3.42). Where the ranges overlap, the answer layer is the only
 defence. An out-of-corpus detector is the real fix and is on the roadmap.
 
-**Answers.** RAGAS over the 23 gold questions, scoring faithfulness, answer
-relevancy and LLM-judged context precision without reference.
+The 17 answer-layer refusals are a different failure: the gate never fired on
+them, and 15 had the gold document at rank 1–2. The six passages retrieved from
+it were the direction's front matter — title, applicability, definitions —
+without the operative paragraphs, so the model refused instead of guessing.
+Document-level recall is therefore not the whole story: passage selection inside
+thin or heavily structured directions is the next retrieval fix.
 
-| metric | full run | strict-pin rerun |
+**Answers.** RAGAS over the 100 gold questions, scoring faithfulness, answer
+relevancy and LLM-judged context precision without reference. 83 answers
+reached the judge; the other 17 were refused by the answer layer, as described
+above.
+
+| metric | scored | mean |
 |---|---|---|
-| faithfulness | 0.935 (19/19) | 0.925 (19/19) |
-| answer relevancy | 0.797 (19/19) | 0.814 (19/19) |
-| context precision | 0.781 (19/19) | 2/19 scored |
-| second-judge agreement | withdrawn | r = 0.322 (n = 12) |
+| faithfulness | 80 / 83 | 0.913 |
+| answer relevancy | 83 / 83 | 0.803 |
+| context precision | 83 / 83 | 0.544 |
+
+Context precision is the weak metric. The reranker puts the right document into
+context 95 times out of 100, but six passages per answer still carry a lot of
+near-miss text from sibling directions, and the judge scores most of those
+passages as not useful. That is the same passage-selection weakness behind the
+17 refusals: document recall is high, passage precision is not.
 
 Free-tier serving is a lottery, so these describe what the product achieved on
-free keys in one window, not a stable benchmark. Each artifact records the
-serving provider and model for every answer and every judge call. The first
-agreement figure (r = 0.999) was withdrawn after tracing it to a cache
-collision: the second judge was reading the first judge's cached reply. The
-cache is now keyed per pinned model and `--strict-pin` forbids live fallback.
-The strict rerun is the first agreement number computed over genuinely different
-served models, and r = 0.322 is the honest size of that corroboration.
+free keys in one window, not a stable benchmark. The requested answer pin
+served 54 of 100 answers and the requested judge pin served 31 of 917 judge
+calls; the rest fell back to Gemini, Nemotron and one pooled free model. Each
+artifact records the serving provider and model for every answer and every
+judge call. The first agreement figure (r = 0.999) was withdrawn after tracing
+it to a cache collision: the second judge was reading the first judge's cached
+reply. The cache is now keyed per pinned model and `--strict-pin` forbids live
+fallback. The strict rerun on the earlier 23-question set is the first agreement
+number computed over genuinely different served models — r = 0.322 (n = 12),
+which is the honest size of that corroboration. It has not been re-measured at
+n = 100.
 
 The mechanical validators and the held-out sets are the anti-overclaiming
 anchors: citation resolution and number grounding do not depend on a judge, and

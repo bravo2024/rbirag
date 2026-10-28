@@ -21,3 +21,80 @@
 {"query": "compounding of contraventions under FEMA", "gold_doc_ids": ["md10190"], "institution": null, "note": "FEMA compounding master direction"}
 {"query": "statutory audit requirements for commercial banks", "gold_doc_ids": ["md13639"], "institution": "bank", "note": "2026 supervisory directions (DoS)"}
 {"query": "prepaid payment instrument issuance and loading limits", "gold_doc_ids": ["md12156"], "institution": null, "note": "PPI master directions"}
+{"query": "minimum capital adequacy ratio for small finance banks", "gold_doc_ids": ["md13127"], "institution": null, "note": "SFB capital adequacy directions", "batch": "expansion-2026-10-28"}
+{"query": "capital adequacy ratio requirement for payments banks", "gold_doc_ids": ["md13097"], "institution": null, "note": "Payments Banks capital adequacy directions", "batch": "expansion-2026-10-28"}
+{"query": "kisan credit card scheme for small finance bank borrowers", "gold_doc_ids": ["md13523"], "institution": null, "note": "SFB Kisan Credit Card scheme directions", "batch": "expansion-2026-10-28"}
+{"query": "managing risks in outsourcing for local area banks", "gold_doc_ids": ["md13062"], "institution": null, "note": "LAB outsourcing directions", "batch": "expansion-2026-10-28"}
+{"query": "interest rate on deposits for urban co-operative banks", "gold_doc_ids": ["md13029"], "institution": null, "note": "UCB deposit interest rate directions", "batch": "expansion-2026-10-28"}
+{"query": "fraud risk management framework for urban co-operative banks", "gold_doc_ids": ["md13614"], "institution": null, "note": "UCB fraud risk management directions", "batch": "expansion-2026-10-28"}
+{"query": "fraud monitoring and reporting requirements for commercial banks", "gold_doc_ids": ["md13641"], "institution": "bank", "note": "Commercial Banks fraud risk management directions", "batch": "expansion-2026-10-28"}
+{"query": "cybersecurity and technology resilience framework for small finance banks", "gold_doc_ids": ["md13634"], "institution": null, "note": "SFB cybersecurity directions", "batch": "expansion-2026-10-28"}
+{"query": "digital payment security controls for commercial banks", "gold_doc_ids": ["md13642"], "institution": "bank", "note": "Commercial Banks digital payment security directions", "batch": "expansion-2026-10-28"}
+{"query": "cyber resilience for non-bank prepaid payment instrument issuers", "gold_doc_ids": ["md12715"], "institution": null, "note": "PPI cyber resilience master directions", "batch": "expansion-2026-10-28"}
+{"query": "interest rate on deposits for small finance banks", "gold_doc_ids": ["md13125"], "institution": null, "note": "SFB deposit interest rate directions", "batch": "expansion-2026-10-28"}
+{"query": "interest rate on deposits for payments banks", "gold_doc_ids": ["md13096"], "institution": null, "note": "Payments Banks deposit interest rate directions", "batch": "expansion-2026-10-28"}
+{"query": "internal ombudsman mechanism for commercial banks", "gold_doc_ids": ["md13271"], "institution": "bank", "note": "Commercial Banks internal ombudsman directions", "batch": "expansion-2026-10-28"}
+{"query": "priority sector lending targets for small finance banks", "gold_doc_ids": ["md12799"], "institution": null, "note": "PSL targets and classification directions", "batch": "expansion-2026-10-28"}
+{"query": "know your customer requirements for asset reconstruction companies", "gold_doc_ids": ["md12927"], "institution": null, "note": "ARC KYC directions", "batch": "expansion-2026-10-28"}
+{"query": "treatment of wilful defaulters by asset reconstruction companies", "gold_doc_ids": ["md12928"], "institution": null, "note": "ARC wilful defaulter directions", "batch": "expansion-2026-10-28"}
+{"query": "internal ombudsman for credit information companies", "gold_doc_ids": ["md13276"], "institution": null, "note": "CIC internal ombudsman directions", "batch": "expansion-2026-10-28"}
+{"query": "credit information reporting by non-banking financial companies", "gold_doc_ids": ["md12955"], "institution": "nbfc", "note": "NBFC credit information reporting directions", "batch": "expansion-2026-10-28"}
+{"query": "credit information reporting by commercial banks", "gold_doc_ids": ["md13154"], "institution": "bank", "note": "Commercial Banks credit information reporting directions", "batch": "expansion-2026-10-28"}
+{"query": "dividend declaration norms for non-banking financial companies", "gold_doc_ids": ["md12944"], "institution": "nbfc", "note": "NBFC dividend declaration directions", "batch": "expansion-2026-10-28"}
+{"query": "dividend declaration norms for small finance banks", "gold_doc_ids": ["md13328"], "institution": null, "note": "SFB dividend declaration directions", "batch": "expansion-2026-10-28"}
+{"query": "debit card issuance and conduct for payments banks", "gold_doc_ids": ["md13095"], "institution": null, "note": "Payments Banks debit card directions", "batch": "expansion-2026-10-28"}
+{"query": "margining requirements for non-centrally cleared OTC derivatives", "gold_doc_ids": ["md12682"], "institution": null, "note": "OTC derivatives margining directions", "batch": "expansion-2026-10-28"}
+{"query": "capital adequacy norms for all India financial institutions", "gold_doc_ids": ["md12983"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "managing risks in outsourcing for all India financial institutions", "gold_doc_ids": ["md12967"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "credit information reporting by all India financial institutions", "gold_doc_ids": ["md12980"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "fraud risk management for all India financial institutions", "gold_doc_ids": ["md13596"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "asset liability management for all India financial institutions", "gold_doc_ids": ["md12974"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "resolution of stressed assets for all India financial institutions", "gold_doc_ids": ["md12972"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "capital adequacy norms for regional rural banks", "gold_doc_ids": ["md13055"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cash reserve ratio and statutory liquidity ratio for regional rural banks", "gold_doc_ids": ["md13056"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "treatment of wilful defaulters by regional rural banks", "gold_doc_ids": ["md13042"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "concentration risk management for regional rural banks", "gold_doc_ids": ["md13049"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "asset liability management for regional rural banks", "gold_doc_ids": ["md13045"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "credit facilities for regional rural banks", "gold_doc_ids": ["md13053"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "capital adequacy norms for local area banks", "gold_doc_ids": ["md13080"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cash reserve ratio and statutory liquidity ratio for local area banks", "gold_doc_ids": ["md13081"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "responsible business conduct for local area banks", "gold_doc_ids": ["md13063"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "treatment of wilful defaulters by local area banks", "gold_doc_ids": ["md13067"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "income recognition and asset classification norms for local area banks", "gold_doc_ids": ["md13069"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "supervisory returns for local area banks", "gold_doc_ids": ["md13604"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "capital adequacy norms for urban co-operative banks", "gold_doc_ids": ["md13030"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "income recognition and asset classification norms for urban co-operative banks", "gold_doc_ids": ["md13019"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "interest rates on advances for urban co-operative banks", "gold_doc_ids": ["md13022"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "compliance function for urban co-operative banks", "gold_doc_ids": ["md13618"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "concurrent audit for urban co-operative banks", "gold_doc_ids": ["md13617"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "licensing and regulatory classification for urban co-operative banks", "gold_doc_ids": ["md13203"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "capital adequacy norms for rural co-operative banks", "gold_doc_ids": ["md13004"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cash reserve ratio and statutory liquidity ratio for rural co-operative banks", "gold_doc_ids": ["md13005"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "interest rate on deposits for rural co-operative banks", "gold_doc_ids": ["md13003"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "fraud risk management for rural co-operative banks", "gold_doc_ids": ["md13602"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "asset liability management for rural co-operative banks", "gold_doc_ids": ["md12994"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "managing risks in outsourcing for rural co-operative banks", "gold_doc_ids": ["md12986"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cash reserve ratio and statutory liquidity ratio for payments banks", "gold_doc_ids": ["md13098"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "fraud risk management for payments banks", "gold_doc_ids": ["md13623"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "supervisory returns for payments banks", "gold_doc_ids": ["md13620"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "branch authorisation for payments banks", "gold_doc_ids": ["md13102"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "responsible business conduct for payments banks", "gold_doc_ids": ["md13089"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cash reserve ratio and statutory liquidity ratio for small finance banks", "gold_doc_ids": ["md13128"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "credit facilities for small finance banks", "gold_doc_ids": ["md13124"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "branch authorisation for small finance banks", "gold_doc_ids": ["md13132"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "compliance function for small finance banks", "gold_doc_ids": ["md13636"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "internal audit function for small finance banks", "gold_doc_ids": ["md13631"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "securitisation transactions for small finance banks", "gold_doc_ids": ["md13118"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "interest rates on advances for commercial banks", "gold_doc_ids": ["md13149"], "institution": "bank", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "concentration risk management for commercial banks", "gold_doc_ids": ["md13152"], "institution": "bank", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "interest rate on deposits for commercial banks", "gold_doc_ids": ["md13157"], "institution": "bank", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "concurrent audit for commercial banks", "gold_doc_ids": ["md13644"], "institution": "bank", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "climate finance and climate change risk for commercial banks", "gold_doc_ids": ["md13138"], "institution": "bank", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "supervisory returns for commercial banks", "gold_doc_ids": ["md13638"], "institution": "bank", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "credit risk management for non-banking financial companies", "gold_doc_ids": ["md12954"], "institution": "nbfc", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "classification and valuation of investment portfolio for non-banking financial companies", "gold_doc_ids": ["md12950"], "institution": "nbfc", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "resolution of stressed assets for non-banking financial companies", "gold_doc_ids": ["md12947"], "institution": "nbfc", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cybersecurity framework for non-banking financial companies", "gold_doc_ids": ["md13592"], "institution": "nbfc", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "acceptance of public deposits by non-banking financial companies", "gold_doc_ids": ["md12958"], "institution": "nbfc", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "account aggregator framework for non-banking financial companies", "gold_doc_ids": ["md12936"], "institution": "nbfc", "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}
+{"query": "cybersecurity framework for credit information companies", "gold_doc_ids": ["md13583"], "institution": null, "note": "entity-matrix batch 2026-10-28", "batch": "expansion-2026-10-28"}

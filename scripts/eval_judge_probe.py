@@ -99,7 +99,7 @@ def parse_verdicts(text: str) -> dict | None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel judge selection probe")
+    ap = argparse.ArgumentParser(description="RBIRAG judge selection probe")
     ap.add_argument("--calls", type=int, default=3, help="calls per candidate")
     args = ap.parse_args(argv)
 

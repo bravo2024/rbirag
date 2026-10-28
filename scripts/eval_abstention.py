@@ -74,7 +74,7 @@ def run_one(eng: Engine, query: str, filters, pin, gate: bool = True) -> dict:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel abstention eval")
+    ap = argparse.ArgumentParser(description="RBIRAG abstention eval")
     ap.add_argument("--answer-pin", default="groq:openai/gpt-oss-120b")
     ap.add_argument("--answers", default=None, help="answers_*.json for the in-scope set")
     ap.add_argument("--no-gate", action="store_true",

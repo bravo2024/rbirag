@@ -32,7 +32,7 @@ RESULTS_DIR = ROOT / "evals" / "results"
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel retrieval eval")
+    ap = argparse.ArgumentParser(description="RBIRAG retrieval eval")
     ap.add_argument("--k", type=int, default=5,
                     help="recall/MRR cutoff (nDCG and recall@10 always use top-10)")
     ap.add_argument("--no-rerank", action="store_true")
@@ -54,7 +54,15 @@ def main(argv: list[str] | None = None) -> int:
         if case.get("institution"):
             filt = QueryFilters(entities=config.INSTITUTIONS[case["institution"]]["entities"])
         res = eng.retrieve(case["query"], filters=filt, k=retrieve_k, rerank=not args.no_rerank)
-        docs = [h.doc_id for h in res["hits"]]
+        # Hits are chunks; keep one slot per document so duplicates cannot
+        # crowd out the top-k.
+        seen: set[str] = set()
+        docs = []
+        for h in res["hits"]:
+            if h.doc_id in seen:
+                continue
+            seen.add(h.doc_id)
+            docs.append(h.doc_id)
         gold = set(case["gold_doc_ids"])
         hit = hit_at_k(docs, gold, args.k)
         rr = mrr_at_k(docs, gold, args.k)

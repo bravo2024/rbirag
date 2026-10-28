@@ -180,12 +180,13 @@ def stage_answers(cases: list[dict], answer_pin, strict_pin: bool = False) -> li
 
 
 def stage_metric(samples: list[dict], judge_pin, metric: str, progress: bool = False,
-                 strict_pin: bool = False, judge_chain=None):
+                 strict_pin: bool = False, judge_chain=None, workers: int = 1):
     """Returns (scores, served): per-sample scores and, per sample, the
     {"provider/model": calls} census of the judge calls behind each score."""
     t0 = time.time()
     out = judge.run_eval(samples, judge_pin=judge_pin, metrics=[metric],
                          show_progress=progress, strict_pin=strict_pin,
+                         max_workers=workers,
                          **({"judge_chain": judge_chain} if judge_chain else {}))
     vals = [r.get(metric) for r in out["rows"]]
     served = [r.get("judge_served") or {} for r in out["rows"]]
@@ -197,8 +198,9 @@ def stage_metric(samples: list[dict], judge_pin, metric: str, progress: bool = F
 
 
 def stage_agreement(samples: list[dict], f1: list, served1: list[dict], judge2_pin,
-                    strict_pin: bool = False) -> dict:
-    vals2, served2 = stage_metric(samples, judge2_pin, "faithfulness", strict_pin=strict_pin)
+                    strict_pin: bool = False, workers: int = 1) -> dict:
+    vals2, served2 = stage_metric(samples, judge2_pin, "faithfulness", strict_pin=strict_pin,
+                                  workers=workers)
     out = judge_agreement(f1, served1, vals2, served2)
     out.update(judge2=":".join(judge2_pin or ()), scores_judge2=vals2, served_judge2=served2)
     return out
@@ -239,7 +241,7 @@ def mechanical_summary(records: list[dict]) -> dict:
 
 def write_markdown(path: Path, meta: dict, summary: dict, metric_means: dict,
                    per_query: list[dict], agreement: dict | None) -> None:
-    lines = [f"# RegIntel answer evaluation — {meta['ts']}", ""]
+    lines = [f"# RBIRAG answer evaluation — {meta['ts']}", ""]
     judge_req = (" -> ".join(meta["judge_chain"]) if meta.get("judge_chain")
                  else meta["judge_pin"])
     ctx_req = (f"context {meta['context_size']} tok/{meta['context_scope']}"
@@ -291,7 +293,7 @@ def write_markdown(path: Path, meta: dict, summary: dict, metric_means: dict,
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="RegIntel answer eval (RAGAS + mechanical)")
+    ap = argparse.ArgumentParser(description="RBIRAG answer eval (RAGAS + mechanical)")
     ap.add_argument("--file", default=str(EVAL_FILE),
                     help="JSONL questions (default evals/queries.jsonl; v2 schema accepted)")
     ap.add_argument("--category", action="append",
@@ -319,6 +321,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--answers", default=None, help="reuse a saved answers_*.json")
     ap.add_argument("--tag", default="")
     ap.add_argument("--progress", action="store_true", help="ragas progress bar")
+    ap.add_argument("--workers", type=int, default=1,
+                    help="parallel judge calls (1 = serial, survives free-tier limits)")
     args = ap.parse_args(argv)
 
     answer_pin, judge_pin = _pin(args.answer_pin), _pin(args.judge_pin)
@@ -387,7 +391,8 @@ def main(argv: list[str] | None = None) -> int:
             try:
                 vals, served = stage_metric(samples, judge_pin, m, progress=args.progress,
                                             strict_pin=args.strict_pin,
-                                            judge_chain=judge_chain)
+                                            judge_chain=judge_chain,
+                                            workers=args.workers)
             except Exception as exc:  # noqa: BLE001 - one metric must not kill the run
                 print(f"[judge] {m} FAILED: {str(exc)[:200]}")
                 vals, served = [None] * len(samples), [{}] * len(samples)

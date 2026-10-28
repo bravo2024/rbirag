@@ -1,4 +1,4 @@
-"""The RegIntel hybrid engine exposed as a LangChain retriever.
+"""The RBIRAG hybrid engine exposed as a LangChain retriever.
 
 Chains and agents get the full quality stack — BM25 + dense + RRF fusion +
 cross-encoder rerank, under institution / doc-type / theme / date filters —
