@@ -47,8 +47,8 @@ Additional fields for specific categories:
 * `as_of`: `probe_doc_id`, `expect_present` (bool), and `as_of` (ISO date).
 * `unanswerable`: `expected = "abstain"` and `expected_topic` names the reason.
 
-`institution` is `bank` (commercial banks), `nbfc`
-(NBFC-HFC), or `null` (no entity filter).
+`institution` is `bank` (commercial banks), `nbfc` (NBFC/HFC group), or `null`
+(no entity filter).
 
 ## What the harness does
 

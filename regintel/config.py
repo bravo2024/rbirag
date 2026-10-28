@@ -133,7 +133,7 @@ ABSTAIN_SCORE = float(os.environ.get("REGINTEL_ABSTAIN", "2.0"))
 # ---------------------------------------------------------------------------
 INSTITUTIONS = {
     "all":  {"label": "All institutions", "entities": set()},
-    "bank":  {"label": "Commercial bank",
+    "bank": {"label": "Commercial bank",
              "entities": {"commercial_banks", "authorised_dealers"}},
     "nbfc": {"label": "NBFC / HFC group",
              "entities": {"nbfc", "hfc"}},
