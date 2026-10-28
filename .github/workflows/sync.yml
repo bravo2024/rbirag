@@ -1,0 +1,35 @@
+name: sync-rbi
+
+# Daily RSS sync that commits refreshed corpora/indexes back to the repo.
+# The Streamlit app can also sync live from its sidebar; this workflow keeps the
+# committed artifacts warm so deploys always start from a current corpus.
+on:
+  schedule:
+    - cron: "15 1 * * *"   # ~06:45 IST
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Sync RSS + rebuild indexes
+        run: |
+          python scripts/sync.py --source rss --refresh
+      - name: Recompute document statuses (forthcoming -> current on its date)
+        run: |
+          python scripts/recompute_status.py
+      - name: Commit corpus artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/documents.jsonl data/chunks.jsonl data/manifest.json data/index
+          git diff --cached --quiet || git commit -m "sync: RBI notifications for $(date -u +%F)"
+          git push
