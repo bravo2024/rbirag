@@ -7,7 +7,7 @@ Tabs
   Audit      every query, filter set and retrieved passage, exportable
 
 Sidebar
-  institution filter (Commercial bank / NBFC / HFC / all), doc-type,
+  institution filter (commercial bank / NBFC-HFC group / all), doc-type,
   theme and date filters, retrieval settings, and the RBI updates panel
   (check the feed, sync new notifications + re-crawl the Master Directions
   listings, optional 2-minute auto-sync).
@@ -51,6 +51,53 @@ def _link_titles(ids: list[str], docs: dict | None) -> str:
 
 st.set_page_config(page_title="RBIRAG - RBI Regulatory Intelligence",
                    page_icon="\U0001f3e6", layout="wide")
+
+CSS = """
+<style>
+.block-container {padding-top: 2.4rem; padding-bottom: 3rem; max-width: 1180px;}
+header[data-testid="stHeader"] {background: transparent;}
+#MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"] {display: none;}
+
+.rbi-hero h1 {font-size: 2.3rem; line-height: 1.15; letter-spacing: -0.02em;
+              margin: 0 0 .3rem 0;}
+.rbi-hero p {color: #6b7280; font-size: 1rem; margin: 0; max-width: 64ch;}
+
+.rbi-chips {display: flex; flex-wrap: wrap; gap: .4rem; margin: .95rem 0 .1rem 0;}
+.rbi-chip {border: 1px solid rgba(128,128,128,.3); border-radius: 999px;
+           padding: .16rem .62rem; font-size: .76rem; color: #6b7280;
+           background: rgba(128,128,128,.07); white-space: nowrap;}
+.rbi-chip b {color: #111827; font-weight: 600;}
+
+.rbi-meta {display: flex; flex-wrap: wrap; gap: .38rem; align-items: center;
+           margin: 0 0 .55rem 0;}
+.rbi-pill {border-radius: 999px; padding: .14rem .6rem; font-size: .73rem;
+           font-weight: 600; border: 1px solid; white-space: nowrap;}
+.rbi-pill.ok   {background: rgba(34,197,94,.14);  border-color: rgba(34,197,94,.45);}
+.rbi-pill.warn {background: rgba(245,158,11,.16); border-color: rgba(245,158,11,.5);}
+.rbi-pill.mute {background: rgba(128,128,128,.1); border-color: rgba(128,128,128,.28);
+                font-weight: 500; color: #6b7280;}
+
+.rbi-claims {margin: .95rem 0 0 0; border-top: 1px solid rgba(128,128,128,.22);
+             padding-top: .7rem;}
+.rbi-claims .h {font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+                color: #6b7280; margin-bottom: .5rem;}
+.rbi-claim {margin: 0 0 .5rem 0; font-size: .92rem; line-height: 1.5;}
+.rbi-ref {font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          font-size: .72rem; background: rgba(128,128,128,.16);
+          border-radius: 4px; padding: .05rem .3rem; margin-left: .18rem;}
+.rbi-note {display: block; font-size: .76rem; color: #9ca3af; margin-top: .15rem;}
+</style>
+"""
+
+EXAMPLES = [
+    ("Capital adequacy", "What is the minimum capital adequacy ratio for small finance banks?"),
+    ("KYC", "How often must KYC records be updated for high-risk customers?"),
+    ("Out of scope", "What is SEBI's framework for insider trading?"),
+]
+
+
+def _inject_css() -> None:
+    st.markdown(CSS, unsafe_allow_html=True)
 
 
 # ---------------------------------------------------------------------------
@@ -322,17 +369,20 @@ def render_citation_card(i: int, card: dict, docs: dict | None = None) -> None:
 
 def render_assistant(msg: dict, docs: dict | None = None) -> None:
     ans, filt, trace = msg["answer"], msg["filters"], msg["trace"]
-    badge = {"llm": "Grounded LLM answer", "extractive": "Extractive answer",
-             "abstain": "Abstained"}.get(ans["mode"], ans["mode"])
-    parts = [badge]
+    mode = ans["mode"]
+    label, cls = {"llm": ("Grounded answer", "ok"),
+                  "extractive": ("Extractive answer", "warn"),
+                  "abstain": ("Refused", "warn")}.get(mode, (mode, "mute"))
+    pills = [f"<span class='rbi-pill {cls}'>{label}</span>"]
     if ans.get("provider") or ans.get("model"):
-        parts.append(f"{ans.get('provider') or '?'}/{ans.get('model') or '?'}")
+        served = f"{ans.get('provider') or '?'}/{ans.get('model') or '?'}"
+        pills.append(f"<span class='rbi-pill mute'>{escape(served)}</span>")
     if ans.get("cached"):
-        parts.append("cached")
+        pills.append("<span class='rbi-pill mute'>cached</span>")
     if ans.get("latency_s") is not None:
-        parts.append(f"{ans['latency_s']:.1f}s")
-    parts.append(filt["institution_label"])
-    st.caption(" \u00b7 ".join(parts))
+        pills.append(f"<span class='rbi-pill mute'>{ans['latency_s']:.1f} s</span>")
+    pills.append(f"<span class='rbi-pill mute'>{escape(filt['institution_label'])}</span>")
+    st.markdown(f"<div class='rbi-meta'>{''.join(pills)}</div>", unsafe_allow_html=True)
     if ans.get("low_confidence") and ans["mode"] == "llm":
         st.warning("Retrieval confidence is low \u2014 verify every claim against the cited text.")
     if filt.get("institution_key") == "all" and ans["citations"]:
@@ -349,12 +399,17 @@ def render_assistant(msg: dict, docs: dict | None = None) -> None:
                     "applies to your entity.")
     st.markdown(ans["answer_md"])
     if ans["claims"]:
-        st.markdown("**Claims (validated citations):**")
+        rows = ["<div class='rbi-claims'><div class='h'>Validated claims</div>"]
         for c in ans["claims"]:
-            cites = " ".join(f"`[{x}]`" for x in c["citations"])
-            warn = (f" (numbers not found in cited text: {', '.join(c['number_issues'])})"
-                    if c.get("number_issues") else "")
-            st.markdown(f"- {c['text']} {cites}{warn}")
+            refs = "".join(f"<span class='rbi-ref'>[{escape(str(x))}]</span>"
+                           for x in c["citations"])
+            note = ""
+            if c.get("number_issues"):
+                note = (f"<span class='rbi-note'>numbers not found in cited text: "
+                        f"{escape(', '.join(c['number_issues']))}</span>")
+            rows.append(f"<div class='rbi-claim'>{escape(c['text'])}{refs}{note}</div>")
+        rows.append("</div>")
+        st.markdown("".join(rows), unsafe_allow_html=True)
     if ans.get("claims_dropped"):
         st.caption(f"{_plural(ans['claims_dropped'], 'claim')} dropped by the citation validator.")
     if ans.get("claims_ungrounded"):
@@ -392,7 +447,17 @@ def ask_tab(eng: Engine | None, docs: dict, ui: dict) -> None:
         with st.chat_message("assistant"):
             render_assistant(msg, docs)
 
+    if not st.session_state.chat and not st.session_state.get("pending_q"):
+        st.caption("Try an example")
+        for _, example in EXAMPLES:
+            if st.button(example, key=f"ex-{example}", width="stretch"):
+                st.session_state.pending_q = example
+                st.rerun()
+
     q = st.chat_input("Ask about RBI directions, circulars, thresholds, forms\u2026")
+    if not q:
+        q = st.session_state.get("pending_q")
+        st.session_state.pending_q = None
     if not q:
         return
     with st.chat_message("user"):
@@ -419,7 +484,7 @@ def ask_tab(eng: Engine | None, docs: dict, ui: dict) -> None:
                            k=ui["top_k"], rerank=ui["rerank"], trace=result["trace"],
                            hits=result["hits"], answer=ans, mode=ans["mode"])
         st.session_state.chat.append(msg)
-        render_assistant(msg, docs)
+        st.rerun()
 
 
 # ---------------------------------------------------------------------------
@@ -618,24 +683,34 @@ def audit_tab() -> None:
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+def render_header(docs: dict, version: str, m: dict, eng: Engine | None) -> None:
+    backend = eng.dense.backend if eng is not None and eng.dense is not None else "n/a"
+    chunks = m.get("n_chunks")
+    chips = [f"<span class='rbi-chip'><b>{len(docs)}</b> instruments</span>"]
+    if isinstance(chunks, int):
+        chips.append(f"<span class='rbi-chip'><b>{chunks:,}</b> passages</span>")
+    chips += ["<span class='rbi-chip'>BM25 + dense + rerank</span>",
+              f"<span class='rbi-chip'>dense: {escape(str(backend))}</span>"]
+    st.markdown(
+        "<div class='rbi-hero'><h1>RBIRAG</h1>"
+        "<p>Ask the RBI's Master Directions. Every answer cites the paragraph, the "
+        "instrument and the page, or refuses.</p>"
+        f"<div class='rbi-chips'>{''.join(chips)}</div></div>",
+        unsafe_allow_html=True)
+    st.caption(f"Corpus {version} \u00b7 built {m.get('built_at', '')} \u00b7 "
+               f"embedder {m.get('embed_model', '')}")
+    st.caption("Informational tool built on official RBI texts (rbi.org.in). Not legal "
+               "advice \u2014 verify every answer against the cited text.")
+
+
 def main() -> None:
     llm.warm_model_registry()  # parallel /models fetch, cached 10 min
+    _inject_css()
     ui = sidebar_filters()
     rbi_updates_panel()
     eng, docs, version = engine_and_docs()
 
-    st.title("RBIRAG \u2014 RBI Regulatory Intelligence")
-    m = store.read_manifest() or {}
-    if docs:
-        backend = eng.dense.backend if eng is not None and eng.dense is not None else "n/a"
-        llm_state = ("grounded LLM, extractive fallback" if llm.available()
-                     else "extractive only (no LLM key)")
-        st.caption(f"Corpus {version} \u2014 {_plural(len(docs), 'instrument')} / "
-                   f"{m.get('n_chunks', '?')} passages \u00b7 built {m.get('built_at', '')} \u00b7 "
-                   f"embedder {m.get('embed_model', '')} \u00b7 dense: {backend} \u00b7 "
-                   f"answers: {llm_state}.")
-    st.caption("Informational tool built on official RBI texts (rbi.org.in). Not legal "
-               "advice \u2014 verify every answer against the cited text.")
+    render_header(docs, version, store.read_manifest() or {}, eng)
 
     tab_ask, tab_circ, tab_cmp, tab_audit = st.tabs(
         ["Ask", "Circulars", "Compare", "Audit"])
