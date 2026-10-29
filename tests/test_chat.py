@@ -126,6 +126,17 @@ def test_contextual_query_ignores_blank_and_assistant_only_history():
         == "What about NBFCs?"
 
 
+def test_contextual_query_skips_greetings_and_earlier_follow_ups():
+    greeting = [{"role": "user", "content": "hi"}, {"role": "assistant", "content": "Hello."}]
+    assert answer.contextual_query("What about NBFCs?", greeting) == "What about NBFCs?"
+    chained = CRAR_TURNS + [
+        {"role": "user", "content": "What about NBFCs?"},
+        {"role": "assistant", "content": "For NBFCs the ratio is 9 per cent [C2]."},
+    ]
+    assert (answer.contextual_query("And for small finance banks?", chained)
+            == "What is the minimum CRAR for a commercial bank? And for small finance banks?")
+
+
 def _hit(text: str = "KYC is updated every two years."):
     from regintel.index.fusion import Hit
     return Hit(chunk_id="c1", doc_id="d1", text=text, title="T", reference="R",

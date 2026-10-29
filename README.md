@@ -3,7 +3,7 @@
 **Ask the RBI's Master Directions a question and get an answer that cites the
 paragraph, the instrument and the page — or an explicit refusal.**
 
-![tests](https://img.shields.io/badge/tests-174%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-175%20passing-brightgreen)
 ![python](https://img.shields.io/badge/python-3.11-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
@@ -36,7 +36,7 @@ when". Both entity columns run off the same corpus with one toggle.
 | **Answers** | provider failover, claim-level citation validation, number grounding, extractive fallback |
 | **Answer quality** | RAGAS faithfulness **0.913** · relevancy **0.803** · context precision **0.544** (83/100 answered) |
 | **Latency** | ~65 ms retrieval, ~8–13 s with rerank on a 4-core laptop |
-| **Tests** | 174 passing (`pytest tests`) |
+| **Tests** | 175 passing (`pytest tests`) |
 
 Retrieval and answer metrics were measured on the 2026-10-28 corpus (398
 instruments). The corpus refreshes daily from the RBI feed, so counts drift
@@ -275,7 +275,7 @@ regintel/              ingestion, classification, chunking, retrieval, answers
 scripts/               sync, index build, evaluations, Kaggle GPU build
 evals/                 gold set, held-out set, 120-question draft set, results
 data/                  committed corpus and indexes
-tests/                 174 offline tests
+tests/                 175 offline tests
 ```
 
 `scripts/eval_retrieval.py`, `eval_v2.py`, `eval_abstention.py` and

@@ -123,27 +123,37 @@ _ANAPHORA_RX = re.compile(
     r"\b(it|its|that|this|these|those|they|them|there|such)\b", re.I)
 
 
+def _reads_as_followup(q: str) -> bool:
+    """A connector or an anaphor in a short message ("what about X?", "how is it set?")."""
+    return bool(_FOLLOWUP_RX.match(q)) or (
+        len(q.split()) <= 12 and bool(_ANAPHORA_RX.search(q)))
+
+
 def contextual_query(query: str, history: list[dict] | None = None) -> str:
     """Retrieval query for a follow-up turn.
 
     Returns the query unchanged unless it reads as a follow-up: an explicit
     connector ("what about..."), or an anaphor inside a short message. In that
-    case the previous user question is prepended so the retriever sees the
-    topic. The answer prompt still receives the user's original words.
+    case the last question that stood on its own is prepended so the retriever
+    sees the topic. Greetings and earlier follow-ups are skipped, so a "hi"
+    never becomes part of the search. The answer prompt still receives the
+    user's original words.
     """
     q = (query or "").strip()
     if not q or not history:
         return q
     prev = ""
     for turn in reversed(history):
-        if turn.get("role") == "user" and (turn.get("content") or "").strip():
-            prev = turn["content"].strip()
-            break
+        if turn.get("role") != "user":
+            continue
+        content = (turn.get("content") or "").strip()
+        if not content or is_smalltalk(content) or _reads_as_followup(content):
+            continue
+        prev = content
+        break
     if not prev:
         return q
-    follow = bool(_FOLLOWUP_RX.match(q)) or (
-        len(q.split()) <= 12 and bool(_ANAPHORA_RX.search(q)))
-    return f"{prev} {q}" if follow else q
+    return f"{prev} {q}" if _reads_as_followup(q) else q
 
 
 def scope_label(entity_scope: str | None, entities: list[str] | None) -> str:
