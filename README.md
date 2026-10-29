@@ -3,7 +3,7 @@
 **Ask the RBI's Master Directions a question and get an answer that cites the
 paragraph, the instrument and the page — or an explicit refusal.**
 
-![tests](https://img.shields.io/badge/tests-120%20passing-brightgreen)
+![tests](https://img.shields.io/badge/tests-174%20passing-brightgreen)
 ![python](https://img.shields.io/badge/python-3.11-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
@@ -36,7 +36,7 @@ when". Both entity columns run off the same corpus with one toggle.
 | **Answers** | provider failover, claim-level citation validation, number grounding, extractive fallback |
 | **Answer quality** | RAGAS faithfulness **0.913** · relevancy **0.803** · context precision **0.544** (83/100 answered) |
 | **Latency** | ~65 ms retrieval, ~8–13 s with rerank on a 4-core laptop |
-| **Tests** | 164 passing (`pytest tests`) |
+| **Tests** | 174 passing (`pytest tests`) |
 
 Retrieval and answer metrics were measured on the 2026-10-28 corpus (398
 instruments). The corpus refreshes daily from the RBI feed, so counts drift
@@ -130,11 +130,15 @@ provider reachable the same response shape is filled extractively.
 
 **App.** Four tabs. *Ask* is a chat over the corpus with the institution toggle
 and an in-force-on date. Greetings and questions about the assistant are answered
-conversationally rather than refused; everything else goes through retrieval, and
-every answer carries its mode, serving model, latency, validated claims and an
-expandable audit trail with per-passage citation cards and retrieval ranks.
+conversationally rather than refused; everything else goes through retrieval.
+Follow-up turns keep their topic: when a message reads as a continuation ("what
+about NBFCs?"), the previous question rides along as the retrieval query and the
+last three turns reach the model as context that cannot be cited. Every answer
+carries its mode, serving model and latency on one muted line, with a *Sources*
+popover holding per-passage citation cards and retrieval ranks. Claims are shown
+only when the validator flags one, so a clean answer stays clean.
 *Circulars* browses every instrument with
-metadata, entity and theme chips, extraction provenance and the full parsed text
+metadata, entity and theme tags, extraction provenance and the full parsed text
 page by page. *Compare* puts two instruments side by side with
 paragraph-overlap highlighting (≥62% similar), useful for the bank versus NBFC
 version of one mandate or a consolidation versus its amendment. *Audit* lists
@@ -271,7 +275,7 @@ regintel/              ingestion, classification, chunking, retrieval, answers
 scripts/               sync, index build, evaluations, Kaggle GPU build
 evals/                 gold set, held-out set, 120-question draft set, results
 data/                  committed corpus and indexes
-tests/                 120 offline tests
+tests/                 174 offline tests
 ```
 
 `scripts/eval_retrieval.py`, `eval_v2.py`, `eval_abstention.py` and

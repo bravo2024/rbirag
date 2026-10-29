@@ -49,43 +49,33 @@ def _link_titles(ids: list[str], docs: dict | None) -> str:
     return "; ".join(out)
 
 
-st.set_page_config(page_title="RBIRAG - RBI Regulatory Intelligence",
-                   page_icon="\U0001f3e6", layout="wide")
+st.set_page_config(page_title="RBIRAG \u2014 RBI Regulatory Intelligence",
+                   page_icon="\u00a7", layout="wide")
 
 CSS = """
 <style>
-.block-container {padding-top: 2.4rem; padding-bottom: 3rem; max-width: 1180px;}
+.block-container {padding-top: 2.1rem; padding-bottom: 4rem; max-width: 1120px;}
 header[data-testid="stHeader"] {background: transparent;}
 #MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"] {display: none;}
 
-.rbi-hero h1 {font-size: 2.3rem; line-height: 1.15; letter-spacing: -0.02em;
-              margin: 0 0 .3rem 0;}
-.rbi-hero p {color: #6b7280; font-size: 1rem; margin: 0; max-width: 64ch;}
+.rbi-hero h1 {font-size: 1.7rem; line-height: 1.2; letter-spacing: -0.01em;
+              margin: 0 0 .35rem 0;}
+.rbi-hero p {color: #6b7280; font-size: .95rem; margin: 0; max-width: 68ch;}
+.rbi-stats {color: #9ca3af; font-size: .78rem; margin-top: .7rem;}
+.rbi-stats a {color: #9ca3af; text-decoration: underline;}
 
-.rbi-chips {display: flex; flex-wrap: wrap; gap: .4rem; margin: .95rem 0 .1rem 0;}
-.rbi-chip {border: 1px solid rgba(128,128,128,.3); border-radius: 999px;
-           padding: .16rem .62rem; font-size: .76rem; color: #6b7280;
-           background: rgba(128,128,128,.07); white-space: nowrap;}
-.rbi-chip b {color: #111827; font-weight: 600;}
+.rbi-meta {color: #9ca3af; font-size: .78rem; margin: 0 0 .5rem 0;}
+.rbi-meta b {color: #6b7280; font-weight: 600;}
 
-.rbi-meta {display: flex; flex-wrap: wrap; gap: .38rem; align-items: center;
-           margin: 0 0 .55rem 0;}
-.rbi-pill {border-radius: 999px; padding: .14rem .6rem; font-size: .73rem;
-           font-weight: 600; border: 1px solid; white-space: nowrap;}
-.rbi-pill.ok   {background: rgba(34,197,94,.14);  border-color: rgba(34,197,94,.45);}
-.rbi-pill.warn {background: rgba(245,158,11,.16); border-color: rgba(245,158,11,.5);}
-.rbi-pill.mute {background: rgba(128,128,128,.1); border-color: rgba(128,128,128,.28);
-                font-weight: 500; color: #6b7280;}
-
-.rbi-claims {margin: .95rem 0 0 0; border-top: 1px solid rgba(128,128,128,.22);
-             padding-top: .7rem;}
-.rbi-claims .h {font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
-                color: #6b7280; margin-bottom: .5rem;}
-.rbi-claim {margin: 0 0 .5rem 0; font-size: .92rem; line-height: 1.5;}
+.rbi-claims {margin: .9rem 0 0 0; border-top: 1px solid rgba(128,128,128,.18);
+             padding-top: .65rem;}
+.rbi-claims .h {font-size: .7rem; text-transform: uppercase; letter-spacing: .08em;
+                color: #9ca3af; margin-bottom: .45rem;}
+.rbi-claim {margin: 0 0 .45rem 0; font-size: .9rem; line-height: 1.5; color: #4b5563;}
 .rbi-ref {font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: .72rem; background: rgba(128,128,128,.16);
-          border-radius: 4px; padding: .05rem .3rem; margin-left: .18rem;}
-.rbi-note {display: block; font-size: .76rem; color: #9ca3af; margin-top: .15rem;}
+          font-size: .7rem; color: #6b7280; background: rgba(128,128,128,.12);
+          border-radius: 3px; padding: .04rem .28rem; margin-left: .2rem;}
+.rbi-note {display: block; font-size: .74rem; color: #b45309; margin-top: .12rem;}
 </style>
 """
 
@@ -137,8 +127,8 @@ def _llm_status() -> list[dict]:
 # ---------------------------------------------------------------------------
 def sidebar_filters() -> dict:
     st.sidebar.title("RBIRAG")
-    st.sidebar.caption("RBI Regulatory Intelligence \u2014 Master Directions + "
-                       "latest notifications, hybrid retrieval, audit-trail citations.")
+    st.sidebar.caption("RBI Master Directions and notifications, with an audit trail "
+                       "for every answer.")
 
     labels = {k: v["label"] for k, v in config.INSTITUTIONS.items()}
     inst_key = st.sidebar.radio(
@@ -209,12 +199,11 @@ def sidebar_filters() -> dict:
             llm_pin = (prov_choice, model_choice)
         st.caption("Provider status")
         for row in _llm_status():
-            live = f"{row['live_models']} models" if row["live_models"] else "models unavailable"
-            first = f" \u00b7 first: `{row['first']}`" if row["first"] else ""
-            st.markdown(f"**{row['provider']}** \u00b7 {row['key']} \u00b7 {live}{first}")
-        st.caption("Keys come from the environment or Streamlit secrets \u2014 a flat "
-                   "`GROQ_API_KEY = \"...\"` or one section deep, e.g. `[api_keys]`. "
-                   "Groq, Gemini and NVIDIA Build offer free tiers.")
+            live = f"{row['live_models']} models" if row["live_models"] else "no models"
+            first = f", first {row['first']}" if row["first"] else ""
+            st.caption(f"{row['provider']}: {row['key']}, {live}{first}")
+        st.caption("Keys come from the environment or Streamlit secrets \u2014 flat, or one "
+                   "section deep. Groq, Gemini and NVIDIA Build have free tiers.")
 
     return {
         "entities": frozenset(config.INSTITUTIONS[inst_key]["entities"]),
@@ -251,14 +240,10 @@ def rbi_updates_panel() -> None:
         c1, c2 = st.columns(2)
         c1.metric("Last feed poll", (seen.get("last_poll") or "\u2014")[11:16] or "\u2014")
         c2.metric("Corpus built", (m.get("built_at") or "\u2014")[11:16] or "\u2014")
-        st.caption("Coverage: all 385 current instruments across RBI's 19 Master "
-                   "Directions listings (commercial banks, NBFCs, co-operative banks, "
-                   "payment systems, financial markets, FEMA, \u2026), plus the latest "
-                   "~10 notifications from the RSS feed. Every sync re-crawls the listings, "
-                   "so new directions are picked up automatically and pages RBI has updated "
-                   "in place are re-ingested as new versions (old versions stay in the audit "
-                   "trail, hidden from retrieval). Press releases, speeches and superseded "
-                   "circulars are out of scope.")
+        st.caption(f"{m.get('n_docs', 0)} instruments across RBI's Master Directions "
+                   "listings, plus the latest notifications. Every sync re-crawls the "
+                   "listings, so new directions are picked up and pages RBI updated in "
+                   "place are re-ingested as new versions.")
 
         if st.button("Check RSS for new notifications", width="stretch"):
             with st.spinner("Polling the RBI feed\u2026"):
@@ -371,38 +356,36 @@ def render_citation_card(i: int, card: dict, docs: dict | None = None) -> None:
 def render_assistant(msg: dict, docs: dict | None = None) -> None:
     ans, filt, trace = msg["answer"], msg["filters"], msg["trace"]
     mode = ans["mode"]
-    label, cls = {"llm": ("Grounded answer", "ok"),
-                  "extractive": ("Extractive answer", "warn"),
-                  "chat": ("Conversational", "mute"),
-                  "abstain": ("Refused", "warn")}.get(mode, (mode, "mute"))
-    pills = [f"<span class='rbi-pill {cls}'>{label}</span>"]
+    label = {"llm": "Grounded", "extractive": "Extractive", "chat": "Chat",
+             "abstain": "Refused"}.get(mode, mode)
+    bits = [f"<b>{label}</b>"]
     if ans.get("provider") or ans.get("model"):
-        served = f"{ans.get('provider') or '?'}/{ans.get('model') or '?'}"
-        pills.append(f"<span class='rbi-pill mute'>{escape(served)}</span>")
+        bits.append(escape(f"{ans.get('provider') or '?'}/{ans.get('model') or '?'}"))
     if ans.get("cached"):
-        pills.append("<span class='rbi-pill mute'>cached</span>")
+        bits.append("cached")
     if ans.get("latency_s") is not None:
-        pills.append(f"<span class='rbi-pill mute'>{ans['latency_s']:.1f} s</span>")
+        bits.append(f"{ans['latency_s']:.1f} s")
     if mode != "chat":
-        pills.append(f"<span class='rbi-pill mute'>{escape(filt['institution_label'])}</span>")
-    st.markdown(f"<div class='rbi-meta'>{''.join(pills)}</div>", unsafe_allow_html=True)
+        bits.append(escape(filt["institution_label"]))
+    st.markdown(f"<div class='rbi-meta'>{' &middot; '.join(bits)}</div>",
+                unsafe_allow_html=True)
     if ans.get("low_confidence") and ans["mode"] == "llm":
-        st.warning("Retrieval confidence is low \u2014 verify every claim against the cited text.")
+        st.caption("Low retrieval confidence \u2014 verify against the cited text.")
     if filt.get("institution_key") == "all" and ans["citations"]:
         groups = answer_mod.entity_groups(ans["citations"])
         if len(groups) > 1:
             names = "; ".join(" + ".join(ENTITY_LABELS.get(e, e) for e in g) for g in groups)
-            st.warning(f"These passages come from **different institution types** ({names}) "
-                       "and their rules can differ. Select the matching Institution view in the "
-                       "sidebar to get the version that applies to your entity.")
+            st.caption(f"Passages span different institution types ({names}); their rules can "
+                       "differ. Pick the matching institution view in the sidebar for the "
+                       "version that applies to you.")
         elif groups and ans["citations"][0].get("entity_scope") == "specific":
             ents = ", ".join(ENTITY_LABELS.get(e, e) for e in ans["citations"][0]["entities"])
-            st.info(f"Top passages are the **{ents}** version of these rules. Select the "
-                    "matching Institution view in the sidebar to see the version that "
-                    "applies to your entity.")
+            st.caption(f"Top passages are the {ents} version of these rules.")
     st.markdown(ans["answer_md"])
-    if ans["claims"]:
-        rows = ["<div class='rbi-claims'><div class='h'>Validated claims</div>"]
+    flagged = (ans.get("claims_dropped") or ans.get("claims_ungrounded")
+               or any(c.get("number_issues") for c in ans["claims"]))
+    if ans["claims"] and flagged:
+        rows = ["<div class='rbi-claims'><div class='h'>Claim check</div>"]
         for c in ans["claims"]:
             refs = "".join(f"<span class='rbi-ref'>[{escape(str(x))}]</span>"
                            for x in c["citations"])
@@ -421,9 +404,11 @@ def render_assistant(msg: dict, docs: dict | None = None) -> None:
     if ans.get("errors"):
         st.caption(f"LLM note: {ans['errors'][0]}")
     if ans["citations"]:
-        with st.popover(f"Audit trail \u2014 {_plural(len(ans['citations']), 'passage')}"):
-            st.caption("Pipeline trace")
-            st.json(trace, expanded=False)
+        with st.popover(f"Sources \u2014 {_plural(len(ans['citations']), 'passage')}"):
+            if isinstance(trace, dict) and trace.get("bm25_hits"):
+                st.caption(f"BM25 {trace['bm25_hits']} \u00b7 dense {trace.get('dense_hits', 0)} "
+                           f"\u00b7 fused {trace.get('fused', 0)} \u00b7 "
+                           f"reranked {trace.get('reranked', 0)}")
             st.dataframe(pd.DataFrame([{
                 "ref": c["ref"], "passage": c["chunk_id"], "reference": c.get("reference"),
                 "title": c["title"][:60], "para": c.get("para"), "page": c.get("page_start"),
@@ -451,9 +436,9 @@ def ask_tab(eng: Engine | None, docs: dict, ui: dict) -> None:
             render_assistant(msg, docs)
 
     if not st.session_state.chat and not st.session_state.get("pending_q"):
-        st.caption("Try an example")
-        for _, example in EXAMPLES:
-            if st.button(example, key=f"ex-{example}", width="stretch"):
+        cols = st.columns(len(EXAMPLES))
+        for col, (label, example) in zip(cols, EXAMPLES):
+            if col.button(label, key=f"ex-{label}", width="stretch", help=example):
                 st.session_state.pending_q = example
                 st.rerun()
 
@@ -463,24 +448,28 @@ def ask_tab(eng: Engine | None, docs: dict, ui: dict) -> None:
         st.session_state.pending_q = None
     if not q:
         return
+    history = []
+    for prev in st.session_state.chat[-3:]:
+        history.append({"role": "user", "content": prev["q"]})
+        history.append({"role": "assistant", "content": prev["answer"]["answer_md"]})
     with st.chat_message("user"):
         st.markdown(q)
     with st.chat_message("assistant"):
         if answer_mod.is_smalltalk(q):
-            history = []
-            for prev in st.session_state.chat[-3:]:
-                history.append({"role": "user", "content": prev["q"]})
-                history.append({"role": "assistant", "content": prev["answer"]["answer_md"]})
             with st.spinner("Thinking\u2026"):
                 ans = answer_mod.chat_reply(q, history=history,
                                             use_llm=not ui["retrieve_only"],
                                             llm_pin=ui["llm_pin"])
             result = {"hits": [], "abstain": False, "trace": {"mode": "chat"}}
         else:
+            retrieval_q = answer_mod.contextual_query(q, history)
             with st.spinner("Retrieving relevant passages\u2026"):
                 filt = filters_from(ui)
-                result = eng.retrieve(q, filters=filt, k=ui["top_k"], rerank=ui["rerank"],
+                result = eng.retrieve(retrieval_q, filters=filt, k=ui["top_k"],
+                                      rerank=ui["rerank"],
                                       abstain_score=ui["abstain_score"])
+            if retrieval_q != q:
+                result["trace"]["retrieval_query"] = retrieval_q
             if result["abstain"] and result["hits"] and ui["gate"]:
                 ans = answer_mod.refuse(q, result["hits"],
                                         threshold=float(result["trace"].get(
@@ -490,7 +479,7 @@ def ask_tab(eng: Engine | None, docs: dict, ui: dict) -> None:
                     ans = answer_mod.answer(q, result["hits"],
                                             low_confidence=bool(result["abstain"] and result["hits"]),
                                             use_llm=not ui["retrieve_only"],
-                                            llm_pin=ui["llm_pin"])
+                                            llm_pin=ui["llm_pin"], history=history)
         msg = {"q": q, "answer": ans, "trace": result["trace"], "filters": ui}
         audit.append_query(session=st.session_state.session_id, query=q,
                            filters={k: list(v) if isinstance(v, frozenset) else v
@@ -697,24 +686,23 @@ def audit_tab() -> None:
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
-def render_header(docs: dict, version: str, m: dict, eng: Engine | None) -> None:
-    backend = eng.dense.backend if eng is not None and eng.dense is not None else "n/a"
+def render_header(docs: dict, m: dict) -> None:
     chunks = m.get("n_chunks")
-    chips = [f"<span class='rbi-chip'><b>{len(docs)}</b> instruments</span>"]
+    bits = [f"{len(docs)} instruments"]
     if isinstance(chunks, int):
-        chips.append(f"<span class='rbi-chip'><b>{chunks:,}</b> passages</span>")
-    chips += ["<span class='rbi-chip'>BM25 + dense + rerank</span>",
-              f"<span class='rbi-chip'>dense: {escape(str(backend))}</span>"]
+        bits.append(f"{chunks:,} passages")
+    built = str(m.get("built_at") or "")[:10]
+    if built:
+        bits.append(f"built {built}")
     st.markdown(
         "<div class='rbi-hero'><h1>RBIRAG</h1>"
-        "<p>Ask the RBI's Master Directions. Every answer cites the paragraph, the "
-        "instrument and the page, or refuses.</p>"
-        f"<div class='rbi-chips'>{''.join(chips)}</div></div>",
+        "<p>Grounded answers over RBI Master Directions and notifications. Every answer "
+        "cites the instrument, paragraph and page, or refuses.</p></div>",
         unsafe_allow_html=True)
-    st.caption(f"Corpus {version} \u00b7 built {m.get('built_at', '')} \u00b7 "
-               f"embedder {m.get('embed_model', '')}")
-    st.caption("Informational tool built on official RBI texts (rbi.org.in). Not legal "
-               "advice \u2014 verify every answer against the cited text.")
+    st.markdown(
+        f"<div class='rbi-stats'>{' &middot; '.join(bits)} &middot; "
+        "<a href='https://rbi.org.in'>rbi.org.in</a> &middot; not legal advice</div>",
+        unsafe_allow_html=True)
 
 
 def main() -> None:
@@ -722,9 +710,9 @@ def main() -> None:
     _inject_css()
     ui = sidebar_filters()
     rbi_updates_panel()
-    eng, docs, version = engine_and_docs()
+    eng, docs, _version = engine_and_docs()
 
-    render_header(docs, version, store.read_manifest() or {}, eng)
+    render_header(docs, store.read_manifest() or {})
 
     tab_ask, tab_circ, tab_cmp, tab_audit = st.tabs(
         ["Ask", "Circulars", "Compare", "Audit"])

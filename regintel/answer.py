@@ -113,6 +113,39 @@ def is_smalltalk(query: str) -> bool:
     return text in _SMALLTALK or any(rx.match(text) for rx in _SMALLTALK_RX)
 
 
+# A follow-up turn ("what about NBFCs?", "and for co-operative banks?") reads
+# as a topic-less question on its own, so retrieval would search the literal
+# words. Detecting it lets the previous question ride along as context.
+_FOLLOWUP_RX = re.compile(
+    r"^(and|also|so|then|what about|how about|what if|same|and for|what of|"
+    r"how does that|does that|is that|are there)\b", re.I)
+_ANAPHORA_RX = re.compile(
+    r"\b(it|its|that|this|these|those|they|them|there|such)\b", re.I)
+
+
+def contextual_query(query: str, history: list[dict] | None = None) -> str:
+    """Retrieval query for a follow-up turn.
+
+    Returns the query unchanged unless it reads as a follow-up: an explicit
+    connector ("what about..."), or an anaphor inside a short message. In that
+    case the previous user question is prepended so the retriever sees the
+    topic. The answer prompt still receives the user's original words.
+    """
+    q = (query or "").strip()
+    if not q or not history:
+        return q
+    prev = ""
+    for turn in reversed(history):
+        if turn.get("role") == "user" and (turn.get("content") or "").strip():
+            prev = turn["content"].strip()
+            break
+    if not prev:
+        return q
+    follow = bool(_FOLLOWUP_RX.match(q)) or (
+        len(q.split()) <= 12 and bool(_ANAPHORA_RX.search(q)))
+    return f"{prev} {q}" if follow else q
+
+
 def scope_label(entity_scope: str | None, entities: list[str] | None) -> str:
     """Human label of who a passage applies to ("Commercial Banks, Authorised Dealers")."""
     if entity_scope == "broad" or not entities:
@@ -285,11 +318,17 @@ def _extractive(query: str, cards: list[dict]) -> str:
 
 def answer(query: str, hits: list[Hit], low_confidence: bool = False,
            use_llm: bool = True, max_tokens: int = 2600,
-           llm_pin: tuple[str, str] | None = None, strict_pin: bool = False) -> dict:
+           llm_pin: tuple[str, str] | None = None, strict_pin: bool = False,
+           history: list[dict] | None = None) -> dict:
     """Returns the UI-ready answer object (mode: llm | extractive | abstain).
 
     `llm_pin` = (provider, model) chosen in the UI: tried first, with the
-    normal failover chain as the fallback (``strict_pin``: no fallback)."""
+    normal failover chain as the fallback (``strict_pin``: no fallback).
+
+    `history` = earlier turns as ``{"role": "user"|"assistant", "content": str}``.
+    They are shown to the model so follow-up questions resolve ("what about
+    NBFCs?"), but marked as context only: every fact must still come from the
+    passages, and nothing in the history may be cited."""
     t0 = time.time()
     cards = _resolve_cards(hits)
     result = {
@@ -324,8 +363,22 @@ def answer(query: str, hits: list[Hit], low_confidence: bool = False,
         result["latency_s"] = round(time.time() - t0, 2)
         return result
 
-    user = (f"QUESTION: {query}\n\nCONTEXT:\n{build_context(hits)}\n\n"
-            "Answer with strict JSON per the system instructions.")
+    convo = ""
+    if history:
+        lines = []
+        for turn in history[-6:]:
+            role = turn.get("role")
+            content = (turn.get("content") or "").strip()
+            if role in ("user", "assistant") and content:
+                who = "User" if role == "user" else "Assistant"
+                lines.append(f"{who}: {content[:400]}")
+        if lines:
+            convo = ("CONVERSATION SO FAR (context only \u2014 not evidence, never cite it):\n"
+                     + "\n".join(lines) + "\n\n")
+    follow = ("Resolve references such as 'that', 'it' or 'what about X' from the "
+              "conversation above, but answer only from the passages.\n\n") if convo else ""
+    user = (f"{convo}QUESTION: {query}\n\nCONTEXT:\n{build_context(hits)}\n\n"
+            f"{follow}Answer with strict JSON per the system instructions.")
     if low_confidence:
         user += ("\n\nNOTE: the retrieval layer flagged LOW confidence for this question. "
                  "Only answer if the passages clearly and directly answer it; otherwise "
