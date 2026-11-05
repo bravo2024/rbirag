@@ -1,22 +1,22 @@
 {
-  "built_at": "2026-11-04T07:32:03",
+  "built_at": "2026-11-05T07:57:20",
   "chunk_words": [
     120,
     380
   ],
   "docs_types": {
     "amendment_direction": 14,
-    "master_direction": 366,
+    "master_direction": 367,
     "notification": 6,
     "other": 18,
     "scheme": 4
   },
   "embed_model": "BAAI/bge-small-en-v1.5",
-  "n_chunks": 14481,
-  "n_docs": 408,
+  "n_chunks": 14509,
+  "n_docs": 409,
   "sources": {
-    "backfill": 387,
+    "backfill": 388,
     "rss": 21
   },
-  "version": "v1-c728509c38"
+  "version": "v1-85c8d9c50e"
 }
