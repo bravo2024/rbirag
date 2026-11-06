@@ -2,10 +2,10 @@
   "encoder": "BAAI/bge-small-en-v1.5",
   "fingerprint": {
     "algo": "sha256(chunk_id|text_hash)",
-    "n": 14509,
-    "sha256": "1966f86df53044d12bfe74a904f3cff33263f2b3dd5e874d3f658d0545bd02be"
+    "n": 14540,
+    "sha256": "ec6348d653dabfeb5d0e14877ab798679bb89f83ab17bc430d9461d91e59e3ad"
   },
-  "n": 14509,
+  "n": 14540,
   "dim": 384,
   "storage": "flat_fp16"
 }
